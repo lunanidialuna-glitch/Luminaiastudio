@@ -336,7 +336,7 @@
         <p class="debajo">Empieza el <span class="hueco">FECHA</span>. Cupos limitados de verdad: son <span class="hueco">CUPOS</span> y los reviso uno por uno.</p>
       </div>
       <div class="hero-foto">
-        <video poster="../video/calle.jpg" muted loop playsinline preload="auto" aria-label="Cinco escenas distintas de Luna con la misma cara en todas."><source src="../video/luna-misma-cara.mp4" type="video/mp4"><source src="../video/luna-misma-cara.webm" type="video/webm"></video>
+        <video data-audio poster="../video/luna-misma-cara-poster.jpg" muted loop playsinline preload="auto" aria-label="Cinco escenas distintas de Luna con la misma cara en todas."><source src="../video/luna-misma-cara.mp4" type="video/mp4"><source src="../video/luna-misma-cara.webm" type="video/webm"></video>
         <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · 5 escenas · 1 sola cara</span></div>
       </div>
     </div>
@@ -615,9 +615,75 @@
   function arrancar(v){ var p = v.play(); if (p && p.catch) { p.catch(function(){ v.setAttribute('controls',''); }); } }
   if (!('IntersectionObserver' in window)) { videos.forEach(arrancar); return; }
   var obs = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting) { arrancar(e.target); } else { e.target.pause(); } });
+    es.forEach(function(e){ if (e.isIntersecting) { arrancar(e.target); } else { e.target.pause(); e.target.muted = true; } });
   }, { threshold: 0.25 });
   videos.forEach(function(v){ obs.observe(v); });
+})();
+
+(function(){
+  /* Sonido a pedido: los videos arrancan en silencio (los navegadores lo exigen
+     para reproducir solos) y se escuchan cuando la persona toca. Solo suena uno
+     por vez, y se silencia al salir de la pantalla. */
+  var videos = Array.prototype.slice.call(
+    document.querySelectorAll('.galeria video[data-audio], .hero-foto video[data-audio]'));
+  if (!videos.length) return;
+
+  var OFF = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l4 6m0-6l-4 6"/></svg>';
+  var ON  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 8.5a5 5 0 010 7M20 6a9 9 0 010 12"/></svg>';
+  var DECIR_ENCENDER = 'Escuchar el audio de este video';
+  var DECIR_APAGAR   = 'Silenciar este video';
+
+  function pintar(b, sonando){
+    b.setAttribute('aria-pressed', sonando ? 'true' : 'false');
+    b.setAttribute('aria-label', sonando ? DECIR_APAGAR : DECIR_ENCENDER);
+    b.innerHTML = (sonando ? ON : OFF) + '<span class="txt">sonido</span>';
+  }
+  function silenciarOtros(menos){
+    videos.forEach(function(v){
+      if (v === menos || v.muted) return;
+      v.muted = true;
+      if (v.__boton) pintar(v.__boton, false);
+    });
+  }
+
+  videos.forEach(function(v){
+    var caja = v.closest('figure') || v.closest('.hero-foto');
+    if (!caja) return;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'sonido';
+    pintar(b, false);
+    caja.appendChild(b);
+    v.__boton = b;
+
+    function alternar(e){
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      if (v.muted) {
+        silenciarOtros(v);
+        v.muted = false;
+        var p = v.play(); if (p && p.catch) { p.catch(function(){}); }
+      } else {
+        v.muted = true;
+      }
+      pintar(b, !v.muted);
+    }
+    b.addEventListener('click', alternar);
+    v.addEventListener('click', alternar);
+    v.addEventListener('volumechange', function(){ pintar(b, !v.muted); });
+  });
+
+  /* al salir de la pantalla, se silencia solo */
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting && !e.target.muted) {
+          e.target.muted = true;
+          if (e.target.__boton) pintar(e.target.__boton, false);
+        }
+      });
+    }, { threshold: 0.2 });
+    videos.forEach(function(v){ obs.observe(v); });
+  }
 })();
 </script>
 
