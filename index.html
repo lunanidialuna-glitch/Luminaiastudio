@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Aprendé a hacer video con IA sin perder lo que yo perdí. Comunidad gratuita de Lumina IA Studio.">
+<meta name="description" content="Reto Clona tu Marca: 5 días, un prompt real por día, gratis. De Lumina IA Studio.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://luminaiastudio.com/">
 <link rel="alternate" hreflang="es" href="https://luminaiastudio.com/">
 <link rel="alternate" hreflang="en" href="https://luminaiastudio.com/en/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Lumina IA Studio — Comunidad gratuita">
+<meta property="og:title" content="Reto Clona tu Marca — 5 días, gratis">
 <meta property="og:description" content="Aprendé a hacer video con IA sin perder lo que yo perdí.">
 <meta property="og:url" content="https://luminaiastudio.com/">
 <meta property="og:image" content="https://luminaiastudio.com/luna/cafe.jpg">
@@ -22,7 +22,7 @@
   img{max-width:100%;display:block}
   [hidden]{display:none!important}
 </style>
-<title>Comunidad Lumina</title>
+<title>Reto Clona tu Marca — Lumina</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -117,6 +117,12 @@
   .boton:focus-visible{outline:2px solid var(--texto);outline-offset:3px}
   .boton:disabled{cursor:default;translate:0}
   .debajo{font-size:13.5px;color:var(--gris2);margin-top:4px}
+  .consentimiento{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--gris2);line-height:1.45;cursor:pointer;margin-top:2px}
+  .consentimiento input{margin:2px 0 0;flex:none;width:15px;height:15px;accent-color:var(--verde);cursor:pointer}
+  .consentimiento input:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .consentimiento a{color:var(--gris);text-decoration:underline;text-underline-offset:2px}
+  .consentimiento a:hover{color:var(--verde)}
+  .cierre .consentimiento{max-width:430px;margin-inline:auto}
 
   /* ---------- secciones ---------- */
   section{padding-block:clamp(52px,8.5vw,92px)}
@@ -260,16 +266,17 @@
 
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">Comunidad gratuita · Video con IA</p>
+        <p class="eyebrow">Reto gratuito · 5 días por email</p>
         <h1>Aprendé a hacer video con IA sin perder lo que yo perdí</h1>
-        <p class="entrada">Meses. Créditos quemados. Decenas de versiones que no servían para nada. <b>Te voy a enseñar el camino corto</b> — el que a mí no me enseñó nadie.</p>
+        <p class="entrada">Meses. Créditos quemados. Decenas de versiones que no servían para nada. <b>En cinco días te doy el camino corto</b> — un prompt real de los míos por día, para que lo pruebes el mismo día.</p>
         <form class="formulario" id="form-hero" novalidate>
           <div class="fila">
             <input class="campo" id="h-nombre" type="text" name="FNAME" required placeholder="Tu nombre" autocomplete="given-name">
             <input class="campo" id="h-correo" type="email" name="EMAIL" required placeholder="Tu email" autocomplete="email">
           </div>
-          <button class="boton" type="submit">Quiero entrar</button>
-          <p class="debajo">Dejás tu email, te llega el link de la comunidad. Nada más.</p>
+          <button class="boton" type="submit">Empezar el reto</button>
+          <label class="consentimiento" for="h-ok"><input type="checkbox" id="h-ok" required><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span></label>
+          <p class="debajo">Cinco días, un correo por día. Gratis y sin tarjeta.</p>
         </form>
       </div>
       <div class="hero-foto">
@@ -295,6 +302,25 @@
       <li><span class="marca-x">05</span><span>Generaste una cara que se te parecía… pero no eras vos.</span></li>
     </ul>
     <p class="remate">No sos vos. <span>Nadie te está contando la parte del medio</span> — la que va entre el tutorial de dos minutos y el resultado que te gustó.</p>
+  </div>
+</section>
+
+<!-- ================= EL RETO ================= -->
+<section class="banda alterna">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">El reto · gratis · 5 días</p>
+      <h2>Clona tu Marca</h2>
+      <p class="bajada">Un correo por día. En cada uno te mando <b>un prompt real de los que uso yo</b> —no un ejemplo de manual— y vos lo probás ese mismo día en tu cuenta. Al quinto día tenés videos hechos por vos.</p>
+    </div>
+    <ul class="dolores">
+      <li><span class="marca-x">DÍA 1</span><span><b>Tu primer video, hoy.</b> Te doy mi plantilla completa, la que ya me funcionó, con las piezas marcadas. Cambiás cinco cosas y generás.</span></li>
+      <li><span class="marca-x">DÍA 2</span><span><b>Por qué se nota que es IA.</b> El bloque de texto que le saca la piel de plástico a las caras. Lo pegás, regenerás el de ayer, y la diferencia se ve sola.</span></li>
+      <li><span class="marca-x">DÍA 3</span><span><b>El error que te quema créditos.</b> Cuánto texto entra en cuántos segundos. Es la razón por la que tu personaje habla apurado, y nadie te lo dice.</span></li>
+      <li><span class="marca-x">DÍA 4</span><span><b>Cara de nena y ojos de vidrio.</b> Lo que hay que prohibirle al modelo <em>por escrito</em> para que no te devuelva una adolescente de plástico.</span></li>
+      <li><span class="marca-x">DÍA 5</span><span><b>Poné los cuatro juntos.</b> Acá vas a ver lo que casi nadie te cuenta — y vas a entender qué es lo que te falta de verdad.</span></li>
+    </ul>
+    <p class="remate">Gratis de verdad. <span>Los créditos que gastes son de tu propia cuenta</span> — esa plata no pasa por mí, y en el día 3 te enseño a no quemarla.</p>
   </div>
 </section>
 
@@ -490,14 +516,15 @@
   <div class="interior">
     <p class="eyebrow">Último paso</p>
     <h2 style="margin-top:14px">El camino corto empieza acá</h2>
-    <p class="bajada">Dejás tu nombre y tu email. Te llega el link de la comunidad en menos de un minuto.</p>
+    <p class="bajada">Dejás tu nombre y tu email. El primer correo del reto te llega en menos de un minuto.</p>
     <form class="formulario" id="form-cierre" novalidate>
       <div class="fila">
         <input class="campo" id="c-nombre" type="text" name="FNAME" required placeholder="Tu nombre" autocomplete="given-name">
         <input class="campo" id="c-correo" type="email" name="EMAIL" required placeholder="Tu email" autocomplete="email">
       </div>
-      <button class="boton" type="submit">Quiero entrar</button>
-      <p class="debajo">Gratis. Sin tarjeta. Te podés ir cuando quieras.</p>
+      <button class="boton" type="submit">Empezar el reto</button>
+      <label class="consentimiento" for="c-ok"><input type="checkbox" id="c-ok" required><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span></label>
+      <p class="debajo">Gratis. Sin tarjeta. Te borrás con un click cuando quieras.</p>
     </form>
   </div>
 </section>
@@ -537,16 +564,27 @@
     /* Sin dirección configurada: no se pierde a nadie, se abre el correo */
     f.addEventListener('submit', function(e){
       e.preventDefault();
+
+      /* Consentimiento obligatorio, tambien en el camino de respaldo */
+      var casilla = f.querySelector('input[type="checkbox"]');
+      if (casilla && !casilla.checked) {
+        var aviso = f.querySelector('.debajo');
+        if (aviso) { aviso.textContent = 'Para seguir, marcá la casilla de la política de privacidad.'; aviso.style.color = 'var(--verde)'; }
+        casilla.focus();
+        return;
+      }
+
       var nombre = (f.querySelector('input[name="FNAME"]') || {}).value || '';
       var correo = (f.querySelector('input[name="EMAIL"]') || {}).value || '';
       var boton = f.querySelector('button[type="submit"]');
       var pie = f.querySelector('.debajo');
 
-      var asunto = encodeURIComponent('Quiero entrar a la comunidad');
+      var asunto = encodeURIComponent('Quiero hacer el reto Clona tu Marca');
       var cuerpo = encodeURIComponent(
-        'Hola Nidia, quiero entrar a la comunidad.\n\n' +
+        'Hola Nidia, quiero hacer el reto Clona tu Marca.\n\n' +
         'Nombre: ' + nombre + '\n' +
-        'Email: ' + correo + '\n'
+        'Email: ' + correo + '\n' +
+        'Acepta la politica de privacidad: si\n'
       );
       window.location.href = 'mailto:' + CORREO_DE_RESPALDO + '?subject=' + asunto + '&body=' + cuerpo;
 

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Learn AI video without burning what I burned. The free Lumina IA Studio community.">
+<meta name="description" content="Clone Your Brand: a free 5-day challenge, one real prompt a day. From Lumina IA Studio.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://luminaiastudio.com/en/">
 <link rel="alternate" hreflang="es" href="https://luminaiastudio.com/">
 <link rel="alternate" hreflang="en" href="https://luminaiastudio.com/en/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Lumina IA Studio — Free community">
+<meta property="og:title" content="Clone Your Brand — free 5-day challenge">
 <meta property="og:description" content="Learn AI video without burning what I burned.">
 <meta property="og:url" content="https://luminaiastudio.com/en/">
 <meta property="og:image" content="https://luminaiastudio.com/luna/cafe.jpg">
@@ -22,7 +22,7 @@
   img{max-width:100%;display:block}
   [hidden]{display:none!important}
 </style>
-<title>Lumina Community</title>
+<title>Clone Your Brand — Lumina</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -117,6 +117,12 @@
   .boton:focus-visible{outline:2px solid var(--texto);outline-offset:3px}
   .boton:disabled{cursor:default;translate:0}
   .debajo{font-size:13.5px;color:var(--gris2);margin-top:4px}
+  .consentimiento{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--gris2);line-height:1.45;cursor:pointer;margin-top:2px}
+  .consentimiento input{margin:2px 0 0;flex:none;width:15px;height:15px;accent-color:var(--verde);cursor:pointer}
+  .consentimiento input:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .consentimiento a{color:var(--gris);text-decoration:underline;text-underline-offset:2px}
+  .consentimiento a:hover{color:var(--verde)}
+  .cierre .consentimiento{max-width:430px;margin-inline:auto}
 
   /* ---------- secciones ---------- */
   section{padding-block:clamp(52px,8.5vw,92px)}
@@ -260,16 +266,17 @@
 
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">Free community · AI video</p>
+        <p class="eyebrow">Free challenge · 5 days by email</p>
         <h1>Learn AI video without burning what I burned</h1>
-        <p class="entrada">Months. Burned credits. Dozens of versions that were good for nothing. <b>I'll show you the short way</b> — the one nobody showed me.</p>
+        <p class="entrada">Months. Burned credits. Dozens of versions that were good for nothing. <b>In five days I hand you the short path</b> — one real prompt of mine a day, so you can try it the same day.</p>
         <form class="formulario" id="form-hero" novalidate>
           <div class="fila">
             <input class="campo" id="h-nombre" type="text" name="FNAME" required placeholder="Your name" autocomplete="given-name">
             <input class="campo" id="h-correo" type="email" name="EMAIL" required placeholder="Your email" autocomplete="email">
           </div>
-          <button class="boton" type="submit">I want in</button>
-          <p class="debajo">You leave your email, the community link arrives. That's it.</p>
+          <button class="boton" type="submit">Start the challenge</button>
+          <label class="consentimiento" for="h-ok"><input type="checkbox" id="h-ok" required><span>I have read and accept the <a href="privacy.html">privacy policy</a>.</span></label>
+          <p class="debajo">Five days, one email a day. Free, no card.</p>
         </form>
       </div>
       <div class="hero-foto">
@@ -295,6 +302,25 @@
       <li><span class="marca-x">05</span><span>You generated a face that looked like you… but wasn't you.</span></li>
     </ul>
     <p class="remate">It's not you. <span>Nobody tells you about the middle part</span> — the part between the two-minute tutorial and the result you liked.</p>
+  </div>
+</section>
+
+<!-- ================= THE CHALLENGE ================= -->
+<section class="banda alterna">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">The challenge · free · 5 days</p>
+      <h2>Clone Your Brand</h2>
+      <p class="bajada">One email a day. In each one I send you <b>a real prompt of the ones I actually use</b> —not a textbook example— and you try it that same day on your own account. By day five you have videos you made yourself.</p>
+    </div>
+    <ul class="dolores">
+      <li><span class="marca-x">DAY 1</span><span><b>Your first video, today.</b> You get my full template, the one that already worked for me, with the pieces marked. Change five things and generate.</span></li>
+      <li><span class="marca-x">DAY 2</span><span><b>Why it looks AI-made.</b> The block of text that takes the plastic off the skin. Paste it, regenerate yesterday's, and the difference shows on its own.</span></li>
+      <li><span class="marca-x">DAY 3</span><span><b>The mistake that burns your credits.</b> How much text fits in how many seconds. It's why your character talks in a rush, and nobody tells you.</span></li>
+      <li><span class="marca-x">DAY 4</span><span><b>Baby face and glass eyes.</b> What you have to forbid the model <em>in writing</em> so it doesn't hand you a plastic teenager.</span></li>
+      <li><span class="marca-x">DAY 5</span><span><b>Put the four side by side.</b> Here you'll see what almost nobody tells you — and you'll understand what you're actually missing.</span></li>
+    </ul>
+    <p class="remate">Free for real. <span>The credits you spend are on your own account</span> — that money never goes through me, and on day 3 I teach you not to burn it.</p>
   </div>
 </section>
 
@@ -490,14 +516,15 @@
   <div class="interior">
     <p class="eyebrow">Last step</p>
     <h2 style="margin-top:14px">The short way starts here</h2>
-    <p class="bajada">Leave your name and your email. The community link arrives in under a minute.</p>
+    <p class="bajada">Leave your name and your email. The first email of the challenge arrives in under a minute.</p>
     <form class="formulario" id="form-cierre" novalidate>
       <div class="fila">
         <input class="campo" id="c-nombre" type="text" name="FNAME" required placeholder="Your name" autocomplete="given-name">
         <input class="campo" id="c-correo" type="email" name="EMAIL" required placeholder="Your email" autocomplete="email">
       </div>
-      <button class="boton" type="submit">I want in</button>
-      <p class="debajo">Free. No card. Leave whenever you want.</p>
+      <button class="boton" type="submit">Start the challenge</button>
+      <label class="consentimiento" for="c-ok"><input type="checkbox" id="c-ok" required><span>I have read and accept the <a href="privacy.html">privacy policy</a>.</span></label>
+      <p class="debajo">Free. No card. Unsubscribe with one click whenever you want.</p>
     </form>
   </div>
 </section>
@@ -537,16 +564,27 @@
     /* Sin dirección configurada: no se pierde a nadie, se abre el correo */
     f.addEventListener('submit', function(e){
       e.preventDefault();
+
+      /* Consentimiento obligatorio, tambien en el camino de respaldo */
+      var casilla = f.querySelector('input[type="checkbox"]');
+      if (casilla && !casilla.checked) {
+        var aviso = f.querySelector('.debajo');
+        if (aviso) { aviso.textContent = 'To continue, tick the privacy policy box.'; aviso.style.color = 'var(--verde)'; }
+        casilla.focus();
+        return;
+      }
+
       var nombre = (f.querySelector('input[name="FNAME"]') || {}).value || '';
       var correo = (f.querySelector('input[name="EMAIL"]') || {}).value || '';
       var boton = f.querySelector('button[type="submit"]');
       var pie = f.querySelector('.debajo');
 
-      var asunto = encodeURIComponent('I want to join the community');
+      var asunto = encodeURIComponent('I want to do the Clone Your Brand challenge');
       var cuerpo = encodeURIComponent(
-        'Hi Nidia, I want to join the community.\n\n' +
+        'Hi Nidia, I want to do the Clone Your Brand challenge.\n\n' +
         'Name: ' + nombre + '\n' +
-        'Email: ' + correo + '\n'
+        'Email: ' + correo + '\n' +
+        'Accepts the privacy policy: yes\n'
       );
       window.location.href = 'mailto:' + CORREO_DE_RESPALDO + '?subject=' + asunto + '&body=' + cuerpo;
 
