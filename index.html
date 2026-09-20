@@ -562,7 +562,7 @@
        https://XXXX.us5.list-manage.com/subscribe/post?u=XXXX&id=XXXX
      Mientras esté vacía, el botón abre el correo en vez de perder a nadie.
   --------------------------------------------------------------- */
-  var ACCION_MAILCHIMP = "";
+  var ACCION_MAILCHIMP = "https://gmail.us5.list-manage.com/subscribe/post?u=64357cc0bdae80b13b0816b34&id=8bf4838e02&f_id=00f319e0f0";
   var CORREO_DE_RESPALDO = "wavemarketingone@gmail.com";
 
   var formularios = [document.getElementById('form-hero'), document.getElementById('form-cierre')];
@@ -573,9 +573,29 @@
     if (ACCION_MAILCHIMP) {
       f.setAttribute('action', ACCION_MAILCHIMP);
       f.setAttribute('method', 'post');
-      f.setAttribute('target', '_self');
-      f.removeAttribute('novalidate');
-      return;                       /* envío normal del navegador */
+      f.setAttribute('target', '_blank');   /* la confirmación abre aparte: no se pierde la página */
+      f.removeAttribute('novalidate');      /* la casilla obligatoria la valida el navegador */
+
+      /* Trampa anti-robot de Mailchimp: va vacía y fuera de la vista.
+         Si un robot la llena, Mailchimp descarta el alta. */
+      if (!f.querySelector('input[name="b_64357cc0bdae80b13b0816b34_8bf4838e02"]')) {
+        var trampa = document.createElement('div');
+        trampa.setAttribute('aria-hidden', 'true');
+        trampa.style.cssText = 'position:absolute;left:-5000px;overflow:hidden';
+        trampa.innerHTML = '<input type="text" name="b_64357cc0bdae80b13b0816b34_8bf4838e02" tabindex="-1" value="">';
+        f.appendChild(trampa);
+      }
+
+      /* Confirmación en la propia página, sin esperar a que vuelva nada */
+      f.addEventListener('submit', function(){
+        var boton = f.querySelector('button[type="submit"]');
+        var pie = f.querySelector('.debajo');
+        setTimeout(function(){
+          if (boton) { boton.textContent = 'Ya estás dentro ✓'; boton.disabled = true; }
+          if (pie) { pie.innerHTML = '<b>¡Listo! Revisá tu correo — el día 1 llega en unos minutos.</b> Si no lo ves, fijate en Promociones o Spam.'; }
+        }, 60);
+      });
+      return;
     }
 
     /* Sin dirección configurada: no se pierde a nadie, se abre el correo */
