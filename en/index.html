@@ -117,6 +117,23 @@
   .boton:focus-visible{outline:2px solid var(--texto);outline-offset:3px}
   .boton:disabled{cursor:default;translate:0}
   .debajo{font-size:13.5px;color:var(--gris2);margin-top:4px}
+  /* ---------- botón de sonido ---------- */
+  .sonido{
+    position:absolute;top:10px;right:10px;z-index:3;
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(10,10,12,.80);backdrop-filter:blur(8px);
+    border:1px solid var(--linea2);border-radius:999px;padding:7px 10px;cursor:pointer;
+    font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--gris);line-height:1;transition:color .18s,border-color .18s,background .18s;
+  }
+  .sonido:hover{color:var(--texto);border-color:var(--gris2)}
+  .sonido:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .sonido svg{width:13px;height:13px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .sonido[aria-pressed="true"]{background:var(--verde);color:#0A0A0C;border-color:var(--verde)}
+  .hero-foto .sonido{top:13px;right:13px;padding:8px 12px;font-size:10.5px}
+  .galeria .sonido .txt{display:none}
+  @media (max-width:700px){.sonido .txt{display:none}}
+  video[data-audio]{cursor:pointer}
   .consentimiento{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--gris2);line-height:1.45;cursor:pointer;margin-top:2px}
   .consentimiento input{margin:2px 0 0;flex:none;width:15px;height:15px;accent-color:var(--verde);cursor:pointer}
   .consentimiento input:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
@@ -280,7 +297,7 @@
         </form>
       </div>
       <div class="hero-foto">
-        <video poster="../video/calle.jpg" muted loop playsinline preload="auto" aria-label="Video of Luna walking down the street in six different outfits with the same face in all of them."><source src="../video/calle.mp4" type="video/mp4"><source src="../video/calle.webm" type="video/webm"></video>
+        <video data-audio poster="../video/calle.jpg" muted loop playsinline preload="auto" aria-label="Video of Luna walking down the street in six different outfits with the same face in all of them."><source src="../video/calle.mp4" type="video/mp4"><source src="../video/calle.webm" type="video/webm"></video>
         <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · made without a camera</span></div>
       </div>
     </div>
@@ -330,13 +347,13 @@
     <div class="encabezado">
       <p class="eyebrow">This is what's possible</p>
       <h2>No set, no camera, no plane ticket</h2>
-      <p class="bajada">These are all the same person, in different places, with the same face and the same hair. That consistency is the hard part — and it's what you'll learn to control.</p>
+      <p class="bajada">These are all the same person, in different places, with the same face and the same hair. That consistency is the hard part — and it's what you'll learn to control. <b>Tap any of them to hear the audio.</b></p>
     </div>
     <div class="galeria">
       <figure><span class="marcavideo">video</span><video poster="../video/looks.jpg" muted loop playsinline preload="metadata" aria-label="Three identical Lunas walking together down the street in grey coats."><source src="../video/looks.mp4" type="video/mp4"><source src="../video/looks.webm" type="video/webm"></video><figcaption>Street · three Lunas</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video poster="../video/oficina.jpg" muted loop playsinline preload="metadata"><source src="../video/oficina.mp4" type="video/mp4"><source src="../video/oficina.webm" type="video/webm"></video><figcaption>Office</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video poster="../video/ventana.jpg" muted loop playsinline preload="metadata"><source src="../video/ventana.mp4" type="video/mp4"><source src="../video/ventana.webm" type="video/webm"></video><figcaption>Close-up</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video poster="../video/bano.jpg" muted loop playsinline preload="metadata"><source src="../video/bano.mp4" type="video/mp4"><source src="../video/bano.webm" type="video/webm"></video><figcaption>To camera</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="../video/oficina.jpg" muted loop playsinline preload="metadata"><source src="../video/oficina.mp4" type="video/mp4"><source src="../video/oficina.webm" type="video/webm"></video><figcaption>Office</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="../video/ventana.jpg" muted loop playsinline preload="metadata"><source src="../video/ventana.mp4" type="video/mp4"><source src="../video/ventana.webm" type="video/webm"></video><figcaption>Close-up</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="../video/bano.jpg" muted loop playsinline preload="metadata"><source src="../video/bano.mp4" type="video/mp4"><source src="../video/bano.webm" type="video/webm"></video><figcaption>To camera</figcaption></figure>
     </div>
     <p class="pie-galeria"><b>The same face in all four.</b> That doesn't happen by accident: it comes from one step almost everybody skips. It's step 2 below, and it's the difference between "looks like her" and "is her".</p>
   </div>
@@ -609,10 +626,76 @@
 
   var obs = new IntersectionObserver(function(entradas){
     entradas.forEach(function(e){
-      if (e.isIntersecting) { arrancar(e.target); } else { e.target.pause(); }
+      if (e.isIntersecting) { arrancar(e.target); } else { e.target.pause(); e.target.muted = true; }
     });
   }, { threshold: 0.25 });
   videos.forEach(function(v){ obs.observe(v); });
+})();
+
+(function(){
+  /* Sonido a pedido: los videos arrancan en silencio (los navegadores lo exigen
+     para reproducir solos) y se escuchan cuando la persona toca. Solo suena uno
+     por vez, y se silencia al salir de la pantalla. */
+  var videos = Array.prototype.slice.call(
+    document.querySelectorAll('.galeria video[data-audio], .hero-foto video[data-audio]'));
+  if (!videos.length) return;
+
+  var OFF = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l4 6m0-6l-4 6"/></svg>';
+  var ON  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 8.5a5 5 0 010 7M20 6a9 9 0 010 12"/></svg>';
+  var DECIR_ENCENDER = 'Play this video with sound';
+  var DECIR_APAGAR   = 'Mute this video';
+
+  function pintar(b, sonando){
+    b.setAttribute('aria-pressed', sonando ? 'true' : 'false');
+    b.setAttribute('aria-label', sonando ? DECIR_APAGAR : DECIR_ENCENDER);
+    b.innerHTML = (sonando ? ON : OFF) + '<span class="txt">sound</span>';
+  }
+  function silenciarOtros(menos){
+    videos.forEach(function(v){
+      if (v === menos || v.muted) return;
+      v.muted = true;
+      if (v.__boton) pintar(v.__boton, false);
+    });
+  }
+
+  videos.forEach(function(v){
+    var caja = v.closest('figure') || v.closest('.hero-foto');
+    if (!caja) return;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'sonido';
+    pintar(b, false);
+    caja.appendChild(b);
+    v.__boton = b;
+
+    function alternar(e){
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      if (v.muted) {
+        silenciarOtros(v);
+        v.muted = false;
+        var p = v.play(); if (p && p.catch) { p.catch(function(){}); }
+      } else {
+        v.muted = true;
+      }
+      pintar(b, !v.muted);
+    }
+    b.addEventListener('click', alternar);
+    v.addEventListener('click', alternar);
+    v.addEventListener('volumechange', function(){ pintar(b, !v.muted); });
+  });
+
+  /* al salir de la pantalla, se silencia solo */
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting && !e.target.muted) {
+          e.target.muted = true;
+          if (e.target.__boton) pintar(e.target.__boton, false);
+        }
+      });
+    }, { threshold: 0.2 });
+    videos.forEach(function(v){ obs.observe(v); });
+  }
 })();
 </script>
 
