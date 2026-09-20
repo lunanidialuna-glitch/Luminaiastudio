@@ -226,6 +226,9 @@
   .cierre h2{margin-bottom:16px}
   .cierre .bajada{color:var(--gris);max-width:44ch;margin-inline:auto}
   footer{padding-block:30px;border-top:1px solid var(--linea);font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--gris2);text-transform:uppercase}
+  footer .enlaces{display:flex;gap:18px;flex-wrap:wrap}
+  footer a{color:var(--gris2);text-decoration:none;transition:color .18s}
+  footer a:hover{color:var(--verde)}
   footer .interior{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </style>
 </head>
@@ -501,7 +504,7 @@
 <footer class="banda">
   <div class="interior">
     <span>Lumina · Wave Plus Pro</span>
-    <span>Washington DC · Maryland · Virginia</span>
+    <span class="enlaces"><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a><span>Washington DC · Maryland · Virginia</span></span>
   </div>
 </footer>
 
