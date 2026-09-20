@@ -260,6 +260,10 @@
     white-space:nowrap;
   }
   a.boton{text-decoration:none;display:flex;align-items:center;justify-content:center}
+  a.boton.pendiente{
+    background:transparent;color:#F0B429;border:1px dashed rgba(240,180,41,.55);cursor:not-allowed;
+  }
+  a.boton.pendiente:hover{filter:none;translate:0}
   .hero .boton{max-width:430px}
   .idiomas a{color:var(--gris)}
 
@@ -546,7 +550,8 @@
       <p class="monto"><span class="hueco">PRECIO</span></p>
       <p class="letra">Precio de lanzamiento, para los primeros <span class="hueco">CUPOS</span>. Después pasa a <span class="hueco">PRECIO 2</span>.</p>
       <p class="fijo">El precio que agarrás hoy es el que pagás. Si entrás ahora, no te sube nunca.</p>
-      <a class="boton" href="#" id="cta-pago">Quiero mi lugar</a>
+      <a class="boton pendiente" href="#precio" id="cta-pago" aria-disabled="true">Quiero mi lugar</a>
+      <p class="debajo" style="color:#F0B429">Este botón todavía no lleva a ningún lado: falta el <span class="hueco">LINK DE PAGO</span>.</p>
       <p class="debajo">Empieza el <span class="hueco">FECHA</span> · <span class="hueco">DEVOLUCIÓN</span></p>
     </div>
 

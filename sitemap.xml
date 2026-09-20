@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://luminaiastudio.com/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://luminaiastudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luminaiastudio.com/en/"/>
+  </url>
+  <url>
+    <loc>https://luminaiastudio.com/en/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://luminaiastudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luminaiastudio.com/en/"/>
+  </url>
+  <url><loc>https://luminaiastudio.com/privacidad.html</loc><lastmod>2026-09-20</lastmod><priority>0.3</priority></url>
+  <url><loc>https://luminaiastudio.com/terminos.html</loc><lastmod>2026-09-20</lastmod><priority>0.3</priority></url>
+  <url><loc>https://luminaiastudio.com/en/privacy.html</loc><lastmod>2026-09-20</lastmod><priority>0.3</priority></url>
+  <url><loc>https://luminaiastudio.com/en/terms.html</loc><lastmod>2026-09-20</lastmod><priority>0.3</priority></url>
+</urlset>

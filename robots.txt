@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /bootcamp/
+Disallow: /gracias.html
+Disallow: /en/thanks.html
+
+Sitemap: https://luminaiastudio.com/sitemap.xml
