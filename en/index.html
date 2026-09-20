@@ -571,29 +571,64 @@
     if(!f) return;
 
     if (ACCION_MAILCHIMP) {
-      f.setAttribute('action', ACCION_MAILCHIMP);
-      f.setAttribute('method', 'post');
-      f.setAttribute('target', '_blank');   /* la confirmación abre aparte: no se pierde la página */
-      f.removeAttribute('novalidate');      /* la casilla obligatoria la valida el navegador */
+      /* Se manda por JSONP: no saca a la persona de la página, no abre
+         pestañas nuevas, y Mailchimp contesta de verdad si entró o no. */
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
 
-      /* Trampa anti-robot de Mailchimp: va vacía y fuera de la vista.
-         Si un robot la llena, Mailchimp descarta el alta. */
-      if (!f.querySelector('input[name="b_64357cc0bdae80b13b0816b34_8bf4838e02"]')) {
-        var trampa = document.createElement('div');
-        trampa.setAttribute('aria-hidden', 'true');
-        trampa.style.cssText = 'position:absolute;left:-5000px;overflow:hidden';
-        trampa.innerHTML = '<input type="text" name="b_64357cc0bdae80b13b0816b34_8bf4838e02" tabindex="-1" value="">';
-        f.appendChild(trampa);
-      }
-
-      /* Confirmación en la propia página, sin esperar a que vuelva nada */
-      f.addEventListener('submit', function(){
         var boton = f.querySelector('button[type="submit"]');
-        var pie = f.querySelector('.debajo');
-        setTimeout(function(){
-          if (boton) { boton.textContent = 'You\'re in ✓'; boton.disabled = true; }
-          if (pie) { pie.innerHTML = '<b>You\'re in! Check your inbox — day 1 arrives in a few minutes.</b> If you don\u2019t see it, check Promotions or Spam.'; }
-        }, 60);
+        var pie   = f.querySelector('.debajo');
+        var datos = {
+          EMAIL: (f.querySelector('input[name="EMAIL"]') || {}).value || '',
+          FNAME: (f.querySelector('input[name="FNAME"]') || {}).value || ''
+        };
+
+        var textoOriginal = boton ? (boton.getAttribute('data-original') || boton.textContent) : '';
+        if (boton) { boton.setAttribute('data-original', textoOriginal); }
+        if (boton) { boton.textContent = 'Signing you up…'; boton.disabled = true; }
+
+        var fn = 'mc_' + Date.now();
+        var url = ACCION_MAILCHIMP.replace('/post?', '/post-json?')
+                + '&EMAIL=' + encodeURIComponent(datos.EMAIL)
+                + '&FNAME=' + encodeURIComponent(datos.FNAME)
+                + '&c=' + fn;
+
+        var sc = document.createElement('script');
+        var cerrado = false;
+
+        function terminar(html, entro){
+          if (cerrado) return; cerrado = true;
+          clearTimeout(reloj);
+          try { delete window[fn]; } catch(x) { window[fn] = undefined; }
+          if (sc.parentNode) sc.parentNode.removeChild(sc);
+          if (pie) pie.innerHTML = html;
+          if (boton) {
+            if (entro) { boton.textContent = 'You\u2019re in ✓'; }
+            else { boton.textContent = textoOriginal; boton.disabled = false; }
+          }
+        }
+
+        window[fn] = function(r){
+          if (r && r.result === 'success') { terminar('<b>Done! Check your inbox</b> \u2014 day 1 arrives in a few minutes. If you don\u2019t see it, check Promotions or Spam.', true); }
+          else {
+            var m = (r && r.msg) ? String(r.msg) : '';
+            if (m.toLowerCase().indexOf('already') !== -1 || m.indexOf('ya está') !== -1) {
+              terminar('<b>That email was already on the list.</b> You\u2019ll get the challenge, nothing else to do.', true);
+            } else {
+              terminar('Couldn\u2019t sign you up: ' + m.replace(/<[^>]*>/g, ''), false);
+            }
+          }
+        };
+
+        var reloj = setTimeout(function(){
+          terminar('<b>Couldn\u2019t connect.</b> Try again in a minute, or write to <a href="mailto:' + CORREO_DE_RESPALDO + '">' + CORREO_DE_RESPALDO + '</a>.', false);
+        }, 12000);
+
+        sc.src = url;
+        sc.onerror = function(){
+          terminar('<b>Couldn\u2019t connect.</b> Try again in a minute, or write to <a href="mailto:' + CORREO_DE_RESPALDO + '">' + CORREO_DE_RESPALDO + '</a>.', false);
+        };
+        document.body.appendChild(sc);
       });
       return;
     }
