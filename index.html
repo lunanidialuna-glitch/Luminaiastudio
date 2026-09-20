@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Aprendé a hacer video con IA sin perder lo que yo perdí. Comunidad gratuita de Lumina IA Studio.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luminaiastudio.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lumina IA Studio — Comunidad gratuita">
+<meta property="og:description" content="Aprendé a hacer video con IA sin perder lo que yo perdí.">
+<meta property="og:url" content="https://luminaiastudio.com/">
+<meta property="og:image" content="https://luminaiastudio.com/luna/cafe.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 220 220&apos;%3E%3Crect width=&apos;220&apos; height=&apos;220&apos; fill=&apos;%230A0A0C&apos;/%3E%3Ccircle cx=&apos;110&apos; cy=&apos;110&apos; r=&apos;70&apos; fill=&apos;none&apos; stroke=&apos;%23D7FF3F&apos; stroke-width=&apos;16&apos;/%3E%3C/svg%3E">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0}
+  img{max-width:100%;display:block}
+  [hidden]{display:none!important}
+</style>
+<title>Comunidad Lumina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --fondo:#0A0A0C; --banda:#0F0F13; --panel:#141419; --linea:#26262C; --linea2:#33333B;
+    --verde:#D7FF3F; --verde-op:rgba(215,255,63,.10); --verde-bor:rgba(215,255,63,.28);
+    --gris:#8F8F88; --gris2:#6B6B66; --texto:#EFEEE9;
+    --display:"Playfair Display",Georgia,"Times New Roman",serif;
+    --cuerpo:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --gutter:clamp(20px,5vw,40px);
+  }
+  body{background:var(--fondo);color:var(--texto);font-family:var(--cuerpo);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  *,*::before,*::after{box-sizing:border-box}
+  .banda{padding-inline:var(--gutter)}
+  .interior{max-width:1020px;margin-inline:auto}
+  .medio{max-width:680px}
+
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.018em;text-wrap:balance;margin:0}
+  h1{font-size:clamp(33px,6.6vw,58px);line-height:1.07}
+  h2{font-size:clamp(27px,5.2vw,42px);line-height:1.12}
+  h3{font-size:clamp(19px,3vw,23px);line-height:1.25;letter-spacing:-.01em}
+  p{margin:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde);margin:0}
+
+  img{display:block;max-width:100%;height:auto}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding-block:clamp(30px,6vw,60px) clamp(52px,9vw,88px);border-bottom:1px solid var(--linea);overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:auto auto -30% 60%;translate:-50% 0;
+    width:min(820px,130%);aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle,rgba(215,255,63,.11),transparent 62%);pointer-events:none;
+  }
+  .hero .interior{position:relative}
+  .marca{display:flex;align-items:center;gap:12px;margin-bottom:clamp(28px,5vw,48px)}
+  .marca svg{width:40px;height:40px;flex:none;display:block}
+  .marca .nombre{font-family:var(--display);font-weight:700;font-size:26px;color:var(--verde);line-height:1;letter-spacing:-.01em}
+  .hoja{transform-origin:0 0;transform-box:view-box;animation:diafragma 4.2s cubic-bezier(.5,0,.3,1) infinite}
+  @keyframes diafragma{0%,10%{transform:rotate(0) translateX(0)}48%,66%{transform:rotate(15deg) translateX(52px)}100%{transform:rotate(0) translateX(0)}}
+  @media (prefers-reduced-motion:reduce){.hoja{animation:none;transform:rotate(15deg) translateX(52px)}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:clamp(28px,4.5vw,56px);align-items:center}
+  @media (max-width:800px){
+    .hero-grid{grid-template-columns:1fr;gap:26px}
+    .hero-foto{order:-1}
+  }
+  .hero h1{margin:14px 0 20px;max-width:14ch}
+  .hero .entrada{font-size:clamp(16.5px,2.2vw,19px);color:var(--gris);max-width:46ch;margin-bottom:30px}
+  .hero .entrada b{color:var(--texto);font-weight:500}
+
+  .hero-foto{position:relative}
+  .hero-foto img{
+    width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;
+    border-radius:16px;border:1px solid var(--linea2);
+  }
+  @media (max-width:800px){.hero-foto img{aspect-ratio:16/11;object-position:50% 20%}}
+  .sello{
+    position:absolute;left:14px;bottom:14px;right:14px;
+    display:flex;align-items:center;gap:9px;
+    background:rgba(10,10,12,.82);backdrop-filter:blur(8px);
+    border:1px solid var(--linea2);border-radius:10px;padding:9px 12px;
+  }
+  .sello .pt{width:7px;height:7px;border-radius:50%;background:var(--verde);flex:none}
+  .sello span{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--gris);line-height:1.4}
+
+  /* ---------- formulario ---------- */
+  .formulario{display:flex;flex-direction:column;gap:9px;max-width:430px}
+  .fila{display:flex;gap:9px;flex-wrap:wrap}
+  .fila > *{flex:1 1 150px;min-width:0}
+  .campo{
+    width:100%;background:var(--panel);border:1px solid var(--linea2);color:var(--texto);
+    font-family:var(--cuerpo);font-size:16px;padding:14px 15px;border-radius:10px;
+  }
+  .campo::placeholder{color:var(--gris2)}
+  .campo:focus{outline:2px solid var(--verde);outline-offset:1px;border-color:transparent}
+  .boton{
+    display:block;width:100%;background:var(--verde);color:#0A0A0C;border:none;
+    font-family:var(--cuerpo);font-weight:600;font-size:17px;padding:15px;
+    border-radius:10px;cursor:pointer;transition:filter .18s,translate .18s;text-align:center;
+  }
+  .boton:hover{filter:brightness(1.07);translate:0 -1px}
+  .boton:focus-visible{outline:2px solid var(--texto);outline-offset:3px}
+  .boton:disabled{cursor:default;translate:0}
+  .debajo{font-size:13.5px;color:var(--gris2);margin-top:4px}
+
+  /* ---------- secciones ---------- */
+  section{padding-block:clamp(52px,8.5vw,92px)}
+  .alterna{background:var(--banda);border-block:1px solid var(--linea)}
+  .encabezado{margin-bottom:clamp(28px,4.5vw,44px)}
+  .encabezado h2{margin-top:12px}
+  .encabezado .bajada{color:var(--gris);margin-top:16px;max-width:54ch;font-size:17px}
+
+  .dolores{list-style:none;padding:0;margin:0;max-width:680px}
+  .dolores li{display:flex;gap:16px;align-items:flex-start;padding-block:18px;border-top:1px solid var(--linea);font-size:17px;line-height:1.5}
+  .dolores li:last-child{border-bottom:1px solid var(--linea)}
+  .dolores .marca-x{color:var(--verde);font-family:var(--mono);font-size:13px;padding-top:4px;flex:none}
+  .remate{font-family:var(--display);font-style:italic;font-size:clamp(21px,3.6vw,28px);line-height:1.35;margin-top:32px;text-wrap:balance;max-width:680px}
+  .remate span{color:var(--verde);font-style:normal}
+
+  /* ---------- galería ---------- */
+  .galeria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,16px)}
+  @media (max-width:700px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr))}.galeria figure:first-child{grid-column:span 2}}
+  .galeria figure{margin:0;position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--linea2);background:var(--panel)}
+  .galeria img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
+  @media (max-width:700px){.galeria figure:first-child img{aspect-ratio:16/10;object-position:50% 20%}}
+  .galeria figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:26px 12px 11px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#E6E5E0;
+    background:linear-gradient(transparent,rgba(10,10,12,.92));
+  }
+  .pie-galeria{margin-top:20px;color:var(--gris);font-size:15.5px;max-width:58ch;line-height:1.6}
+  .pie-galeria b{color:var(--texto);font-weight:600}
+
+  /* ---------- historia ---------- */
+  .historia{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(24px,4vw,46px);align-items:start}
+  @media (max-width:760px){.historia{grid-template-columns:1fr}}
+  .historia .retrato img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;border-radius:14px;border:1px solid var(--linea2)}
+  @media (max-width:760px){.historia .retrato img{aspect-ratio:16/10;object-position:50% 18%}}
+  .historia p{margin-bottom:18px;color:#D9D8D2}
+  .historia p:last-child{margin-bottom:0}
+  .historia strong{color:var(--texto);font-weight:600}
+
+  /* ---------- tarjetas ---------- */
+  .rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+  .tarjeta{background:var(--fondo);padding:clamp(24px,3.2vw,32px);display:flex;flex-direction:column;gap:12px}
+  .alterna .tarjeta{background:var(--banda)}
+  .tarjeta .num{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--verde)}
+  .tarjeta p{font-size:15.5px;color:var(--gris);line-height:1.55}
+
+  /* ---------- pasos ---------- */
+  .pasos{list-style:none;padding:0;margin:0;max-width:760px}
+  .pasos li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start;padding-block:26px;border-top:1px solid var(--linea)}
+  .pasos li:last-child{border-bottom:1px solid var(--linea)}
+  .pasos .cifra{font-family:var(--display);font-size:clamp(30px,5vw,44px);line-height:.9;color:transparent;-webkit-text-stroke:1px var(--verde-bor);font-weight:700}
+  .pasos h3{margin-bottom:7px}
+  .pasos p{color:var(--gris);font-size:16px}
+
+  /* ---------- lumina ---------- */
+  .lumina-caja{
+    border:1px solid var(--verde-bor);border-radius:16px;padding:clamp(26px,4.2vw,44px);
+    background:linear-gradient(160deg,var(--verde-op),transparent 58%);
+    display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(22px,3.4vw,38px);align-items:center;
+  }
+  @media (max-width:620px){.lumina-caja{grid-template-columns:1fr}}
+  .lumina-caja svg{width:clamp(72px,12vw,100px);height:auto;flex:none;display:block}
+  .lumina-caja h3{margin-bottom:12px}
+  .lumina-caja p{color:var(--gris);font-size:16px;margin-bottom:12px}
+  .lumina-caja p:last-child{margin-bottom:0}
+  .lumina-caja b{color:var(--texto);font-weight:600}
+
+  /* ---------- para quién ---------- */
+  .dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,3vw,32px)}
+  .columna{border-top:2px solid var(--verde);padding-top:20px}
+  .columna.no{border-top-color:var(--linea2)}
+  .columna h3{margin-bottom:16px;font-size:20px}
+  .columna ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px}
+  .columna li{display:flex;gap:11px;font-size:16px;line-height:1.5;color:#D9D8D2}
+  .columna .s{color:var(--verde);flex:none;font-weight:600}
+  .columna.no .s{color:var(--gris2)}
+  .puente{margin-top:28px;padding:18px 20px;border-radius:12px;background:var(--panel);border:1px solid var(--linea);font-size:15.5px;color:var(--gris);line-height:1.55}
+  .puente b{color:var(--texto);font-weight:600}
+
+  /* ---------- faq ---------- */
+  .faq{max-width:700px}
+  details{border-top:1px solid var(--linea)}
+  details:last-of-type{border-bottom:1px solid var(--linea)}
+  summary{cursor:pointer;padding-block:20px;font-size:17px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:18px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--verde);font-family:var(--mono);font-size:20px;flex:none;transition:rotate .2s}
+  details[open] summary::after{rotate:45deg}
+  summary:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  details .respuesta{padding:0 0 22px;color:var(--gris);font-size:16px;line-height:1.6;max-width:58ch}
+  details .respuesta b{color:var(--texto);font-weight:600}
+
+  /* ---------- cierre ---------- */
+  .cierre{text-align:center;border-top:1px solid var(--linea)}
+  .cierre .formulario{margin-inline:auto;margin-top:30px}
+  .cierre .debajo{text-align:center}
+  .cierre h2{margin-bottom:16px}
+  .cierre .bajada{color:var(--gris);max-width:44ch;margin-inline:auto}
+  footer{padding-block:30px;border-top:1px solid var(--linea);font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--gris2);text-transform:uppercase}
+  footer .interior{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+
+<!-- ================= HERO ================= -->
+<header class="hero banda">
+  <div class="interior">
+    <div class="marca">
+      <svg viewBox="0 0 220 220" role="img" aria-label="Lumina">
+        <defs><clipPath id="ar1"><circle cx="110" cy="110" r="95"/></clipPath></defs>
+        <g transform="translate(110 110)" fill="none" stroke="#D7FF3F" stroke-width="6" opacity=".35"><circle r="99"/></g>
+        <g clip-path="url(#ar1)"><g transform="translate(110 110)" fill="#D7FF3F">
+          <g transform="rotate(0)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+          <g transform="rotate(60)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+          <g transform="rotate(120)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+          <g transform="rotate(180)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+          <g transform="rotate(240)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+          <g transform="rotate(300)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+        </g></g>
+      </svg>
+      <span class="nombre">Lumina</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Comunidad gratuita · Video con IA</p>
+        <h1>Aprendé a hacer video con IA sin perder lo que yo perdí</h1>
+        <p class="entrada">Meses. Créditos quemados. Decenas de versiones que no servían para nada. <b>Te voy a enseñar el camino corto</b> — el que a mí no me enseñó nadie.</p>
+        <form class="formulario" id="form-hero" novalidate>
+          <div class="fila">
+            <input class="campo" id="h-nombre" type="text" name="FNAME" required placeholder="Tu nombre" autocomplete="given-name">
+            <input class="campo" id="h-correo" type="email" name="EMAIL" required placeholder="Tu email" autocomplete="email">
+          </div>
+          <button class="boton" type="submit">Quiero entrar</button>
+          <p class="debajo">Dejás tu email, te llega el link de la comunidad. Nada más.</p>
+        </form>
+      </div>
+      <div class="hero-foto">
+        <img src="luna/cafe.jpg" width="1024" height="1280" alt="Luna sentada en la vereda de un café parisino, blazer negro y camisa blanca, con una taza de café en la mano.">
+        <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · París · hecho sin cámara</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PROBLEMA ================= -->
+<section class="banda">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Si estás acá, probablemente</p>
+      <h2>Ya lo intentaste sola</h2>
+    </div>
+    <ul class="dolores">
+      <li><span class="marca-x">01</span><span>Viste un video hecho con IA que te voló la cabeza, lo intentaste, y lo tuyo salió <em>raro</em>.</span></li>
+      <li><span class="marca-x">02</span><span>Pagaste créditos y los quemaste en pruebas que no sirvieron para nada.</span></li>
+      <li><span class="marca-x">03</span><span>Aparecen veinte herramientas nuevas por semana y no sabés cuál importa de verdad.</span></li>
+      <li><span class="marca-x">04</span><span>Te dicen «es fácil, escribí un prompt». Lo escribiste. No fue fácil.</span></li>
+      <li><span class="marca-x">05</span><span>Generaste una cara que se te parecía… pero no eras vos.</span></li>
+    </ul>
+    <p class="remate">No sos vos. <span>Nadie te está contando la parte del medio</span> — la que va entre el tutorial de dos minutos y el resultado que te gustó.</p>
+  </div>
+</section>
+
+<!-- ================= GALERÍA ================= -->
+<section class="banda alterna">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Esto es lo que se puede lograr</p>
+      <h2>Ni un set, ni una cámara, ni un viaje</h2>
+      <p class="bajada">Todas estas son la misma persona, en lugares distintos, con la misma cara y el mismo pelo. Esa constancia es lo difícil — y es lo que vas a aprender a controlar.</p>
+    </div>
+    <div class="galeria">
+      <figure><img loading="lazy" src="luna/patio.jpg" width="1024" height="1365" alt="Luna en un patio con plantas, blazer camel y blusa con moño, tomando un café."><figcaption>Patio · luz de mediodía</figcaption></figure>
+      <figure><img loading="lazy" src="luna/corbata.jpg" width="1024" height="1365" alt="Luna con traje burdeos y corbata, retrato de interior."><figcaption>Sastrería · interior</figcaption></figure>
+      <figure><img loading="lazy" src="luna/traje.jpg" width="1024" height="1365" alt="Luna de cuerpo entero con traje burdeos."><figcaption>Cuerpo entero · editorial</figcaption></figure>
+    </div>
+    <p class="pie-galeria"><b>La misma cara en los tres.</b> Eso no sale solo: sale de hacer un paso que casi todo el mundo se saltea. Es el paso 2 de acá abajo, y es la diferencia entre «se le parece» y «es ella».</p>
+  </div>
+</section>
+
+<!-- ================= QUIÉN SOY ================= -->
+<section class="banda">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Quién te va a enseñar</p>
+      <h2>No soy una gurú. Soy la que se tropezó con todas.</h2>
+    </div>
+    <div class="historia">
+      <div class="retrato">
+        <img loading="lazy" src="luna/espejo.jpg" width="1024" height="1365" alt="Luna en una selfie de espejo en un probador.">
+      </div>
+      <div>
+        <p>Soy <strong>Nidia</strong>. Tengo una agencia de marketing digital en el área de Washington DC, y hace un tiempo me obsesioné con el video hecho con inteligencia artificial.</p>
+        <p>Me llevó meses. Quemé créditos generando clips con duraciones que no entendía. Generé imágenes de mi propio personaje que <strong>no se parecían a mi personaje</strong>. Probé herramientas que prometían todo y hacían la mitad.</p>
+        <p>Hasta que entendí el orden correcto de las cosas. Y cuando lo entendí, <strong>armé mi propia herramienta</strong> para no volver a pasar por eso.</p>
+        <p>Eso es lo que comparto en la comunidad: no el resultado lindo, sino <strong>el camino</strong> — con los errores ya cometidos por mí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUÉ HAY ADENTRO ================= -->
+<section class="banda alterna">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Qué hay adentro</p>
+      <h2>Tres cosas, y las tres son concretas</h2>
+      <p class="bajada">Sin cursos de cuarenta horas que nadie termina. Esto es una comunidad de trabajo, no una biblioteca.</p>
+    </div>
+    <div class="rejilla">
+      <div class="tarjeta">
+        <span class="num">01</span>
+        <h3>El proceso completo</h3>
+        <p>Paso a paso, desde abrir la cuenta hasta el video terminado. En el orden correcto, que es exactamente lo que nadie te dice.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="num">02</span>
+        <h3>Un prompt real cada viernes</h3>
+        <p>No un prompt de ejemplo: uno que uso de verdad, con para qué sirve y qué cambiarle para que te sirva a vos.</p>
+      </div>
+      <div class="tarjeta">
+        <span class="num">03</span>
+        <h3>Acceso a Lumina</h3>
+        <p>Mi herramienta. Cuando abra, entrás de las primeras — y para entonces ya vas a saber usarla.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CÓMO FUNCIONA ================= -->
+<section class="banda">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2>Tres pasos, en este orden</h2>
+      <p class="bajada">El orden importa más que las herramientas. Casi todo el tiempo que perdí fue por hacer el paso 3 antes del 2.</p>
+    </div>
+    <ol class="pasos">
+      <li>
+        <span class="cifra" aria-hidden="true">01</span>
+        <div><h3>Abrís tu cuenta</h3>
+        <p>Con tu propia cuenta y tus propios créditos. Nada pasa por mí: lo que creás es tuyo, y no dependés de nadie para seguir.</p></div>
+      </li>
+      <li>
+        <span class="cifra" aria-hidden="true">02</span>
+        <div><h3>Entrenás tu personaje</h3>
+        <p>Tu cara, o el personaje que quieras. <strong>Este es el paso que casi todo el mundo se saltea</strong>, y es el que hace que las tres fotos de arriba sean la misma persona y no tres parecidas.</p></div>
+      </li>
+      <li>
+        <span class="cifra" aria-hidden="true">03</span>
+        <div><h3>Producís</h3>
+        <p>Con lo anterior hecho, generar deja de ser tirar monedas. Sabés qué pedir, cuánto va a costar y qué vas a recibir.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= LUMINA ================= -->
+<section class="banda alterna">
+  <div class="interior">
+    <div class="lumina-caja">
+      <svg viewBox="0 0 220 220" role="img" aria-label="Lumina">
+        <defs><clipPath id="ar2"><circle cx="110" cy="110" r="95"/></clipPath></defs>
+        <g transform="translate(110 110)" fill="none" stroke="#D7FF3F" stroke-width="6" opacity=".35"><circle r="99"/></g>
+        <g clip-path="url(#ar2)"><g transform="translate(110 110)" fill="#D7FF3F">
+          <g transform="rotate(0)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+          <g transform="rotate(60)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+          <g transform="rotate(120)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+          <g transform="rotate(180)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+          <g transform="rotate(240)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+          <g transform="rotate(300)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+        </g></g>
+      </svg>
+      <div>
+        <p class="eyebrow">La herramienta</p>
+        <h3 style="margin-top:10px">La armé porque no existía</h3>
+        <p>Lumina junta en una sola pantalla lo que yo hacía en cuatro: generar video, convertir una foto en movimiento, transferir el movimiento de un video a una imagen, y crear imágenes.</p>
+        <p><b>Te lo digo derecho:</b> Lumina corre sobre una herramienta que ya existe, y cada persona entra con su cuenta y gasta sus propios créditos. <b>No es más barata. Es más fácil.</b> Prometerte un precio que no existe sería la forma más rápida de que dejes de creerme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PARA QUIÉN ================= -->
+<section class="banda">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Antes de que dejes tu email</p>
+      <h2>Para quién es, y para quién no</h2>
+    </div>
+    <div class="dos">
+      <div class="columna">
+        <h3>Entrá si</h3>
+        <ul>
+          <li><span class="s">→</span><span>Querés aprender a hacerlo vos, con tus manos</span></li>
+          <li><span class="s">→</span><span>Tenés paciencia para probar y equivocarte</span></li>
+          <li><span class="s">→</span><span>Querés usar video para tu negocio o tus redes</span></li>
+          <li><span class="s">→</span><span>Preferís entender cómo funciona antes de pagar nada</span></li>
+        </ul>
+      </div>
+      <div class="columna no">
+        <h3>No entres si</h3>
+        <ul>
+          <li><span class="s">×</span><span>Buscás un botón que lo haga todo solo</span></li>
+          <li><span class="s">×</span><span>Querés resultados sin tocar una herramienta</span></li>
+          <li><span class="s">×</span><span>Esperás que sea gratis de punta a punta — los créditos de tu cuenta los pagás vos</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="puente">¿Necesitás el video hecho, no aprender a hacerlo? <b>Eso también lo hago, pero es otra cosa y se cobra.</b> Entrá igual a la comunidad y escribime ahí: te digo en dos líneas si te conviene aprenderlo o encargarlo.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="banda alterna">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Preguntas</p>
+      <h2>Lo que me preguntan siempre</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>¿Es realmente gratis?</summary>
+        <div class="respuesta">La comunidad sí, y no hay letra chica. Lo que sí se paga son <b>los créditos de tu propia cuenta</b> en la herramienta de generación — esa cuenta es tuya y el dinero no pasa por mí. Te voy a enseñar a gastar lo menos posible, que es justo lo que yo no supe hacer.</div>
+      </details>
+      <details>
+        <summary>¿Necesito saber algo de antes?</summary>
+        <div class="respuesta">No. Yo empecé sin saber nada y me llevó meses justamente porque nadie me explicó el orden. Si sabés usar Instagram, podés con esto.</div>
+      </details>
+      <details>
+        <summary>¿Cuánto tiempo me va a llevar?</summary>
+        <div class="respuesta">No te voy a dar un número inventado. Depende de cuánto pruebes. Lo que sí te puedo decir es <b>qué pasos te podés saltear</b>, que es donde se me fue a mí la mayor parte del tiempo.</div>
+      </details>
+      <details>
+        <summary>¿Qué es Lumina exactamente?</summary>
+        <div class="respuesta">La herramienta que armé para mí: video, foto a video, transferencia de movimiento e imágenes, todo en una pantalla. Funciona, la uso todos los días, y quiero que la comunidad sea la primera en entrar.</div>
+      </details>
+      <details>
+        <summary>¿Me vas a llenar de correos?</summary>
+        <div class="respuesta">No. Escribo cuando hay algo que vale la pena — una herramienta que cambió, algo que descubrí, o cuando abra Lumina. El día a día pasa adentro del grupo, no en tu bandeja.</div>
+      </details>
+      <details>
+        <summary>¿Puedo irme cuando quiera?</summary>
+        <div class="respuesta">Salís del grupo y te borrás de la lista con un click al pie de cualquier correo. Sin preguntas y sin que te persiga nadie.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CIERRE ================= -->
+<section class="banda cierre">
+  <div class="interior">
+    <p class="eyebrow">Último paso</p>
+    <h2 style="margin-top:14px">El camino corto empieza acá</h2>
+    <p class="bajada">Dejás tu nombre y tu email. Te llega el link de la comunidad en menos de un minuto.</p>
+    <form class="formulario" id="form-cierre" novalidate>
+      <div class="fila">
+        <input class="campo" id="c-nombre" type="text" name="FNAME" required placeholder="Tu nombre" autocomplete="given-name">
+        <input class="campo" id="c-correo" type="email" name="EMAIL" required placeholder="Tu email" autocomplete="email">
+      </div>
+      <button class="boton" type="submit">Quiero entrar</button>
+      <p class="debajo">Gratis. Sin tarjeta. Te podés ir cuando quieras.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="banda">
+  <div class="interior">
+    <span>Lumina · Wave Plus Pro</span>
+    <span>Washington DC · Maryland · Virginia</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------------------------------------------------------------
+     Pegar acá la dirección del formulario incorporado de Mailchimp.
+     Sale de: Formularios -> Formulario incorporado -> el <form action="...">
+     Tiene esta forma:
+       https://XXXX.us5.list-manage.com/subscribe/post?u=XXXX&id=XXXX
+     Mientras esté vacía, el botón abre el correo en vez de perder a nadie.
+  --------------------------------------------------------------- */
+  var ACCION_MAILCHIMP = "";
+  var CORREO_DE_RESPALDO = "wavemarketingone@gmail.com";
+
+  var formularios = [document.getElementById('form-hero'), document.getElementById('form-cierre')];
+
+  formularios.forEach(function(f){
+    if(!f) return;
+
+    if (ACCION_MAILCHIMP) {
+      f.setAttribute('action', ACCION_MAILCHIMP);
+      f.setAttribute('method', 'post');
+      f.setAttribute('target', '_self');
+      f.removeAttribute('novalidate');
+      return;                       /* envío normal del navegador */
+    }
+
+    /* Sin dirección configurada: no se pierde a nadie, se abre el correo */
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var nombre = (f.querySelector('input[name="FNAME"]') || {}).value || '';
+      var correo = (f.querySelector('input[name="EMAIL"]') || {}).value || '';
+      var boton = f.querySelector('button[type="submit"]');
+      var pie = f.querySelector('.debajo');
+
+      var asunto = encodeURIComponent('Quiero entrar a la comunidad');
+      var cuerpo = encodeURIComponent(
+        'Hola Nidia, quiero entrar a la comunidad.\n\n' +
+        'Nombre: ' + nombre + '\n' +
+        'Email: ' + correo + '\n'
+      );
+      window.location.href = 'mailto:' + CORREO_DE_RESPALDO + '?subject=' + asunto + '&body=' + cuerpo;
+
+      if (boton) { boton.textContent = 'Abriendo tu correo…'; }
+      if (pie) { pie.textContent = 'Se abre tu app de correo con el mensaje listo. Mandalo y te agrego a mano.'; }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
