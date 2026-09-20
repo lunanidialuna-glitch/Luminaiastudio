@@ -143,6 +143,18 @@
     font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#E6E5E0;
     background:linear-gradient(transparent,rgba(10,10,12,.92));
   }
+  .galeria video{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:var(--panel)}
+  @media (max-width:700px){.galeria figure:first-child video{aspect-ratio:3/4}}
+  .marcavideo{
+    position:absolute;top:10px;left:10px;z-index:2;
+    display:flex;align-items:center;gap:6px;
+    background:rgba(10,10,12,.7);backdrop-filter:blur(6px);
+    border-radius:999px;padding:5px 9px;
+    font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#E6E5E0;
+  }
+  .marcavideo::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--verde);animation:latir 2s ease-in-out infinite}
+  @keyframes latir{0%,100%{opacity:1}50%{opacity:.25}}
+  @media (prefers-reduced-motion:reduce){.marcavideo::before{animation:none}}
   .pie-galeria{margin-top:20px;color:var(--gris);font-size:15.5px;max-width:58ch;line-height:1.6}
   .pie-galeria b{color:var(--texto);font-weight:600}
 
@@ -292,9 +304,9 @@
       <p class="bajada">These are all the same person, in different places, with the same face and the same hair. That consistency is the hard part — and it's what you'll learn to control.</p>
     </div>
     <div class="galeria">
-      <figure><img loading="lazy" src="../luna/patio.jpg" width="1024" height="1365" alt="Luna in a plant-filled courtyard, camel blazer and bow blouse, drinking coffee."><figcaption>Courtyard · midday light</figcaption></figure>
-      <figure><img loading="lazy" src="../luna/corbata.jpg" width="1024" height="1365" alt="Luna in a burgundy suit and tie, indoor portrait."><figcaption>Tailoring · interior</figcaption></figure>
-      <figure><img loading="lazy" src="../luna/traje.jpg" width="1024" height="1365" alt="Full-length shot of Luna in a burgundy suit."><figcaption>Full length · editorial</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video poster="../video/calle.jpg" muted loop playsinline preload="metadata" aria-label="Luna walking down the street, changing outfits within the same shot."><source src="../video/calle.mp4" type="video/mp4"><source src="../video/calle.webm" type="video/webm"></video><figcaption>Street · several looks</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video poster="../video/oficina.jpg" muted loop playsinline preload="metadata" aria-label="Luna in an office, on the phone beside a floor-to-ceiling window."><source src="../video/oficina.mp4" type="video/mp4"><source src="../video/oficina.webm" type="video/webm"></video><figcaption>Office</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video poster="../video/ventana.jpg" muted loop playsinline preload="metadata" aria-label="Close-up of Luna talking to camera."><source src="../video/ventana.mp4" type="video/mp4"><source src="../video/ventana.webm" type="video/webm"></video><figcaption>Close-up</figcaption></figure>
     </div>
     <p class="pie-galeria"><b>The same face in all three.</b> That doesn't happen by accident: it comes from one step almost everybody skips. It's step 2 below, and it's the difference between "looks like her" and "is her".</p>
   </div>
@@ -366,7 +378,7 @@
       <li>
         <span class="cifra" aria-hidden="true">02</span>
         <div><h3>You train your character</h3>
-        <p>Your face, or whatever character you want. <strong>This is the step almost everybody skips</strong>, and it's the one that makes the three photos above the same person instead of three lookalikes.</p></div>
+        <p>Your face, or whatever character you want. <strong>This is the step almost everybody skips</strong>, and it's the one that makes the three videos above the same person instead of three lookalikes.</p></div>
       </li>
       <li>
         <span class="cifra" aria-hidden="true">03</span>
@@ -538,6 +550,27 @@
       if (pie) { pie.textContent = 'Your mail app opens with the message ready. Send it and I\'ll add you by hand.'; }
     });
   });
+})();
+
+(function(){
+  var quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var videos = Array.prototype.slice.call(document.querySelectorAll('.galeria video'));
+  if (!videos.length) return;
+
+  if (quieto) {                                  /* respeta a quien pidió menos movimiento */
+    videos.forEach(function(v){ v.setAttribute('controls',''); });
+    return;
+  }
+  function arrancar(v){ var p = v.play(); if (p && p.catch) { p.catch(function(){ v.setAttribute('controls',''); }); } }
+
+  if (!('IntersectionObserver' in window)) { videos.forEach(arrancar); return; }
+
+  var obs = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){
+      if (e.isIntersecting) { arrancar(e.target); } else { e.target.pause(); }
+    });
+  }, { threshold: 0.25 });
+  videos.forEach(function(v){ obs.observe(v); });
 })();
 </script>
 
