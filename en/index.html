@@ -84,11 +84,11 @@
   .hero .entrada b{color:var(--texto);font-weight:500}
 
   .hero-foto{position:relative}
-  .hero-foto img{
+  .hero-foto img,.hero-foto video{
     width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;
-    border-radius:16px;border:1px solid var(--linea2);
+    border-radius:16px;border:1px solid var(--linea2);display:block;background:var(--panel);
   }
-  @media (max-width:800px){.hero-foto img{aspect-ratio:16/11;object-position:50% 20%}}
+  @media (max-width:800px){.hero-foto img,.hero-foto video{aspect-ratio:4/5;object-position:50% 20%}}
   .sello{
     position:absolute;left:14px;bottom:14px;right:14px;
     display:flex;align-items:center;gap:9px;
@@ -273,8 +273,8 @@
         </form>
       </div>
       <div class="hero-foto">
-        <img src="../luna/cafe.jpg" width="1024" height="1280" alt="Luna sitting outside a Paris café in a black blazer and white shirt, holding a coffee cup.">
-        <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · Paris · made without a camera</span></div>
+        <video poster="../video/calle.jpg" muted loop playsinline preload="auto" aria-label="Video of Luna walking down the street, changing outfits within the same shot."><source src="../video/calle.mp4" type="video/mp4"><source src="../video/calle.webm" type="video/webm"></video>
+        <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · made without a camera</span></div>
       </div>
     </div>
   </div>
@@ -307,9 +307,10 @@
       <p class="bajada">These are all the same person, in different places, with the same face and the same hair. That consistency is the hard part — and it's what you'll learn to control.</p>
     </div>
     <div class="galeria">
-      <figure><span class="marcavideo">video</span><video poster="../video/calle.jpg" muted loop playsinline preload="metadata" aria-label="Luna walking down the street, changing outfits within the same shot."><source src="../video/calle.mp4" type="video/mp4"><source src="../video/calle.webm" type="video/webm"></video><figcaption>Street · several looks</figcaption></figure>
+      
       <figure><span class="marcavideo">video</span><video poster="../video/oficina.jpg" muted loop playsinline preload="metadata" aria-label="Luna in an office, on the phone beside a floor-to-ceiling window."><source src="../video/oficina.mp4" type="video/mp4"><source src="../video/oficina.webm" type="video/webm"></video><figcaption>Office</figcaption></figure>
       <figure><span class="marcavideo">video</span><video poster="../video/ventana.jpg" muted loop playsinline preload="metadata" aria-label="Close-up of Luna talking to camera."><source src="../video/ventana.mp4" type="video/mp4"><source src="../video/ventana.webm" type="video/webm"></video><figcaption>Close-up</figcaption></figure>
+          <figure><span class="marcavideo">video</span><video poster="../video/bano.jpg" muted loop playsinline preload="metadata" aria-label="Luna talking to camera in a bathroom, black shirt with a burgundy tie."><source src="../video/bano.mp4" type="video/mp4"><source src="../video/bano.webm" type="video/webm"></video><figcaption>Bathroom · to camera</figcaption></figure>
     </div>
     <p class="pie-galeria"><b>The same face in all three.</b> That doesn't happen by accident: it comes from one step almost everybody skips. It's step 2 below, and it's the difference between "looks like her" and "is her".</p>
   </div>
@@ -557,7 +558,7 @@
 
 (function(){
   var quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var videos = Array.prototype.slice.call(document.querySelectorAll('.galeria video'));
+  var videos = Array.prototype.slice.call(document.querySelectorAll('.galeria video, .hero-foto video'));
   if (!videos.length) return;
 
   if (quieto) {                                  /* respeta a quien pidió menos movimiento */

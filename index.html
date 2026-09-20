@@ -84,11 +84,11 @@
   .hero .entrada b{color:var(--texto);font-weight:500}
 
   .hero-foto{position:relative}
-  .hero-foto img{
+  .hero-foto img,.hero-foto video{
     width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;
-    border-radius:16px;border:1px solid var(--linea2);
+    border-radius:16px;border:1px solid var(--linea2);display:block;background:var(--panel);
   }
-  @media (max-width:800px){.hero-foto img{aspect-ratio:16/11;object-position:50% 20%}}
+  @media (max-width:800px){.hero-foto img,.hero-foto video{aspect-ratio:4/5;object-position:50% 20%}}
   .sello{
     position:absolute;left:14px;bottom:14px;right:14px;
     display:flex;align-items:center;gap:9px;
@@ -273,8 +273,8 @@
         </form>
       </div>
       <div class="hero-foto">
-        <img src="luna/cafe.jpg" width="1024" height="1280" alt="Luna sentada en la vereda de un café parisino, blazer negro y camisa blanca, con una taza de café en la mano.">
-        <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · París · hecho sin cámara</span></div>
+        <video poster="video/calle.jpg" muted loop playsinline preload="auto" aria-label="Video de Luna caminando por la calle con varios cambios de look en la misma toma."><source src="video/calle.mp4" type="video/mp4"><source src="video/calle.webm" type="video/webm"></video>
+        <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · hecho sin cámara</span></div>
       </div>
     </div>
   </div>
@@ -307,9 +307,10 @@
       <p class="bajada">Todas estas son la misma persona, en lugares distintos, con la misma cara y el mismo pelo. Esa constancia es lo difícil — y es lo que vas a aprender a controlar.</p>
     </div>
     <div class="galeria">
-      <figure><span class="marcavideo">video</span><video poster="video/calle.jpg" muted loop playsinline preload="metadata" aria-label="Luna caminando por la calle, con varios cambios de look en la misma toma."><source src="video/calle.mp4" type="video/mp4"><source src="video/calle.webm" type="video/webm"></video><figcaption>Calle · varios looks</figcaption></figure>
+      
       <figure><span class="marcavideo">video</span><video poster="video/oficina.jpg" muted loop playsinline preload="metadata" aria-label="Luna en una oficina, hablando por teléfono junto a un ventanal."><source src="video/oficina.mp4" type="video/mp4"><source src="video/oficina.webm" type="video/webm"></video><figcaption>Oficina</figcaption></figure>
       <figure><span class="marcavideo">video</span><video poster="video/ventana.jpg" muted loop playsinline preload="metadata" aria-label="Primer plano de Luna hablando a cámara."><source src="video/ventana.mp4" type="video/mp4"><source src="video/ventana.webm" type="video/webm"></video><figcaption>Primer plano</figcaption></figure>
+          <figure><span class="marcavideo">video</span><video poster="video/bano.jpg" muted loop playsinline preload="metadata" aria-label="Luna hablando a cámara en un baño, camisa negra con corbata burdeos."><source src="video/bano.mp4" type="video/mp4"><source src="video/bano.webm" type="video/webm"></video><figcaption>Baño · a cámara</figcaption></figure>
     </div>
     <p class="pie-galeria"><b>La misma cara en los tres.</b> Eso no sale solo: sale de hacer un paso que casi todo el mundo se saltea. Es el paso 2 de acá abajo, y es la diferencia entre «se le parece» y «es ella».</p>
   </div>
@@ -557,7 +558,7 @@
 
 (function(){
   var quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var videos = Array.prototype.slice.call(document.querySelectorAll('.galeria video'));
+  var videos = Array.prototype.slice.call(document.querySelectorAll('.galeria video, .hero-foto video'));
   if (!videos.length) return;
 
   if (quieto) {                                  /* respeta a quien pidió menos movimiento */
