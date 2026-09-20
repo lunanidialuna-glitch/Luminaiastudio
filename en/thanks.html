@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>You're in — Lumina IA Studio</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 220 220&apos;%3E%3Crect width=&apos;220&apos; height=&apos;220&apos; fill=&apos;%230A0A0C&apos;/%3E%3Ccircle cx=&apos;110&apos; cy=&apos;110&apos; r=&apos;70&apos; fill=&apos;none&apos; stroke=&apos;%23D7FF3F&apos; stroke-width=&apos;16&apos;/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{
+    --fondo:#0A0A0C; --panel:#141419; --linea:#26262C;
+    --verde:#D7FF3F; --gris:#8F8F88; --texto:#EFEEE9;
+    --display:"Playfair Display",Georgia,serif;
+    --cuerpo:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  html,body{height:100%}
+  body{
+    margin:0;background:var(--fondo);color:var(--texto);
+    font-family:var(--cuerpo);font-size:17px;line-height:1.6;
+    display:flex;align-items:center;justify-content:center;
+    padding:32px 20px;-webkit-font-smoothing:antialiased;
+  }
+  .caja{max-width:440px;width:100%;text-align:center}
+  .aro{width:64px;height:64px;margin:0 auto 26px;display:block}
+  .hoja{transform-origin:0 0;transform-box:view-box;animation:dia 3.4s cubic-bezier(.5,0,.3,1) infinite}
+  @keyframes dia{0%,10%{transform:rotate(0) translateX(0)}48%,66%{transform:rotate(15deg) translateX(52px)}100%{transform:rotate(0) translateX(0)}}
+  @media (prefers-reduced-motion:reduce){.hoja{animation:none;transform:rotate(15deg) translateX(52px)}}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde);margin:0 0 14px}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,7vw,38px);line-height:1.12;margin:0 0 14px;letter-spacing:-.015em;text-wrap:balance}
+  p{margin:0 0 18px;color:var(--gris)}
+  .aviso{
+    border:1px dashed var(--linea);border-radius:12px;padding:16px 18px;
+    background:var(--panel);text-align:left;font-size:15px;color:var(--gris);line-height:1.55;
+  }
+  .aviso b{color:var(--texto);font-weight:600}
+  .firma{margin-top:30px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6B6B66}
+</style>
+</head>
+<body>
+  <div class="caja">
+    <svg class="aro" viewBox="0 0 220 220" role="img" aria-label="Lumina">
+      <defs><clipPath id="ar"><circle cx="110" cy="110" r="95"/></clipPath></defs>
+      <g transform="translate(110 110)" fill="none" stroke="#D7FF3F" stroke-width="6" opacity=".35"><circle r="99"/></g>
+      <g clip-path="url(#ar)"><g transform="translate(110 110)" fill="#D7FF3F">
+        <g transform="rotate(0)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+        <g transform="rotate(60)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+        <g transform="rotate(120)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+        <g transform="rotate(180)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+        <g transform="rotate(240)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+        <g transform="rotate(300)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
+      </g></g>
+    </svg>
+
+    <p class="eyebrow">You're in</p>
+    <h1>Done. Check your email.</h1>
+    <p>I just sent you the community link. It arrives in under a minute.</p>
+
+    <div class="aviso">
+      <b>Don't see it?</b> Check Promotions or Spam, and mark it as "not spam".
+      That way you won't miss what I send you next week.
+    </div>
+
+    <p class="firma">Lumina IA Studio</p>
+  </div>
+</body>
+</html>
