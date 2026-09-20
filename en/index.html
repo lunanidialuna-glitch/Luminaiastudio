@@ -133,18 +133,18 @@
   .remate span{color:var(--verde);font-style:normal}
 
   /* ---------- galería ---------- */
-  .galeria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,16px)}
-  @media (max-width:700px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr))}.galeria figure:first-child{grid-column:span 2}}
+  .galeria{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.6vw,16px)}
+  @media (max-width:700px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .galeria figure{margin:0;position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--linea2);background:var(--panel)}
   .galeria img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
-  @media (max-width:700px){.galeria figure:first-child img{aspect-ratio:16/10;object-position:50% 20%}}
+  
   .galeria figcaption{
     position:absolute;left:0;right:0;bottom:0;padding:26px 12px 11px;
     font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#E6E5E0;
     background:linear-gradient(transparent,rgba(10,10,12,.92));
   }
   .galeria video{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:var(--panel)}
-  @media (max-width:700px){.galeria figure:first-child video{aspect-ratio:3/4}}
+  
   .marcavideo{
     position:absolute;top:10px;left:10px;z-index:2;
     display:flex;align-items:center;gap:6px;
@@ -273,7 +273,7 @@
         </form>
       </div>
       <div class="hero-foto">
-        <video poster="../video/calle.jpg" muted loop playsinline preload="auto" aria-label="Video of Luna walking down the street, changing outfits within the same shot."><source src="../video/calle.mp4" type="video/mp4"><source src="../video/calle.webm" type="video/webm"></video>
+        <video poster="../video/looks.jpg" muted loop playsinline preload="auto" aria-label="Video of three identical Lunas walking down the street in grey coats."><source src="../video/looks.mp4" type="video/mp4"><source src="../video/looks.webm" type="video/webm"></video>
         <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · made without a camera</span></div>
       </div>
     </div>
@@ -307,12 +307,12 @@
       <p class="bajada">These are all the same person, in different places, with the same face and the same hair. That consistency is the hard part — and it's what you'll learn to control.</p>
     </div>
     <div class="galeria">
-      
-      <figure><span class="marcavideo">video</span><video poster="../video/oficina.jpg" muted loop playsinline preload="metadata" aria-label="Luna in an office, on the phone beside a floor-to-ceiling window."><source src="../video/oficina.mp4" type="video/mp4"><source src="../video/oficina.webm" type="video/webm"></video><figcaption>Office</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video poster="../video/ventana.jpg" muted loop playsinline preload="metadata" aria-label="Close-up of Luna talking to camera."><source src="../video/ventana.mp4" type="video/mp4"><source src="../video/ventana.webm" type="video/webm"></video><figcaption>Close-up</figcaption></figure>
-          <figure><span class="marcavideo">video</span><video poster="../video/bano.jpg" muted loop playsinline preload="metadata" aria-label="Luna talking to camera in a bathroom, black shirt with a burgundy tie."><source src="../video/bano.mp4" type="video/mp4"><source src="../video/bano.webm" type="video/webm"></video><figcaption>Bathroom · to camera</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video poster="../video/calle.jpg" muted loop playsinline preload="metadata"><source src="../video/calle.mp4" type="video/mp4"><source src="../video/calle.webm" type="video/webm"></video><figcaption>Street · several looks</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video poster="../video/oficina.jpg" muted loop playsinline preload="metadata"><source src="../video/oficina.mp4" type="video/mp4"><source src="../video/oficina.webm" type="video/webm"></video><figcaption>Office</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video poster="../video/ventana.jpg" muted loop playsinline preload="metadata"><source src="../video/ventana.mp4" type="video/mp4"><source src="../video/ventana.webm" type="video/webm"></video><figcaption>Close-up</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video poster="../video/bano.jpg" muted loop playsinline preload="metadata"><source src="../video/bano.mp4" type="video/mp4"><source src="../video/bano.webm" type="video/webm"></video><figcaption>To camera</figcaption></figure>
     </div>
-    <p class="pie-galeria"><b>The same face in all three.</b> That doesn't happen by accident: it comes from one step almost everybody skips. It's step 2 below, and it's the difference between "looks like her" and "is her".</p>
+    <p class="pie-galeria"><b>The same face in all four.</b> That doesn't happen by accident: it comes from one step almost everybody skips. It's step 2 below, and it's the difference between "looks like her" and "is her".</p>
   </div>
 </section>
 
@@ -382,7 +382,7 @@
       <li>
         <span class="cifra" aria-hidden="true">02</span>
         <div><h3>You train your character</h3>
-        <p>Your face, or whatever character you want. <strong>This is the step almost everybody skips</strong>, and it's the one that makes the three videos above the same person instead of three lookalikes.</p></div>
+        <p>Your face, or whatever character you want. <strong>This is the step almost everybody skips</strong>, and it's the one that makes the four videos above the same person instead of four lookalikes.</p></div>
       </li>
       <li>
         <span class="cifra" aria-hidden="true">03</span>
