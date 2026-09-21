@@ -197,6 +197,7 @@
      con el gris de .tarjeta p quedaban del mismo peso que la explicación. */
   .tarjeta .cifra{font-family:var(--display);font-weight:600;color:var(--verde);
     font-size:clamp(38px,5.2vw,52px);line-height:1;letter-spacing:-.02em;margin-bottom:2px}
+  .afiliado a{color:var(--verde)}
 
   /* ---------- pasos ---------- */
   .pasos{list-style:none;padding:0;margin:0;max-width:760px}
@@ -262,6 +263,9 @@
     border-radius:5px;padding:1px 6px;font-family:var(--mono);font-size:.82em;letter-spacing:.06em;
     white-space:nowrap;
   }
+  /* Casi todos los huecos son etiquetas cortas y van en una línea. El del aviso
+     de afiliado es una frase larga: con nowrap se sale de la pantalla en el teléfono. */
+  .afiliado .hueco{white-space:normal}
   a.boton{text-decoration:none;display:flex;align-items:center;justify-content:center}
   a.boton.pendiente{
     background:transparent;color:#F0B429;border:1px dashed rgba(240,180,41,.55);cursor:not-allowed;
@@ -283,14 +287,17 @@
   .semana ul li b{color:var(--texto)}
   .entrega{margin-top:17px;padding-top:15px;border-top:1px solid var(--linea);font-size:14.5px;color:var(--gris)}
 
-  .dos{display:grid;grid-template-columns:1fr;gap:26px}
-  @media (min-width:760px){.dos{grid-template-columns:1fr 1fr;gap:38px}}
+  .dos{display:grid;grid-template-columns:minmax(0,1fr);gap:26px}
+  @media (min-width:760px){.dos{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:38px}}
   .listado{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px}
   .listado li{display:flex;gap:11px;font-size:15px;line-height:1.55;color:var(--gris)}
   .listado li::before{flex:none;font-family:var(--mono);font-size:13px;padding-top:2px}
   .listado.si li::before{content:"+";color:var(--verde)}
   .listado.no li::before{content:"–";color:var(--gris2)}
   .listado li b{color:var(--texto)}
+  /* El <li> es flex para separar el marcador del texto. Sin este envoltorio,
+     cada <a>, <b> y <span> de adentro se vuelve otro item flex y el renglón se parte. */
+  .listado li>span{flex:1;min-width:0}
 
   .precio-caja{
     border:1px solid var(--verde-bor);border-radius:18px;background:var(--panel);
@@ -507,19 +514,20 @@
       <div class="columna">
         <h3 style="color:var(--verde);margin-bottom:14px">Incluye</h3>
         <ul class="listado si">
-          <li>Los 30 días de programa, con una entrega por semana.</li>
-          <li>Mis plantillas reales — la ficha, el módulo de realismo, la cola negativa y la plantilla UGC — para copiar y llenar.</li>
-          <li>Revisión de tu ficha de personaje. La miro yo y te digo qué está mal antes de que quemes créditos.</li>
-          <li>El grupo, para preguntar mientras lo hacés.</li>
-          <li>Las actualizaciones: cuando cambia algo de la herramienta, te llega.</li>
+          <li><span>Los 30 días de programa, con una entrega por semana.</span></li>
+          <li><span>Mis plantillas reales — la ficha, el módulo de realismo, la cola negativa y la plantilla UGC — para copiar y llenar.</span></li>
+          <li><span>Revisión de tu ficha de personaje. La miro yo y te digo qué está mal antes de que quemes créditos.</span></li>
+          <li><span>El grupo, para preguntar mientras lo hacés.</span></li>
+          <li><span>Las actualizaciones: cuando cambia algo de la herramienta, te llega.</span></li>
         </ul>
       </div>
       <div class="columna">
         <h3 style="color:var(--gris);margin-bottom:14px">No incluye</h3>
         <ul class="listado no">
-          <li><b>Los créditos de generación.</b> Esa cuenta es tuya y el dinero no pasa por mí. Te enseño a gastar lo menos posible, que es justo lo que yo no supe hacer.</li>
-          <li>Que yo te haga los videos. Eso también lo hago, pero es otra cosa y se cobra aparte.</li>
-          <li>Promesas de views, de seguidores ni de clientes. No las puedo garantizar y no te las voy a vender.</li>
+          <li><span><b>Los créditos de generación.</b> Esa cuenta es tuya y el dinero no pasa por mí. Te enseño a gastar lo menos posible, que es justo lo que yo no supe hacer.</span></li>
+          <li class="afiliado"><span>Si todavía no tenés cuenta, podés abrirla por acá: <a href="https://higgsfield.ai?fpr=nidia-fa4411" target="_blank" rel="noopener sponsored">higgsfield.ai</a> <span class="hueco">confirmar y poner acá el descuento exacto</span><br><b>Es mi link de afiliado:</b> a vos te hacen descuento y a mí me paga Higgsfield. No te cuesta más — y si preferís entrar por tu cuenta, entrá por tu cuenta.</span></li>
+          <li><span>Que yo te haga los videos. Eso también lo hago, pero es otra cosa y se cobra aparte.</span></li>
+          <li><span>Promesas de views, de seguidores ni de clientes. No las puedo garantizar y no te las voy a vender.</span></li>
         </ul>
       </div>
     </div>
