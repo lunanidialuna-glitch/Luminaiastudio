@@ -309,6 +309,22 @@
   .precio-caja .fijo{font-size:14px;color:var(--texto);line-height:1.5;border-top:1px solid var(--linea);padding-top:14px;margin-top:5px}
   .precio-caja .boton{margin-top:9px}
   .precio-caja .debajo{text-align:center}
+  /* Dos precios, uno al lado del otro. En el teléfono van apilados, y el
+     bootcamp queda primero: es el que compra la mayoría. */
+  .dos-precios{display:grid;gap:18px;max-width:1080px;margin-inline:auto;align-items:start}
+  @media (min-width:860px){.dos-precios{grid-template-columns:1fr 1fr}}
+  .dos-precios .precio-caja{max-width:none;margin-inline:0;height:100%}
+  .precio-caja.fundadora{border-color:var(--linea2);background:var(--banda)}
+  .precio-caja.fundadora .aviso{color:var(--gris);background:transparent;border-color:var(--linea2)}
+  .precio-caja.fundadora .aviso .pt{background:var(--gris)}
+  .precio-caja.fundadora .boton{background:transparent;color:var(--verde);border:1px solid var(--verde-bor)}
+  .precio-caja.fundadora .boton:hover{background:var(--verde);color:#0A0A0C}
+  .incluye{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:9px;text-align:left}
+  .incluye li{display:flex;gap:10px;font-size:14.5px;line-height:1.5;color:var(--texto)}
+  .incluye li>span{flex:1}   /* sin esto, un <b> adentro del li se vuelve otro item y parte la línea */
+  .incluye li::before{content:"+";color:var(--verde);font-family:var(--mono);font-size:13px;flex:none;padding-top:1px}
+  .cuenta{font-size:14px;color:var(--gris);line-height:1.6;border-top:1px solid var(--linea);padding-top:14px;margin-top:5px}
+  .cuenta b{color:var(--texto)}
   .nota-precio{max-width:520px;margin:18px auto 0;text-align:center;font-size:13.5px;color:var(--gris2);line-height:1.55}
 </style>
 </head>
@@ -572,6 +588,7 @@
       <h2>Lo que sale y hasta cuándo</h2>
     </div>
 
+    <div class="dos-precios">
     <div class="precio-caja">
       <p class="aviso"><span class="pt" aria-hidden="true"></span> $79 hasta el <b>viernes 10 de octubre</b>. Después, $125.</p>
       <p class="etiqueta">Bootcamp completo · 30 días</p>
@@ -583,7 +600,25 @@
       <p class="debajo">Empieza el lunes 12 de octubre · devolución de 7 días, sin preguntas</p>
     </div>
 
-    <p class="nota-precio">El viernes 10 a medianoche pasa a $125 y <b>no se reinicia</b>. No hay contador que vuelva a empezar cada vez que entrás a la página. Y son 15 lugares de verdad, porque reviso cada ficha a mano.</p>
+    <div class="precio-caja fundadora">
+      <p class="aviso"><span class="pt" aria-hidden="true"></span> 3 lugares</p>
+      <p class="etiqueta">Fundadora · para siempre</p>
+      <p class="monto">$197</p>
+      <p class="letra">Para la que no quiere hacer esto una vez, sino quedarse.</p>
+      <ul class="incluye">
+        <li><span>Todo el bootcamp de 30 días</span></li>
+        <li><span><b>Todas las ediciones que haga de acá en adelante</b>, sin volver a pagar</span></li>
+        <li><span>El material actualizado siempre — cuando cambia la herramienta, te llega</span></li>
+      </ul>
+      <p class="cuenta">Dos ediciones sueltas te salen <b>$204</b> ($79 ahora + $125 la próxima).
+      Esta sale <b>$197</b> y te da todas.</p>
+      <a class="boton" href="https://www.paypal.com/qrcodes/managed/e5e93413-ecb5-4eae-9466-f17bca61169d" target="_blank" rel="noopener">Quiero el lugar de Fundadora</a>
+      <p class="debajo">Escribí el monto: <b>$197</b>. Cuando termines, mandame el comprobante.</p>
+      <p class="debajo">Si algún día dejo de dar el bootcamp, el material te queda igual, para siempre.</p>
+    </div>
+    </div>
+
+    <p class="nota-precio">El bootcamp a $79 sube a $125 el viernes 10 a medianoche, y <b>no se reinicia</b>. No hay contador que vuelva a empezar cada vez que entrás a la página. Y son 15 lugares de verdad, porque reviso cada ficha a mano.</p>
   </div>
 </section>
 
