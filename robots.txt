@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /bootcamp/
 Disallow: /gracias.html
 Disallow: /en/thanks.html
 

@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Bootcamp de 30 días de Lumina IA Studio: salís con un personaje propio que es siempre la misma persona.">
-<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://luminaiastudio.com/bootcamp/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bootcamp · 30 días · Lumina IA Studio">
@@ -194,6 +193,10 @@
   .alterna .tarjeta{background:var(--banda)}
   .tarjeta .num{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--verde)}
   .tarjeta p{font-size:15.5px;color:var(--gris);line-height:1.55}
+  /* Los números de «lo que me costó» son el argumento entero de esa sección:
+     con el gris de .tarjeta p quedaban del mismo peso que la explicación. */
+  .tarjeta .cifra{font-family:var(--display);font-weight:600;color:var(--verde);
+    font-size:clamp(38px,5.2vw,52px);line-height:1;letter-spacing:-.02em;margin-bottom:2px}
 
   /* ---------- pasos ---------- */
   .pasos{list-style:none;padding:0;margin:0;max-width:760px}
@@ -333,11 +336,11 @@
 
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">Bootcamp · 30 días · <span class="hueco">CUPOS</span> lugares</p>
+        <p class="eyebrow">Bootcamp · 30 días · 15 lugares</p>
         <h1>Al día 30 salís con un personaje que es siempre la misma persona</h1>
         <p class="entrada">No un prompt mejor. <b>Un personaje terminado</b> — con su ficha, su cara, su voz y su ritmo — que podés usar cien veces y nunca se te va a deformar.</p>
         <a class="boton" href="#precio">Quiero mi personaje</a>
-        <p class="debajo">Empieza el <span class="hueco">FECHA</span>. Cupos limitados de verdad: son <span class="hueco">CUPOS</span> y los reviso uno por uno.</p>
+        <p class="debajo">Empieza el lunes 12 de octubre. Cupos limitados de verdad: son 15 y los reviso uno por uno.</p>
       </div>
       <div class="hero-foto">
         <video data-audio poster="../video/luna-misma-cara-poster.jpg" muted loop playsinline preload="auto" aria-label="Cinco escenas distintas de Luna con la misma cara en todas."><source src="../video/luna-misma-cara.mp4" type="video/mp4"><source src="../video/luna-misma-cara.webm" type="video/webm"></video>
@@ -536,6 +539,31 @@
   </div>
 </section>
 
+<!-- ================= LO QUE ME COSTO ================= -->
+<section class="banda alterna">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Lo que me costó a mí</p>
+      <h2>38 generaciones para cinco clips que sirvieran</h2>
+    </div>
+    <p class="bajada">No te lo cuento para darte lástima. Te lo cuento porque es exactamente lo que vas a
+    gastar vos si arrancás sola, y es el número que hace que este precio tenga sentido.</p>
+
+    <div class="rejilla">
+      <div class="tarjeta"><p class="cifra">$212</p><p class="txt">Pagados en créditos en mi cuenta actual. Me quedan 140 — el 8&nbsp;%.</p></div>
+      <div class="tarjeta"><p class="cifra">38</p><p class="txt">Generaciones. Las que terminaron en un video publicado se cuentan con los dedos de una mano.</p></div>
+      <div class="tarjeta"><p class="cifra">+$200</p><p class="txt">En una cuenta anterior, de la que perdí el acceso. Ese no lo puedo probar: es lo que me acuerdo.</p></div>
+      <div class="tarjeta"><p class="cifra">meses</p><p class="txt">Hasta entender que el problema no era escribir mejor, sino llenar ranuras en un orden fijo.</p></div>
+    </div>
+
+    <p class="remate">Cada clip que me quedó usable salió unos <span>$80</span>. Este bootcamp sale <span>$79</span>.</p>
+
+    <p class="bajada" style="margin-top:26px"><b>Y ojo, que esto no te ahorra los créditos.</b> Los vas a gastar
+    igual, son tuyos y esa cuenta no pasa por mí. Lo que te ahorra es gastarlos en <b>los mismos 38 intentos que
+    ya pagué yo</b>.</p>
+  </div>
+</section>
+
 <!-- ================= PRECIO ================= -->
 <section class="banda" id="precio">
   <div class="interior">
@@ -545,17 +573,17 @@
     </div>
 
     <div class="precio-caja">
-      <p class="aviso"><span class="pt" aria-hidden="true"></span> Quedan <span class="hueco">RESTANTES</span> cupos para que suba el precio.</p>
+      <p class="aviso"><span class="pt" aria-hidden="true"></span> $79 hasta el <b>viernes 10 de octubre</b>. Después, $125.</p>
       <p class="etiqueta">Bootcamp completo · 30 días</p>
-      <p class="monto"><span class="hueco">PRECIO</span></p>
-      <p class="letra">Precio de lanzamiento, para los primeros <span class="hueco">CUPOS</span>. Después pasa a <span class="hueco">PRECIO 2</span>.</p>
+      <p class="monto">$79</p>
+      <p class="letra">Precio de lanzamiento, hasta el viernes 10 de octubre. Después pasa a $125.</p>
       <p class="fijo">El precio que agarrás hoy es el que pagás. Si entrás ahora, no te sube nunca.</p>
       <a class="boton" href="https://www.paypal.com/qrcodes/managed/e5e93413-ecb5-4eae-9466-f17bca61169d" target="_blank" rel="noopener" id="cta-pago">Pagar con PayPal</a>
-      <p class="debajo">Se abre PayPal en una pestaña nueva. Escribí el monto: <span class="hueco">PRECIO</span>. Cuando termines, mandame el comprobante y te confirmo el lugar.</p>
-      <p class="debajo">Empieza el <span class="hueco">FECHA</span> · <span class="hueco">DEVOLUCIÓN</span></p>
+      <p class="debajo">Se abre PayPal en una pestaña nueva. Escribí el monto: $79. Cuando termines, mandame el comprobante y te confirmo el lugar.</p>
+      <p class="debajo">Empieza el lunes 12 de octubre · devolución de 7 días, sin preguntas</p>
     </div>
 
-    <p class="nota-precio">El precio sube cuando se llenan los cupos, no cuando se acaba un reloj. Es un número que podés verificar: cuando entran los <span class="hueco">CUPOS</span>, sube. No hay contador que se reinicie.</p>
+    <p class="nota-precio">El viernes 10 a medianoche pasa a $125 y <b>no se reinicia</b>. No hay contador que vuelva a empezar cada vez que entrás a la página. Y son 15 lugares de verdad, porque reviso cada ficha a mano.</p>
   </div>
 </section>
 
@@ -587,7 +615,7 @@
       </details>
       <details>
         <summary>¿Y si no me sirve?</summary>
-        <div class="respuesta"><span class="hueco">POLÍTICA DE DEVOLUCIÓN</span></div>
+        <div class="respuesta">Te devuelvo todo dentro de los <b>primeros 7 días</b>, sin preguntarte nada y sin que tengas que justificar nada. Para entonces ya viste la semana 1 entera — que es la ficha de personaje, el corazón de todo. Si con eso no te sirve, no te va a servir después, y prefiero devolverte la plata a que termines el mes enojada.</div>
       </details>
     </div>
   </div>
@@ -598,7 +626,7 @@
   <div class="interior">
     <p class="eyebrow">Último paso</p>
     <h2 style="margin-top:14px">Un mes, y salís con tu personaje</h2>
-    <p class="bajada">Son <span class="hueco">CUPOS</span> lugares y empieza el <span class="hueco">FECHA</span>.</p>
+    <p class="bajada">Son 15 lugares y empieza el lunes 12 de octubre.</p>
     <a class="boton" href="#precio" style="max-width:430px;margin:26px auto 0">Quiero mi lugar</a>
     <p class="debajo" style="text-align:center">El precio que agarrás hoy no te sube nunca.</p>
   </div>
