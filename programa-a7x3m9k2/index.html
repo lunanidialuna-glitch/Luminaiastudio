@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Área privada del programa de 30 días de Lumina IA Studio.">
+<title>Tu programa · Lumina IA Studio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 220 220&apos;%3E%3Crect width=&apos;220&apos; height=&apos;220&apos; fill=&apos;%230A0A0C&apos;/%3E%3Ccircle cx=&apos;110&apos; cy=&apos;110&apos; r=&apos;70&apos; fill=&apos;none&apos; stroke=&apos;%23D7FF3F&apos; stroke-width=&apos;16&apos;/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0}
+  img{max-width:100%;display:block}
+  [hidden]{display:none!important}
+
+
+  :root{
+    --fondo:#0A0A0C; --banda:#0F0F13; --panel:#141419; --linea:#26262C; --linea2:#33333B;
+    --verde:#D7FF3F; --verde-op:rgba(215,255,63,.10); --verde-bor:rgba(215,255,63,.28);
+    --gris:#8F8F88; --gris2:#6B6B66; --texto:#EFEEE9;
+    --display:"Playfair Display",Georgia,"Times New Roman",serif;
+    --cuerpo:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --gutter:clamp(20px,5vw,40px);
+  }
+  body{background:var(--fondo);color:var(--texto);font-family:var(--cuerpo);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  *,*::before,*::after{box-sizing:border-box}
+  .banda{padding-inline:var(--gutter)}
+  .interior{max-width:1020px;margin-inline:auto}
+  .medio{max-width:680px}
+
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.018em;text-wrap:balance;margin:0}
+  h1{font-size:clamp(33px,6.6vw,58px);line-height:1.07}
+  h2{font-size:clamp(27px,5.2vw,42px);line-height:1.12}
+  h3{font-size:clamp(19px,3vw,23px);line-height:1.25;letter-spacing:-.01em}
+  p{margin:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde);margin:0}
+
+  img{display:block;max-width:100%;height:auto}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding-block:clamp(30px,6vw,60px) clamp(52px,9vw,88px);border-bottom:1px solid var(--linea);overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:auto auto -30% 60%;translate:-50% 0;
+    width:min(820px,130%);aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle,rgba(215,255,63,.11),transparent 62%);pointer-events:none;
+  }
+  .hero .interior{position:relative}
+  .marca{display:flex;align-items:center;gap:12px;margin-bottom:clamp(28px,5vw,48px)}
+  .marca svg{width:40px;height:40px;flex:none;display:block}
+  .marca .nombre{font-family:var(--display);font-weight:700;font-size:26px;color:var(--verde);line-height:1;letter-spacing:-.01em}
+  .idiomas{margin-inline-start:auto;display:flex;align-items:center;gap:2px;border:1px solid var(--linea2);border-radius:999px;padding:3px}
+  .idiomas a{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-decoration:none;
+    color:var(--gris);padding:6px 11px;border-radius:999px;line-height:1;transition:color .18s,background .18s;
+  }
+  .idiomas a:hover{color:var(--texto)}
+  .idiomas a[aria-current="true"]{background:var(--verde);color:#0A0A0C;font-weight:500}
+  .idiomas a:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .hoja{transform-origin:0 0;transform-box:view-box;animation:diafragma 4.2s cubic-bezier(.5,0,.3,1) infinite}
+  @keyframes diafragma{0%,10%{transform:rotate(0) translateX(0)}48%,66%{transform:rotate(15deg) translateX(52px)}100%{transform:rotate(0) translateX(0)}}
+  @media (prefers-reduced-motion:reduce){.hoja{animation:none;transform:rotate(15deg) translateX(52px)}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:clamp(28px,4.5vw,56px);align-items:center}
+  @media (max-width:800px){
+    .hero-grid{grid-template-columns:1fr;gap:26px}
+    .hero-foto{order:-1}
+  }
+  .hero h1{margin:14px 0 20px;max-width:14ch}
+  .hero .entrada{font-size:clamp(16.5px,2.2vw,19px);color:var(--gris);max-width:46ch;margin-bottom:30px}
+  .hero .entrada b{color:var(--texto);font-weight:500}
+
+  .hero-foto{position:relative}
+  .hero-foto img,.hero-foto video{
+    width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;
+    border-radius:16px;border:1px solid var(--linea2);display:block;background:var(--panel);
+  }
+  @media (max-width:800px){.hero-foto img,.hero-foto video{aspect-ratio:4/5;object-position:50% 20%}}
+  .sello{
+    position:absolute;left:14px;bottom:14px;right:14px;
+    display:flex;align-items:center;gap:9px;
+    background:rgba(10,10,12,.82);backdrop-filter:blur(8px);
+    border:1px solid var(--linea2);border-radius:10px;padding:9px 12px;
+  }
+  .sello .pt{width:7px;height:7px;border-radius:50%;background:var(--verde);flex:none}
+  .sello span{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--gris);line-height:1.4}
+
+  /* ---------- formulario ---------- */
+  .formulario{display:flex;flex-direction:column;gap:9px;max-width:430px}
+  .fila{display:flex;gap:9px;flex-wrap:wrap}
+  .fila > *{flex:1 1 150px;min-width:0}
+  .campo{
+    width:100%;background:var(--panel);border:1px solid var(--linea2);color:var(--texto);
+    font-family:var(--cuerpo);font-size:16px;padding:14px 15px;border-radius:10px;
+  }
+  .campo::placeholder{color:var(--gris2)}
+  .campo:focus{outline:2px solid var(--verde);outline-offset:1px;border-color:transparent}
+  .boton{
+    display:block;width:100%;background:var(--verde);color:#0A0A0C;border:none;
+    font-family:var(--cuerpo);font-weight:600;font-size:17px;padding:15px;
+    border-radius:10px;cursor:pointer;transition:filter .18s,translate .18s;text-align:center;
+  }
+  .boton:hover{filter:brightness(1.07);translate:0 -1px}
+  .boton:focus-visible{outline:2px solid var(--texto);outline-offset:3px}
+  .boton:disabled{cursor:default;translate:0}
+  .debajo{font-size:13.5px;color:var(--gris2);margin-top:4px}
+  /* ---------- botón de sonido ---------- */
+  .sonido{
+    position:absolute;top:10px;right:10px;z-index:3;
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(10,10,12,.80);backdrop-filter:blur(8px);
+    border:1px solid var(--linea2);border-radius:999px;padding:7px 10px;cursor:pointer;
+    font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--gris);line-height:1;transition:color .18s,border-color .18s,background .18s;
+  }
+  .sonido:hover{color:var(--texto);border-color:var(--gris2)}
+  .sonido:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .sonido svg{width:13px;height:13px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .sonido[aria-pressed="true"]{background:var(--verde);color:#0A0A0C;border-color:var(--verde)}
+  .hero-foto .sonido{top:13px;right:13px;padding:8px 12px;font-size:10.5px}
+  .galeria .sonido .txt{display:none}
+  @media (max-width:700px){.sonido .txt{display:none}}
+  video[data-audio]{cursor:pointer}
+  .consentimiento{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--gris2);line-height:1.45;cursor:pointer;margin-top:2px}
+  .consentimiento input{margin:2px 0 0;flex:none;width:15px;height:15px;accent-color:var(--verde);cursor:pointer}
+  .consentimiento input:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .consentimiento a{color:var(--gris);text-decoration:underline;text-underline-offset:2px}
+  .consentimiento a:hover{color:var(--verde)}
+  .cierre .consentimiento{max-width:430px;margin-inline:auto}
+
+  /* ---------- secciones ---------- */
+  section{padding-block:clamp(52px,8.5vw,92px)}
+  .alterna{background:var(--banda);border-block:1px solid var(--linea)}
+  .encabezado{margin-bottom:clamp(28px,4.5vw,44px)}
+  .encabezado h2{margin-top:12px}
+  .encabezado .bajada{color:var(--gris);margin-top:16px;max-width:54ch;font-size:17px}
+
+  .dolores{list-style:none;padding:0;margin:0;max-width:680px}
+  .dolores li{display:flex;gap:16px;align-items:flex-start;padding-block:18px;border-top:1px solid var(--linea);font-size:17px;line-height:1.5}
+  .dolores li:last-child{border-bottom:1px solid var(--linea)}
+  .dolores .marca-x{color:var(--verde);font-family:var(--mono);font-size:13px;padding-top:4px;flex:none}
+  .remate{font-family:var(--display);font-style:italic;font-size:clamp(21px,3.6vw,28px);line-height:1.35;margin-top:32px;text-wrap:balance;max-width:680px}
+  .remate span{color:var(--verde);font-style:normal}
+
+  /* ---------- galería ---------- */
+  .galeria{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.6vw,16px)}
+  @media (max-width:700px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .galeria figure{margin:0;position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--linea2);background:var(--panel)}
+  .galeria img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
+  
+  .galeria figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:26px 12px 11px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#E6E5E0;
+    background:linear-gradient(transparent,rgba(10,10,12,.92));
+  }
+  .galeria video{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:var(--panel)}
+  
+  .marcavideo{
+    position:absolute;top:10px;left:10px;z-index:2;
+    display:flex;align-items:center;gap:6px;
+    background:rgba(10,10,12,.7);backdrop-filter:blur(6px);
+    border-radius:999px;padding:5px 9px;
+    font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#E6E5E0;
+  }
+  .marcavideo::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--verde);animation:latir 2s ease-in-out infinite}
+  @keyframes latir{0%,100%{opacity:1}50%{opacity:.25}}
+  @media (prefers-reduced-motion:reduce){.marcavideo::before{animation:none}}
+  .pie-galeria{margin-top:20px;color:var(--gris);font-size:15.5px;max-width:58ch;line-height:1.6}
+  .pie-galeria b{color:var(--texto);font-weight:600}
+
+  /* ---------- historia ---------- */
+  .historia{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(24px,4vw,46px);align-items:start}
+  @media (max-width:760px){.historia{grid-template-columns:1fr}}
+  .historia .retrato img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 35%;border-radius:14px;border:1px solid var(--linea2)}
+  @media (max-width:760px){.historia .retrato img{aspect-ratio:16/10;object-position:50% 18%}}
+  .historia p{margin-bottom:18px;color:#D9D8D2}
+  .historia p:last-child{margin-bottom:0}
+  .historia strong{color:var(--texto);font-weight:600}
+
+  /* ---------- tarjetas ---------- */
+  .rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+  .tarjeta{background:var(--fondo);padding:clamp(24px,3.2vw,32px);display:flex;flex-direction:column;gap:12px}
+  .alterna .tarjeta{background:var(--banda)}
+  .tarjeta .num{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--verde)}
+  .tarjeta p{font-size:15.5px;color:var(--gris);line-height:1.55}
+
+  /* ---------- pasos ---------- */
+  .pasos{list-style:none;padding:0;margin:0;max-width:760px}
+  .pasos li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start;padding-block:26px;border-top:1px solid var(--linea)}
+  .pasos li:last-child{border-bottom:1px solid var(--linea)}
+  .pasos .cifra{font-family:var(--display);font-size:clamp(30px,5vw,44px);line-height:.9;color:transparent;-webkit-text-stroke:1px var(--verde-bor);font-weight:700}
+  .pasos h3{margin-bottom:7px}
+  .pasos p{color:var(--gris);font-size:16px}
+
+  /* ---------- lumina ---------- */
+  .lumina-caja{
+    border:1px solid var(--verde-bor);border-radius:16px;padding:clamp(26px,4.2vw,44px);
+    background:linear-gradient(160deg,var(--verde-op),transparent 58%);
+    display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(22px,3.4vw,38px);align-items:center;
+  }
+  @media (max-width:620px){.lumina-caja{grid-template-columns:1fr}}
+  .lumina-caja svg{width:clamp(72px,12vw,100px);height:auto;flex:none;display:block}
+  .lumina-caja h3{margin-bottom:12px}
+  .lumina-caja p{color:var(--gris);font-size:16px;margin-bottom:12px}
+  .lumina-caja p:last-child{margin-bottom:0}
+  .lumina-caja b{color:var(--texto);font-weight:600}
+
+  /* ---------- para quién ---------- */
+  .dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,3vw,32px)}
+  .columna{border-top:2px solid var(--verde);padding-top:20px}
+  .columna.no{border-top-color:var(--linea2)}
+  .columna h3{margin-bottom:16px;font-size:20px}
+  .columna ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px}
+  .columna li{display:flex;gap:11px;font-size:16px;line-height:1.5;color:#D9D8D2}
+  .columna .s{color:var(--verde);flex:none;font-weight:600}
+  .columna.no .s{color:var(--gris2)}
+  .puente{margin-top:28px;padding:18px 20px;border-radius:12px;background:var(--panel);border:1px solid var(--linea);font-size:15.5px;color:var(--gris);line-height:1.55}
+  .puente b{color:var(--texto);font-weight:600}
+
+  /* ---------- faq ---------- */
+  .faq{max-width:700px}
+  details{border-top:1px solid var(--linea)}
+  details:last-of-type{border-bottom:1px solid var(--linea)}
+  summary{cursor:pointer;padding-block:20px;font-size:17px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:18px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--verde);font-family:var(--mono);font-size:20px;flex:none;transition:rotate .2s}
+  details[open] summary::after{rotate:45deg}
+  summary:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  details .respuesta{padding:0 0 22px;color:var(--gris);font-size:16px;line-height:1.6;max-width:58ch}
+  details .respuesta b{color:var(--texto);font-weight:600}
+
+  /* ---------- cierre ---------- */
+  .cierre{text-align:center;border-top:1px solid var(--linea)}
+  .cierre .formulario{margin-inline:auto;margin-top:30px}
+  .cierre .debajo{text-align:center}
+  .cierre h2{margin-bottom:16px}
+  .cierre .bajada{color:var(--gris);max-width:44ch;margin-inline:auto}
+  footer{padding-block:30px;border-top:1px solid var(--linea);font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--gris2);text-transform:uppercase}
+  footer .enlaces{display:flex;gap:18px;flex-wrap:wrap}
+  footer a{color:var(--gris2);text-decoration:none;transition:color .18s}
+  footer a:hover{color:var(--verde)}
+  footer .interior{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+
+  /* ---------- propio de la página del bootcamp ---------- */
+  .hueco{
+    background:rgba(240,180,41,.14);color:#F0B429;border:1px dashed rgba(240,180,41,.5);
+    border-radius:5px;padding:1px 6px;font-family:var(--mono);font-size:.82em;letter-spacing:.06em;
+    white-space:nowrap;
+  }
+  a.boton{text-decoration:none;display:flex;align-items:center;justify-content:center}
+  a.boton.pendiente{
+    background:transparent;color:#F0B429;border:1px dashed rgba(240,180,41,.55);cursor:not-allowed;
+  }
+  a.boton.pendiente:hover{filter:none;translate:0}
+  .hero .boton{max-width:430px}
+  .idiomas a{color:var(--gris)}
+
+  .semanas{display:flex;flex-direction:column;gap:14px}
+  .semana{border:1px solid var(--linea2);border-radius:14px;background:var(--panel);padding:clamp(20px,3vw,26px)}
+  .alterna .semana{background:var(--fondo)}
+  .semana > header{display:flex;flex-direction:column;gap:8px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--linea)}
+  .chapa{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--verde)}
+  .semana h3{font-family:var(--display);font-size:clamp(21px,3.4vw,26px);font-weight:600;letter-spacing:-.015em}
+  .semana .que{font-size:14.5px;color:var(--gris);line-height:1.5;max-width:58ch}
+  .semana ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+  .semana ul li{display:flex;gap:11px;font-size:15px;line-height:1.55;color:var(--gris)}
+  .semana ul li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--verde);opacity:.55;flex:none;margin-top:9px}
+  .semana ul li b{color:var(--texto)}
+  .entrega{margin-top:17px;padding-top:15px;border-top:1px solid var(--linea);font-size:14.5px;color:var(--gris)}
+
+  .dos{display:grid;grid-template-columns:1fr;gap:26px}
+  @media (min-width:760px){.dos{grid-template-columns:1fr 1fr;gap:38px}}
+  .listado{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px}
+  .listado li{display:flex;gap:11px;font-size:15px;line-height:1.55;color:var(--gris)}
+  .listado li::before{flex:none;font-family:var(--mono);font-size:13px;padding-top:2px}
+  .listado.si li::before{content:"+";color:var(--verde)}
+  .listado.no li::before{content:"–";color:var(--gris2)}
+  .listado li b{color:var(--texto)}
+
+  .precio-caja{
+    border:1px solid var(--verde-bor);border-radius:18px;background:var(--panel);
+    padding:clamp(26px,4vw,38px);max-width:520px;margin-inline:auto;text-align:center;
+    display:flex;flex-direction:column;gap:11px;
+  }
+  .precio-caja .aviso{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;align-self:center;
+    background:var(--verde-op);border:1px solid var(--verde-bor);border-radius:999px;padding:8px 15px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--verde);
+  }
+  .precio-caja .aviso .pt{width:6px;height:6px;border-radius:50%;background:var(--verde);flex:none}
+  .precio-caja .etiqueta{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gris2);margin-top:7px}
+  .precio-caja .monto{font-family:var(--display);font-size:clamp(40px,8vw,60px);line-height:1;font-weight:600}
+  .precio-caja .letra{font-size:14px;color:var(--gris);line-height:1.5}
+  .precio-caja .fijo{font-size:14px;color:var(--texto);line-height:1.5;border-top:1px solid var(--linea);padding-top:14px;margin-top:5px}
+  .precio-caja .boton{margin-top:9px}
+  .precio-caja .debajo{text-align:center}
+  .nota-precio{max-width:520px;margin:18px auto 0;text-align:center;font-size:13.5px;color:var(--gris2);line-height:1.55}
+</style>
+<style>
+  .aviso-privado{display:flex;gap:12px;align-items:flex-start;background:rgba(215,255,63,.07);
+    border:1px solid var(--verde-bor);border-radius:12px;padding:16px 18px;margin-top:28px}
+  .aviso-privado .llave{font-size:19px;line-height:1.2;flex:none}
+  .aviso-privado p{margin:0;font-size:15px;color:var(--gris);line-height:1.6}
+  .aviso-privado strong{color:var(--texto)}
+  .pasos-inicio{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .pasos-inicio li{display:flex;gap:14px;align-items:flex-start;background:var(--panel);
+    border:1px solid var(--linea);border-radius:12px;padding:16px 18px}
+  .pasos-inicio .n{font-family:var(--mono);font-size:12px;color:var(--verde);padding-top:3px;flex:none}
+  .pasos-inicio p{margin:0;line-height:1.6}
+  .pasos-inicio .sub{font-size:14.5px;color:var(--gris);margin-top:5px}
+  .sem{border-top:1px solid var(--linea);padding-top:34px;margin-top:38px}
+  .sem-top{display:flex;gap:18px;align-items:flex-start}
+  .sem-num{font-family:var(--mono);font-size:12px;color:var(--verde);border:1px solid var(--verde-bor);
+    border-radius:99px;padding:5px 11px;line-height:1;flex:none;margin-top:5px}
+  .sem h3{font-size:clamp(23px,3.8vw,30px);line-height:1.2}
+  .sem-baj{margin:7px 0 0;color:var(--gris);font-size:16px;line-height:1.55}
+  .sem-lista{margin:20px 0 0;padding-left:20px;display:grid;gap:9px;line-height:1.6}
+  .sem-lista li{color:var(--texto)}
+  .sem-entrega{margin:22px 0 0;background:var(--panel);border:1px solid var(--linea2);
+    border-left:3px solid var(--verde);border-radius:0 10px 10px 0;padding:14px 17px;line-height:1.55}
+  .sem-entrega span{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--verde);display:block;margin-bottom:5px}
+  .plantillas{display:grid;gap:14px;margin-top:22px}
+  .plantilla{background:var(--panel);border:1px solid var(--linea);border-radius:12px;overflow:hidden}
+  .plantilla>header{display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--linea)}
+  .plantilla h4{margin:0;font-family:var(--cuerpo);font-weight:600;font-size:15px;flex:1;letter-spacing:0}
+  .copiar{background:transparent;color:var(--verde);border:1px solid var(--verde-bor);border-radius:99px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+    padding:6px 12px;cursor:pointer;flex:none;transition:background .15s,color .15s}
+  .copiar:hover{background:var(--verde);color:#0A0A0C}
+  .copiar:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .plantilla pre{margin:0;padding:15px 16px;font-family:var(--mono);font-size:12.5px;line-height:1.75;
+    color:#D6DAD4;white-space:pre-wrap;word-break:break-word;overflow-x:auto}
+  .tabla-ritmo{width:100%;border-collapse:collapse;font-size:14.5px;margin:0}
+  .tabla-ritmo caption{text-align:left;padding:13px 16px 0;color:var(--gris);font-size:13px}
+  .tabla-ritmo th,.tabla-ritmo td{text-align:left;padding:10px 16px;border-top:1px solid var(--linea)}
+  .tabla-ritmo th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);font-weight:400}
+  .tabla-ritmo td:first-child,.tabla-ritmo td:nth-child(2){font-family:var(--mono);font-size:13px}
+  .nota-tabla{margin:0;padding:13px 16px 16px;font-size:14px;color:var(--gris);line-height:1.6;border-top:1px solid var(--linea)}
+  .faltan{margin-top:20px;border:1px dashed var(--linea2);border-radius:12px;padding:15px 17px}
+  .faltan-t{margin:0 0 10px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:#E0A64F}
+  .faltan ul{margin:0;padding-left:19px;display:grid;gap:8px;font-size:14.5px;line-height:1.55}
+  .marcas{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px}
+  .marcas li{display:flex;gap:13px;align-items:flex-start;background:var(--panel);
+    border:1px solid var(--linea);border-radius:11px;padding:14px 16px}
+  .marcas input{margin:3px 0 0;flex:none;width:17px;height:17px;accent-color:var(--verde);cursor:pointer}
+  .marcas label{cursor:pointer;line-height:1.55}
+  .marcas input:checked+label{color:var(--gris);text-decoration:line-through}
+  .marcas input:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .nota-local{margin:11px 0 0;font-size:13px;color:var(--gris2,#8A8F88);line-height:1.55}
+  /* En el sitio los huecos son etiquetas cortas y van en una sola línea.
+     Acá el texto es largo, y con nowrap se sale de la pantalla en el teléfono. */
+  .hueco{white-space:normal}
+</style>
+</head>
+<body>
+
+<header class="banda">
+  <div class="interior encabezado">
+    <span class="marca"><span class="nombre">Lumina</span></span>
+    <span class="eyebrow">Área de alumnas</span>
+  </div>
+</header>
+
+<main>
+<section class="banda">
+  <div class="interior">
+    <p class="eyebrow">Programa de 30 días</p>
+    <h1>Bienvenida. Acá adentro está todo.</h1>
+    <p class="bajada">Este es tu lugar durante los próximos 30 días: el programa de las cuatro semanas,
+    las plantillas para copiar, y qué entregás en cada una. Guardá esta página en favoritos.</p>
+
+    <div class="aviso-privado">
+      <span class="llave" aria-hidden="true">🔒</span>
+      <p><strong>Este link es tuyo y no está en ningún buscador.</strong> No aparece en Google ni
+      hay forma de llegar desde el sitio. Pero cualquiera que tenga la dirección puede abrirla,
+      igual que un archivo compartido de Drive — <strong>así que no la pases.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="banda alterna">
+  <div class="interior">
+    <p class="eyebrow">Antes que nada</p>
+    <h2>Empezá por estas tres cosas</h2>
+    <ol class="pasos-inicio">
+      <li><span class="n">01</span><div><p><strong>Entrá al grupo.</strong> Ahí se pregunta mientras
+        se hace, que es cuando sirve preguntar.</p>
+        <p class="sub"><span class="hueco">Pegar acá el link del grupo de WhatsApp</span></p></div></li>
+      <li><span class="n">02</span><div><p><strong>Guardá esta página.</strong> En el teléfono:
+        compartir → Añadir a pantalla de inicio. Te va a quedar como una app.</p></div></li>
+      <li><span class="n">03</span><div><p><strong>Tené la cuenta de generación lista y con créditos.</strong>
+        Los créditos son tuyos y no pasan por mí — en la semana 4 te enseño a no quemarlos.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="banda">
+  <div class="interior">
+    <p class="eyebrow">El programa</p>
+    <h2>Cuatro semanas, en este orden</h2>
+    <p class="bajada">El orden no es decorativo: cada semana usa lo de la anterior.
+    No adelantes — la semana 2 sin la ficha de la semana 1 no funciona.</p>
+    
+<section class="sem" id="s01">
+  <header class="sem-top">
+    <span class="sem-num">01</span>
+    <div><h3>La ficha de personaje</h3><p class="sem-baj">El corazón de todo. Si esta semana sale bien, el resto es consecuencia.</p></div>
+  </header>
+  <ul class="sem-lista"><li>Las cuatro reglas que no se negocian — empezando por la que más caras arruina: <em>realista no quiere decir perfecto</em>.</li><li>Las 14 ranuras, y por qué el orden importa: los modelos le dan más peso a lo que va primero.</li><li>El módulo de realismo, textual.</li><li>La cola negativa: qué hay que prohibirle al modelo por escrito.</li><li>Los cuatro tipos de ficha y cuándo sirve cada uno.</li></ul>
+  <p class="sem-entrega"><span>Entregás</span> Tu ficha completa, con las 14 ranuras llenas.</p>
+  <div class="plantillas"><article class="plantilla" id="p-realismo"><header><h4>Módulo de realismo — contra la piel de plástico</h4><button class="copiar" type="button" data-para="c-realismo">Copiar</button></header><pre id="c-realismo">visible fine skin texture with natural pores, fine lines, subtle asymmetries
+and texture irregularities, natural visible makeup with slightly uneven
+foundation blending rather than flawless coverage, faint natural blush, slight
+natural sheen rather than glossy or dewy retouched finish, no digital
+smoothing, no beauty filter, no AI-airbrushed look, skin completely free of
+artificial glare, shine or highlight blooms, matte-to-natural complexion</pre></article><article class="plantilla" id="p-negativa"><header><h4>Cola negativa — va al final de todo prompt de video</h4><button class="copiar" type="button" data-para="c-negativa">Copiar</button></header><pre id="c-negativa">no babyface, no overly youthful rounded proportions, no beauty filter, no
+digital smoothing, no airbrushing, no plastic skin, no glossy skin, no text,
+no watermark, no logos, no frame borders</pre></article></div>
+  <div class="faltan"><p class="faltan-t">Todavía falta subir acá:</p><ul><li><span class='hueco'>Las 14 ranuras en su orden, para copiar y llenar</span></li><li><span class='hueco'>Los 4 tipos de ficha, con un ejemplo de cada uno</span></li><li><span class='hueco'>Las 4 reglas que no se negocian, escritas</span></li></ul></div>
+</section>
+<section class="sem" id="s02">
+  <header class="sem-top">
+    <span class="sem-num">02</span>
+    <div><h3>Que no se deforme</h3><p class="sem-baj">Tener la ficha no alcanza. Hay que saber arrastrarla sin romperla.</p></div>
+  </header>
+  <ul class="sem-lista"><li>Foto de referencia o Soul entrenado: no son lo mismo y no sirven para lo mismo.</li><li>La regla de arrastre: lo ya definido se repite <em>entero y textual</em>.</li><li>Cambiar de escena sin perder la cara: qué se toca y qué no se toca nunca.</li><li>Qué modelo usar y cuándo — la decisión que más cambia el resultado.</li><li>Los errores que me costaron meses, uno por uno.</li></ul>
+  <p class="sem-entrega"><span>Entregás</span> Tu personaje en cinco escenas distintas, con la misma cara.</p>
+  <div class="plantillas"><article class="plantilla" id="p-nena"><header><h4>Contra la cara de nena y los ojos de vidrio</h4><button class="copiar" type="button" data-para="c-nena">Copiar</button></header><pre id="c-nena">defined jawline and cheekbones, mature adult bone structure and facial
+proportions, naturally muted catchlights, no oversized specular glare in the
+iris, eye color muted rather than glowing</pre></article></div>
+  <div class="faltan"><p class="faltan-t">Todavía falta subir acá:</p><ul><li><span class='hueco'>La regla de arrastre, escrita como la aplicás vos</span></li><li><span class='hueco'>Referencia vs. Soul: la tabla de cuándo va cada uno</span></li><li><span class='hueco'>Seedance o Kling: en qué caso cada uno</span></li></ul></div>
+</section>
+<section class="sem" id="s03">
+  <header class="sem-top">
+    <span class="sem-num">03</span>
+    <div><h3>Que hable como persona</h3><p class="sem-baj">Acá está el detalle que casi nadie menciona y que delata cualquier video.</p></div>
+  </header>
+  <ul class="sem-lista"><li>Por qué tu personaje habla apurado: cuánto texto entra en cuántos segundos.</li><li>Declarar el idioma y declarar el ritmo. Los dos, explícitos, siempre.</li><li>Una idea por clip — y qué hacer cuando no entra.</li><li>La plantilla UGC de nueve ranuras, aplicada a tu tema.</li><li>Cómo contar las palabras antes de generar, que es plata que no gastás.</li></ul>
+  <p class="sem-entrega"><span>Entregás</span> Tu personaje hablando, con el ritmo bajo control.</p>
+  <div class="plantillas"><article class="plantilla" id="p-ugc"><header><h4>Plantilla UGC — la base de todo clip hablado</h4><button class="copiar" type="button" data-para="c-ugc">Copiar</button></header><pre id="c-ugc">Selfie-style UGC video featuring a [EDAD]-year-old [ORIGEN] [ROL] in a [LUGAR],
+filmed on an iPhone with natural light; authentic, no-filter look; 9:16 format;
+medium shot, spoken in English, speaking at a natural pace, neither rushed nor slow.
+
+Starts by energetically addressing the camera: "[FRASE DE APERTURA]"
+
+Then, three large text overlays appear on screen as she speaks:
+1. [TEXTO 1]
+2. [TEXTO 2]
+3. [TEXTO 3]
+
+Style: fast-paced, dynamic cuts, large white auto-captions, soft trending
+background music.
+
+Closing shot looking at the camera: "[FRASE FINAL]"</pre></article><article class="plantilla"><header><h4>La regla de palabras por segundo</h4></header><table class="tabla-ritmo"><caption>Cuántas palabras entran, en inglés hablado natural</caption>
+<thead><tr><th>Duración</th><th>Palabras cómodas</th><th>Sirve para</th></tr></thead><tbody>
+<tr><td>3 s</td><td>5 a 6</td><td>Un gancho</td></tr>
+<tr><td>5 s</td><td>9 a 10</td><td>Una idea completa</td></tr>
+<tr><td>8 s</td><td>14 a 16</td><td>Dos frases cortas</td></tr>
+<tr><td>10 s</td><td>18 a 20</td><td>Una idea con remate</td></tr>
+</tbody></table>
+<p class="nota-tabla">Verificado con material real: un video de 18,05 s con 35 palabras da <strong>1,94 palabras por segundo</strong>. Si te pasás, <strong>cortá la frase — nunca alargues el clip.</strong></p></article></div>
+  <div class="faltan"><p class="faltan-t">Todavía falta subir acá:</p><ul><li><span class='hueco'>La plantilla UGC con las 9 ranuras explicadas una por una</span></li></ul></div>
+</section>
+<section class="sem" id="s04">
+  <header class="sem-top">
+    <span class="sem-num">04</span>
+    <div><h3>Armar y publicar</h3><p class="sem-baj">Todo el mundo enseña a generar. Casi nadie enseña a armar.</p></div>
+  </header>
+  <ul class="sem-lista"><li>Una generación es un pedazo, no un video.</li><li>El logo como tapa-costuras y la música como pegamento del audio.</li><li>Las cinco reglas de continuidad.</li><li>Cortar en movimiento, no en quieto.</li><li>Matemática de créditos: dónde se va la plata sin que te des cuenta.</li></ul>
+  <p class="sem-entrega"><span>Entregás</span> Tu primer video terminado, armado de varios pedazos.</p>
+  
+  <div class="faltan"><p class="faltan-t">Todavía falta subir acá:</p><ul><li><span class='hueco'>Las 5 reglas de continuidad</span></li><li><span class='hueco'>La cuenta de créditos: cuánto cuesta cada cosa hoy</span></li><li><span class='hueco'>El logo y la música: dónde van exactamente</span></li></ul></div>
+</section>
+  </div>
+</section>
+
+<section class="banda alterna">
+  <div class="interior">
+    <p class="eyebrow">Tus entregas</p>
+    <h2>Lo que tenés que terminar</h2>
+    <ul class="marcas">
+      <li><input type="checkbox" id="e1"><label for="e1"><strong>Semana 1 —</strong> tu ficha completa, con las 14 ranuras llenas.</label></li>
+      <li><input type="checkbox" id="e2"><label for="e2"><strong>Semana 2 —</strong> tu personaje en cinco escenas distintas, con la misma cara.</label></li>
+      <li><input type="checkbox" id="e3"><label for="e3"><strong>Semana 3 —</strong> tu personaje hablando, con el ritmo bajo control.</label></li>
+      <li><input type="checkbox" id="e4"><label for="e4"><strong>Semana 4 —</strong> tu primer video terminado, armado de varios pedazos.</label></li>
+    </ul>
+    <p class="nota-local">Las marcas se guardan sólo en este teléfono o computadora. No las veo yo, y no se
+    sincronizan con otro dispositivo.</p>
+
+    <h2 style="margin-top:44px">La revisión de tu ficha</h2>
+    <p class="bajada">Está incluida: mirá que la ficha esté bien <strong>antes</strong> de que quemes créditos
+    generando con una ficha rota. Mandámela y te digo qué está mal.</p>
+    <p class="bajada"><span class="hueco">Pegar acá cómo se manda la ficha: al grupo, por DM, o a un correo</span></p>
+  </div>
+</section>
+</main>
+
+<footer class="banda">
+  <div class="interior">
+    <p class="letra">Lumina IA Studio · página privada del programa. No la compartas.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  // Copiar los bloques de prompt de un toque.
+  document.querySelectorAll('.copiar').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var pre = document.getElementById(b.dataset.para);
+      if (!pre) return;
+      var texto = pre.textContent, original = b.textContent;
+      function avisar(ok) {
+        b.textContent = ok ? 'Copiado ✓' : 'No se pudo';
+        setTimeout(function () { b.textContent = original; }, 1600);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(texto).then(function () { avisar(true); }, function () { avisar(false); });
+      } else {
+        // Navegadores viejos: seleccionar el bloque para que se copie a mano.
+        try {
+          var r = document.createRange(); r.selectNodeContents(pre);
+          var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+          avisar(document.execCommand('copy'));
+        } catch (e) { avisar(false); }
+      }
+    });
+  });
+
+  // Las marcas de entrega viven en este dispositivo. Si el navegador las bloquea,
+  // la página tiene que seguir funcionando igual.
+  var LLAVE = 'lumina-entregas';
+  var guardado = {};
+  try { guardado = JSON.parse(localStorage.getItem(LLAVE) || '{}'); } catch (e) { guardado = {}; }
+  document.querySelectorAll('.marcas input').forEach(function (c) {
+    if (guardado[c.id]) c.checked = true;
+    c.addEventListener('change', function () {
+      guardado[c.id] = c.checked;
+      try { localStorage.setItem(LLAVE, JSON.stringify(guardado)); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>
