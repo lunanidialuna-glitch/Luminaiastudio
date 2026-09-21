@@ -358,6 +358,20 @@
   /* En el sitio los huecos son etiquetas cortas y van en una sola línea.
      Acá el texto es largo, y con nowrap se sale de la pantalla en el teléfono. */
   .hueco{white-space:normal}
+
+  .reglas{background:var(--panel);border:1px solid var(--linea);border-radius:12px;padding:18px 20px;margin-top:20px}
+  .reglas-t{margin:0 0 12px;font-family:var(--mono);font-size:10px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--verde)}
+  .reglas ol,.reglas ul{margin:0;padding-left:20px;display:grid;gap:11px;line-height:1.6}
+  .reglas code{font-family:var(--mono);font-size:.88em;background:rgba(215,255,63,.10);
+    color:var(--verde);padding:1px 5px;border-radius:4px}
+  .explica{margin:16px 0 0;color:var(--gris);line-height:1.65;font-size:15.5px}
+  .explica strong{color:var(--texto)}
+  .tabla-caja{background:var(--panel);border:1px solid var(--linea);border-radius:12px;
+    overflow:hidden;margin-top:20px}
+  .tabla-caja .tabla-ritmo th:first-child,.tabla-caja .tabla-ritmo td:first-child{font-family:var(--cuerpo);font-size:15px}
+  .chico{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+
 </style>
 </head>
 <body>
@@ -423,8 +437,66 @@ natural sheen rather than glossy or dewy retouched finish, no digital
 smoothing, no beauty filter, no AI-airbrushed look, skin completely free of
 artificial glare, shine or highlight blooms, matte-to-natural complexion</pre></article><article class="plantilla" id="p-negativa"><header><h4>Cola negativa — va al final de todo prompt de video</h4><button class="copiar" type="button" data-para="c-negativa">Copiar</button></header><pre id="c-negativa">no babyface, no overly youthful rounded proportions, no beauty filter, no
 digital smoothing, no airbrushing, no plastic skin, no glossy skin, no text,
-no watermark, no logos, no frame borders</pre></article></div>
-  <div class="faltan"><p class="faltan-t">Todavía falta subir acá:</p><ul><li><span class='hueco'>Las 14 ranuras en su orden, para copiar y llenar</span></li><li><span class='hueco'>Los 4 tipos de ficha, con un ejemplo de cada uno</span></li><li><span class='hueco'>Las 4 reglas que no se negocian, escritas</span></li></ul></div>
+no watermark, no logos, no frame borders</pre></article></div><div class="reglas"><p class="reglas-t">Las cuatro reglas que no se negocian</p><ol>
+<li><strong>Realista NO quiere decir perfecto.</strong> Este es el error que hace que una cara parezca
+«hecha en una aplicación mala». Realista significa poros visibles, asimetría natural, piel mate sin
+brillos, maquillaje levemente disparejo. <em>Si pedís piel perfecta, te da plástico.</em></li>
+<li><strong>Personaje original, siempre.</strong> Nunca la cara de una persona real ni un personaje con
+dueño. Una referencia sirve de ambiente, no de molde.</li>
+<li><strong>Si es adulta, decilo explícito.</strong> Los modelos tiran a cara de nena. Hay que pedir
+mandíbula y pómulos definidos, estructura ósea adulta, y prohibir <code>babyface</code> en la cola negativa.</li>
+<li><strong>Lo ya definido se arrastra sin cambios.</strong> Al modificar algo, se repite <em>todo</em> lo
+demás igual. Si no se repite, se deforma sola.</li>
+</ol></div><article class="plantilla" id="p-ranuras"><header><h4>Las 14 ranuras, en su orden</h4><button class="copiar" type="button" data-para="c-ranuras">Copiar</button></header><pre id="c-ranuras">1  COMPOSICIÓN         → qué tipo de ficha es
+2  "personaje original idéntico en todas las vistas"
+3  fondo blanco sin costuras, presentación de ficha
+4  IDENTIDAD           → edad + tono de piel
+5  CARA                → forma, mandíbula, pómulos, nariz, labios
+6  OJOS                → forma, color + cláusula anti-brillo
+7  CEJAS
+8  PELO                → color, largo, peinado, ACABADO, raya
+9  MÓDULO DE REALISMO  → el de abajo, textual
+10 CUERPO              → tipo y proporciones
+11 VESTUARIO           → arriba → capas → abajo → cinturón → zapatos → joyas → bolso
+12 LUZ
+13 COLA DE CALIDAD
+14 COLA NEGATIVA</pre></article><p class="explica"><strong>Por qué el orden importa:</strong> los modelos le dan más peso
+a lo que va primero. Por eso composición e identidad van al principio y la calidad al final.</p>
+<p class="explica"><strong>Específico le gana a lindo.</strong> «Pantalón blanco crema de pierna ancha con
+bordado floral calado y cordón en la cintura» sirve. «Un pantalón lindo» no.</p>
+<p class="explica"><strong>Vestuario de la cabeza a los pies, sin huecos.</strong> Si no lleva bolso, se
+escribe «sin bolso».</p><div class="tabla-caja"><table class="tabla-ritmo"><caption>Los cuatro tipos de ficha</caption>
+<thead><tr><th>Tipo</th><th>Para qué</th><th>Proporción</th></tr></thead><tbody>
+<tr><td><strong>Pantalla partida</strong><br><span class="chico">el más útil</span></td><td>Cuerpo entero de pie + primer plano</td><td>16:9</td></tr>
+<tr><td><strong>Vuelta completa</strong></td><td>Frente, 3/4, perfil y espalda</td><td>16:9</td></tr>
+<tr><td><strong>Expresiones</strong></td><td>Un cuerpo entero + grilla de gestos</td><td>16:9</td></tr>
+<tr><td><strong>Vestuarios</strong></td><td>El mismo personaje con varias ropas</td><td>16:9</td></tr>
+</tbody></table></div><article class="plantilla" id="p-esqueleto"><header><h4>El esqueleto para copiar y llenar</h4><button class="copiar" type="button" data-para="c-esqueleto">Copiar</button></header><pre id="c-esqueleto">Split-screen character sheet composition, left side a full-body shot of the
+character standing upright in a neutral straight standing pose facing the
+camera with both feet flat on the ground and arms relaxed at the sides, full
+head-to-toe framing with the whole body and both feet visible, right side a
+tight close-up chest-up portrait of the same character, identical original
+female character on both sides, single subject only exactly one person with
+only the character in frame, pure white seamless studio background,
+professional character sheet presentation,
+[EDAD] with [TONO DE PIEL],
+[FORMA DE CARA] with [MANDÍBULA], [PÓMULOS], [NARIZ], [LABIOS + acabado],
+defined jawline and cheekbones, mature adult bone structure and facial
+proportions,
+[COLOR Y FORMA DE OJOS] with naturally muted catchlights and no artificial
+glare, [CEJAS], [PELO: color, tono, largo, peinado, ACABADO, raya],
+&lt;MÓDULO DE REALISMO&gt;,
+[TIPO DE CUERPO] with balanced proportions,
+wearing [ARRIBA], [CAPAS], [ABAJO], [CINTURÓN], [ZAPATOS], [JOYAS], [BOLSO o "no bag"],
+natural anatomy, high-end but unretouched commercial photography style, soft
+diffused studio lighting without harsh reflections, cinematic realism, clean
+white background, 4K quality, sharp focus on skin texture detail,
+&lt;COLA NEGATIVA&gt;</pre></article><article class="plantilla" id="p-partida"><header><h4>Cola negativa extra — sólo en fichas de pantalla partida</h4><button class="copiar" type="button" data-para="c-partida">Copiar</button></header><pre id="c-partida">single subject only, exactly one person, only the character in frame, no other
+people, no duplicate figures, no mannequin, no reflections, no props, no
+furniture, no background objects, empty seamless studio, left panel standing
+full-body head-to-toe not cropped not sitting, right panel tight close-up not
+full body</pre></article><p class="explica"><strong>Opcional y muy útil:</strong> un par de imperfecciones ancla —
+<code>a few faint freckles, a small mole near the collarbone</code>. Son las que hacen que parezca una persona.</p>
 </section>
 <section class="sem" id="s02">
   <header class="sem-top">
@@ -435,8 +507,20 @@ no watermark, no logos, no frame borders</pre></article></div>
   <p class="sem-entrega"><span>Entregás</span> Tu personaje en cinco escenas distintas, con la misma cara.</p>
   <div class="plantillas"><article class="plantilla" id="p-nena"><header><h4>Contra la cara de nena y los ojos de vidrio</h4><button class="copiar" type="button" data-para="c-nena">Copiar</button></header><pre id="c-nena">defined jawline and cheekbones, mature adult bone structure and facial
 proportions, naturally muted catchlights, no oversized specular glare in the
-iris, eye color muted rather than glowing</pre></article></div>
-  <div class="faltan"><p class="faltan-t">Todavía falta subir acá:</p><ul><li><span class='hueco'>La regla de arrastre, escrita como la aplicás vos</span></li><li><span class='hueco'>Referencia vs. Soul: la tabla de cuándo va cada uno</span></li><li><span class='hueco'>Seedance o Kling: en qué caso cada uno</span></li></ul></div>
+iris, eye color muted rather than glowing</pre></article></div><div class="tabla-caja"><table class="tabla-ritmo"><caption>Crear o sostener: no son lo mismo</caption>
+<thead><tr><th>El momento</th><th>Qué se usa</th></tr></thead><tbody>
+<tr><td><strong>Crear</strong> un personaje que no existe<br><span class="chico">cliente nuevo, sin foto</span></td><td>La ficha por ranuras de la semana 1</td></tr>
+<tr><td><strong>Sostener</strong> un personaje que ya existe</td><td>Su foto de referencia <strong>más</strong> la descripción escrita, juntas</td></tr>
+</tbody></table></div>
+<p class="explica">La foto no es decorativa: es de donde sale la identidad. Pero va <strong>con</strong> la
+descripción, no en lugar de ella.</p><div class="reglas"><p class="reglas-t">La regla de arrastre</p><ol>
+<li><strong>La misma foto de referencia en todos los segmentos.</strong></li>
+<li><strong>El vestuario se repite textual en cada prompt.</strong> No «la misma ropa» — copiar y pegar
+la descripción entera. Si no se repite, deriva sola.</li>
+<li><strong>La luz y el lugar también se repiten textuales.</strong> Mismas palabras, mismo orden.</li>
+</ol></div><p class="explica"><strong>Qué modelo usar:</strong> siempre <strong>Seedance 2.0</strong>.
+Kling, a veces. No es preferencia estética — es la decisión que más cambia el resultado, y está tomada
+a base de probar.</p>
 </section>
 <section class="sem" id="s03">
   <header class="sem-top">
@@ -466,8 +550,43 @@ Closing shot looking at the camera: "[FRASE FINAL]"</pre></article><article clas
 <tr><td>8 s</td><td>14 a 16</td><td>Dos frases cortas</td></tr>
 <tr><td>10 s</td><td>18 a 20</td><td>Una idea con remate</td></tr>
 </tbody></table>
-<p class="nota-tabla">Verificado con material real: un video de 18,05 s con 35 palabras da <strong>1,94 palabras por segundo</strong>. Si te pasás, <strong>cortá la frase — nunca alargues el clip.</strong></p></article></div>
-  <div class="faltan"><p class="faltan-t">Todavía falta subir acá:</p><ul><li><span class='hueco'>La plantilla UGC con las 9 ranuras explicadas una por una</span></li></ul></div>
+<p class="nota-tabla">Verificado con material real: un video de 18,05 s con 35 palabras da <strong>1,94 palabras por segundo</strong>. Si te pasás, <strong>cortá la frase — nunca alargues el clip.</strong></p></article></div><div class="reglas"><p class="reglas-t">Los cinco elementos, siempre los cinco</p><ol>
+<li><strong>La foto va primero</strong>, como referencia.</li>
+<li><strong>Y además se describe.</strong> Foto y descripción, juntas.</li>
+<li><strong>Hiperrealista, explícito.</strong> Sin eso el modelo tira a la versión pulida que no se
+parece a nadie.</li>
+<li><strong>Movimientos naturales.</strong></li>
+<li><strong>El habla</strong> — y acá está lo que casi nadie hace: <strong>el idioma se declara</strong>
+(inglés, no se deja que el modelo elija) y <strong>el ritmo se declara</strong> (ni lento ni rápido).</li>
+</ol></div>
+<p class="explica"><strong>El ritmo del habla es lo que separa «video con IA» de «persona».</strong> Un
+personaje que habla demasiado rápido se delata solo, por más que la cara esté perfecta.</p><article class="plantilla" id="p-nueve"><header><h4>Las nueve ranuras de la plantilla UGC</h4><button class="copiar" type="button" data-para="c-nueve">Copiar</button></header><pre id="c-nueve">1  FORMATO        Selfie-style UGC video
+2  QUIÉN          featuring a [EDAD]-year-old [ORIGEN] [ROL]
+3  DÓNDE          in a [LUGAR]
+4  CÓMO SE FILMÓ  filmed on an iPhone with natural light
+5  ESTÉTICA       authentic, no-filter look
+6  ENCUADRE       9:16 format; medium shot
+
+7  APERTURA       Starts by energetically addressing the camera: "[FRASE 1]"
+
+8  EN PANTALLA    Then, three large text overlays appear on screen as she speaks:
+                  1. [TEXTO 1]
+                  2. [TEXTO 2]
+                  3. [TEXTO 3]
+
+9  ESTILO         Style: fast-paced, dynamic cuts, large white auto-captions,
+                  soft trending background music.
+
+10 CIERRE         Closing shot looking at the camera: "[FRASE FINAL]"</pre></article><div class="reglas"><p class="reglas-t">Por qué funciona cada pieza</p><ul>
+<li><strong>«Selfie-style UGC»</strong> le dice al modelo que NO haga publicidad pulida.</li>
+<li><strong>«filmed on an iPhone with natural light»</strong> define cámara y luz de una. Sin eso tira a
+producción de estudio.</li>
+<li><strong>«authentic, no-filter look»</strong> cumple la misma función que pedir poros y asimetría:
+evita la piel de plástico.</li>
+<li><strong>El diálogo va entre comillas, textual.</strong> Por eso podés contar las palabras antes de
+generar. Es lo que te da el control del ritmo.</li>
+<li><strong>Los textos en pantalla numerados</strong> le dan estructura al video y marcan el ritmo del habla.</li>
+</ul></div>
 </section>
 <section class="sem" id="s04">
   <header class="sem-top">
@@ -475,9 +594,36 @@ Closing shot looking at the camera: "[FRASE FINAL]"</pre></article><article clas
     <div><h3>Armar y publicar</h3><p class="sem-baj">Todo el mundo enseña a generar. Casi nadie enseña a armar.</p></div>
   </header>
   <ul class="sem-lista"><li>Una generación es un pedazo, no un video.</li><li>El logo como tapa-costuras y la música como pegamento del audio.</li><li>Las cinco reglas de continuidad.</li><li>Cortar en movimiento, no en quieto.</li><li>Matemática de créditos: dónde se va la plata sin que te des cuenta.</li></ul>
-  <p class="sem-entrega"><span>Entregás</span> Tu primer video terminado, armado de varios pedazos.</p>
-  
-  <div class="faltan"><p class="faltan-t">Todavía falta subir acá:</p><ul><li><span class='hueco'>Las 5 reglas de continuidad</span></li><li><span class='hueco'>La cuenta de créditos: cuánto cuesta cada cosa hoy</span></li><li><span class='hueco'>El logo y la música: dónde van exactamente</span></li></ul></div>
+  <p class="sem-entrega"><span>Entregás</span> Tu primer video terminado, armado de varios pedazos.</p><div class="reglas"><p class="reglas-t">Las cinco reglas de continuidad</p><ol>
+<li><strong>La misma foto de referencia en todos los segmentos.</strong></li>
+<li><strong>El vestuario se repite textual</strong> en cada prompt. Copiar y pegar la descripción entera.</li>
+<li><strong>La luz y el lugar también, textuales.</strong> Mismas palabras, mismo orden.</li>
+<li><strong>Cortar en movimiento, no en quieto.</strong> Un corte con la persona moviéndose se nota mucho
+menos que uno con la cara quieta.</li>
+<li><strong>Cuando dos clips no pegan: no insistas, meté el logo.</strong> Es más barato que regenerar.</li>
+</ol></div><div class="tabla-caja"><table class="tabla-ritmo"><caption>Cómo se arma el video terminado</caption>
+<thead><tr><th>Pieza</th><th>Cuánto</th><th>Qué lleva</th></tr></thead><tbody>
+<tr><td><strong>Gancho</strong></td><td>1 clip corto</td><td>La frase que frena el pulgar</td></tr>
+<tr><td>Logo</td><td>1 segundo</td><td>Corte</td></tr>
+<tr><td><strong>Desarrollo</strong></td><td>1 a 3 clips</td><td>Un punto por clip</td></tr>
+<tr><td>Logo</td><td>1 segundo</td><td>Corte</td></tr>
+<tr><td><strong>Cierre</strong></td><td>1 clip corto</td><td>La llamada a la acción</td></tr>
+</tbody></table></div>
+<p class="explica"><strong>Un punto por clip.</strong> No metas dos ideas en un clip: ahí es donde aparece
+el habla apurada.</p><div class="reglas"><p class="reglas-t">El logo y la música no son decoración</p><ul>
+<li><strong>El logo entre clips es un tapa-costuras.</strong> Cuando dos clips no pegan —cambia la luz, el
+encuadre, algo de la cara— meter el logo en el medio corta la continuidad a propósito. El ojo deja de
+comparar y perdona la diferencia.</li>
+<li><strong>La música tapa los cortes de audio.</strong> Cada clip trae su propio audio generado; pegados
+en crudo se escuchan los saltos. Una sola pista corriendo por encima de todo los une.</li>
+</ul>
+<p class="explica" style="margin-top:14px">La fórmula: <strong>música, logo, video, logo, video.</strong></p></div><div class="reglas"><p class="reglas-t">La cuenta de los créditos</p>
+<p class="explica" style="margin-top:0"><strong>18 créditos por dólar.</strong> Cada regeneración que te
+ahorrás son unos <strong>3 dólares</strong>.</p>
+<p class="explica">Por eso la regla 5 vale plata: cuando dos clips no pegan, meter el logo cuesta cero y
+regenerar cuesta tres dólares.</p>
+<p class="explica">Y los clips viejos <strong>se reúsan</strong>. Una biblioteca de pedazos vale más que un
+video terminado.</p></div><div class="faltan"><p class="faltan-t">Todavía falta subir acá:</p><ul><li><span class="hueco">Con qué editor se arma — hay que nombrar uno para poder enseñarlo</span></li></ul></div>
 </section>
   </div>
 </section>
