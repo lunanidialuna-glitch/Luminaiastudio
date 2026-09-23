@@ -1,0 +1,12 @@
+theme: jekyll-theme-minimal
+include: [".htaccess"]
+exclude: ["node_modules", ".git", ".gitignore"]
+
+# Enable raw asset serving
+plugins:
+  - jekyll-assets
+
+# Build settings
+markdown: kramdown
+permalink: /:categories/:title/
+future: true
