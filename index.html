@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Reto Clona tu Marca: 5 días, un prompt real por día, gratis. De Lumina IA Studio.">
+<meta name="description" content="Lumina A.I. Studio: tu personaje con tu cara, siempre igual. Fotos, videos, anuncios y edición con IA en un solo lugar, con precio claro.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://luminaiastudio.com/">
 <link rel="alternate" hreflang="es" href="https://luminaiastudio.com/">
 <link rel="alternate" hreflang="en" href="https://luminaiastudio.com/en/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Reto Clona tu Marca — 5 días, gratis">
-<meta property="og:description" content="Aprendé a hacer video con IA sin perder lo que yo perdí.">
+<meta property="og:title" content="Lumina A.I. Studio — tu personaje, siempre con tu cara">
+<meta property="og:description" content="Fotos, videos, anuncios y edición con IA en un solo lugar. Precio claro. Probá gratis tu primer video.">
 <meta property="og:url" content="https://luminaiastudio.com/">
 <meta property="og:image" content="https://luminaiastudio.com/video/hero-jardin.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
   img{max-width:100%;display:block}
   [hidden]{display:none!important}
 </style>
-<title>Reto Clona tu Marca — Lumina</title>
+<title>Lumina A.I. Studio — tu personaje, siempre con tu cara</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -253,6 +253,19 @@
   footer a{color:var(--gris2);text-decoration:none;transition:color .18s}
   footer a:hover{color:var(--verde)}
   footer .interior{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  /* ---------- precios ---------- */
+  .planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .plan{background:var(--panel);border:1px solid var(--linea2);border-radius:14px;padding:clamp(22px,3vw,30px);display:flex;flex-direction:column;gap:10px}
+  .plan.destacado{border-color:var(--verde-bor);background:linear-gradient(180deg,var(--verde-op),transparent 60%),var(--panel)}
+  .plan .precio{font-family:var(--display);font-size:clamp(30px,4.5vw,40px);line-height:1}
+  .plan .precio small{font-family:var(--cuerpo);font-size:15px;color:var(--gris)}
+  .plan .incluye{color:var(--gris);font-size:15px;line-height:1.5}
+  .plan .incluye b{color:var(--texto)}
+  .nota-precio{margin-top:18px;color:var(--gris);font-size:15px;max-width:60ch;line-height:1.6}
+  .nota-precio b{color:var(--texto)}
+  .cta-linea{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
+  .cta-linea .boton{width:auto;padding-inline:26px}
+  .cta-linea .secundario{color:var(--gris);font-size:14px}
 </style>
 </head>
 <body>
@@ -283,22 +296,22 @@
 
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">Reto gratuito · 5 días por email</p>
-        <h1>Aprendé a hacer video con IA sin perder lo que yo perdí</h1>
-        <p class="entrada">Meses. Créditos quemados. Decenas de versiones que no servían para nada. <b>En cinco días te doy el camino corto</b> — un prompt real de los míos por día, para que lo pruebes el mismo día.</p>
+        <p class="eyebrow">Lumina A.I. Studio · abre muy pronto</p>
+        <h1>Tu personaje, siempre con tu cara</h1>
+        <p class="entrada">Subís tus fotos una vez. Después creás <b>fotos, videos, anuncios y animaciones</b> con la misma persona — y los editás ahí mismo, listos para publicar. <b>Cada cosa muestra lo que cuesta antes de crearla.</b></p>
         <form class="formulario" id="form-hero" novalidate>
           <div class="fila">
             <input class="campo" id="h-nombre" type="text" name="FNAME" required placeholder="Tu nombre" autocomplete="given-name">
             <input class="campo" id="h-correo" type="email" name="EMAIL" required placeholder="Tu email" autocomplete="email">
           </div>
-          <button class="boton" type="submit">Empezar el reto</button>
+          <button class="boton" type="submit">Quiero mi primer video gratis</button>
           <label class="consentimiento" for="h-ok"><input type="checkbox" id="h-ok" required><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span></label>
-          <p class="debajo">Cinco días, un correo por día. Gratis y sin tarjeta.</p>
+          <p class="debajo">Te aviso el día que abre. Tu primer video de 5 segundos es gratis, sin tarjeta.</p>
         </form>
       </div>
       <div class="hero-foto">
         <video data-audio poster="video/hero-jardin.jpg" muted loop playsinline preload="auto" aria-label="Video de Luna entre flores, con la misma cara en cada plano."><source src="video/hero-jardin.mp4" type="video/mp4"></video>
-        <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · hecho sin cámara</span></div>
+        <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · hecha con Lumina</span></div>
       </div>
     </div>
   </div>
@@ -309,35 +322,15 @@
   <div class="interior">
     <div class="encabezado">
       <p class="eyebrow">Si estás acá, probablemente</p>
-      <h2>Ya lo intentaste sola</h2>
+      <h2>Ya lo intentaste con otras apps</h2>
     </div>
     <ul class="dolores">
-      <li><span class="marca-x">01</span><span>Viste un video hecho con IA que te voló la cabeza, lo intentaste, y lo tuyo salió <em>raro</em>.</span></li>
-      <li><span class="marca-x">02</span><span>Pagaste créditos y los quemaste en pruebas que no sirvieron para nada.</span></li>
-      <li><span class="marca-x">03</span><span>Aparecen veinte herramientas nuevas por semana y no sabés cuál importa de verdad.</span></li>
-      <li><span class="marca-x">04</span><span>Te dicen «es fácil, escribí un prompt». Lo escribiste. No fue fácil.</span></li>
-      <li><span class="marca-x">05</span><span>Generaste una cara que se te parecía… pero no eras vos.</span></li>
+      <li><span class="marca-x">01</span><span>Generaste una cara que se te parecía… <em>pero no eras vos</em>. Y en el siguiente video, cambió otra vez.</span></li>
+      <li><span class="marca-x">02</span><span>Pagás una app para fotos, otra para video, y después editás todo en una tercera.</span></li>
+      <li><span class="marca-x">03</span><span>Monedas, créditos, packs. Nunca sabés cuánto te va a costar lo que estás por crear.</span></li>
+      <li><span class="marca-x">04</span><span>Las expresiones salen exageradas, de plástico, de dibujo animado.</span></li>
     </ul>
-    <p class="remate">No sos vos. <span>Nadie te está contando la parte del medio</span> — la que va entre el tutorial de dos minutos y el resultado que te gustó.</p>
-  </div>
-</section>
-
-<!-- ================= EL RETO ================= -->
-<section class="banda alterna">
-  <div class="interior">
-    <div class="encabezado">
-      <p class="eyebrow">El reto · gratis · 5 días</p>
-      <h2>Clona tu Marca</h2>
-      <p class="bajada">Un correo por día. En cada uno te mando <b>un prompt real de los que uso yo</b> —no un ejemplo de manual— y vos lo probás ese mismo día en tu cuenta. Al quinto día tenés videos hechos por vos.</p>
-    </div>
-    <ul class="dolores">
-      <li><span class="marca-x">DÍA 1</span><span><b>Tu primer video, hoy.</b> Te doy mi plantilla completa, la que ya me funcionó, con las piezas marcadas. Cambiás cinco cosas y generás.</span></li>
-      <li><span class="marca-x">DÍA 2</span><span><b>Por qué se nota que es IA.</b> El bloque de texto que le saca la piel de plástico a las caras. Lo pegás, regenerás el de ayer, y la diferencia se ve sola.</span></li>
-      <li><span class="marca-x">DÍA 3</span><span><b>El error que te quema créditos.</b> Cuánto texto entra en cuántos segundos. Es la razón por la que tu personaje habla apurado, y nadie te lo dice.</span></li>
-      <li><span class="marca-x">DÍA 4</span><span><b>Cara de nena y ojos de vidrio.</b> Lo que hay que prohibirle al modelo <em>por escrito</em> para que no te devuelva una adolescente de plástico.</span></li>
-      <li><span class="marca-x">DÍA 5</span><span><b>Poné los cuatro juntos.</b> Acá vas a ver lo que casi nadie te cuenta — y vas a entender qué es lo que te falta de verdad.</span></li>
-    </ul>
-    <p class="remate">Gratis de verdad. <span>Los créditos que gastes son de tu propia cuenta</span> — esa plata no pasa por mí, y en el día 3 te enseño a no quemarla.</p>
+    <p class="remate">Lumina nació de eso. <span>Una sola app, tu cara de verdad, y el precio a la vista.</span></p>
   </div>
 </section>
 
@@ -345,9 +338,9 @@
 <section class="banda alterna">
   <div class="interior">
     <div class="encabezado">
-      <p class="eyebrow">Esto es lo que se puede lograr</p>
-      <h2>Ni un set, ni una cámara, ni un viaje</h2>
-      <p class="bajada">Todas estas son la misma persona, en lugares distintos, con la misma cara y el mismo pelo. Esa constancia es lo difícil — y es lo que vas a aprender a controlar. <b>Tocá cualquiera para escuchar el audio.</b></p>
+      <p class="eyebrow">Hecho con Lumina</p>
+      <h2>La misma persona, en todos lados</h2>
+      <p class="bajada">Todas estas son la misma persona, en lugares distintos, con la misma cara y el mismo pelo. Esa constancia es lo difícil, y es lo que Lumina hace por vos. <b>Tocá cualquiera para escuchar el audio.</b></p>
     </div>
     <div class="galeria">
       <figure><span class="marcavideo">video</span><video poster="video/looks.jpg" muted loop playsinline preload="metadata" aria-label="Tres Lunas idénticas caminando juntas por la calle con abrigos grises."><source src="video/looks.mp4" type="video/mp4"><source src="video/looks.webm" type="video/webm"></video><figcaption>Calle · tres Lunas</figcaption></figure>
@@ -359,56 +352,43 @@
       <figure><span class="marcavideo">video</span><video data-audio muted loop playsinline preload="metadata"><source src="video/video3.mp4" type="video/mp4"><source src="video/video3.webm" type="video/webm"></video><figcaption>Personaje 3</figcaption></figure>
       <figure><span class="marcavideo">video</span><video data-audio muted loop playsinline preload="metadata"><source src="video/video4.mp4" type="video/mp4"><source src="video/video4.webm" type="video/webm"></video><figcaption>Personaje 4</figcaption></figure>
     </div>
-    <p class="pie-galeria"><b>La misma cara en los cuatro.</b> Eso no sale solo: sale de hacer un paso que casi todo el mundo se saltea. Es el paso 2 de acá abajo, y es la diferencia entre «se le parece» y «es ella».</p>
+    <p class="pie-galeria"><b>La misma cara en los cuatro.</b> Eso no sale solo: sale de entrenar tu personaje una vez, con tus fotos. Lumina lo hace en el primer paso y después no lo tocás más.</p>
   </div>
 </section>
 
-<!-- ================= QUIÉN SOY ================= -->
+<!-- ================= QUÉ HACE ================= -->
 <section class="banda">
   <div class="interior">
     <div class="encabezado">
-      <p class="eyebrow">Quién te va a enseñar</p>
-      <h2>No soy una gurú. Soy la que se tropezó con todas.</h2>
+      <p class="eyebrow">Qué podés hacer</p>
+      <h2>Crear y editar, en un solo lugar</h2>
+      <p class="bajada">Todo con tu personaje. Todo con el precio a la vista antes de confirmar.</p>
     </div>
-    <div class="historia">
-      <div class="retrato">
-        <img loading="lazy" src="luna/onair.jpg" width="900" height="1120" alt="Luna sentada en un estudio de podcast, traje burdeos y anteojos, con un cartel de neón que dice ON AIR detrás.">
-      </div>
-      <div>
-        <p>Soy <strong>Nidia</strong>. Tengo una agencia de marketing digital en el área de Washington DC, y hace un tiempo me obsesioné con el video hecho con inteligencia artificial.</p>
-        <p>Me llevó meses. Quemé créditos generando clips con duraciones que no entendía. Generé imágenes de mi propio personaje que <strong>no se parecían a mi personaje</strong>. Probé herramientas que prometían todo y hacían la mitad.</p>
-        <p>Hasta que entendí el orden correcto de las cosas. Y cuando lo entendí, <strong>armé mi propia herramienta</strong> para no volver a pasar por eso.</p>
-        <p>Eso es lo que comparto en la comunidad: no el resultado lindo, sino <strong>el camino</strong> — con los errores ya cometidos por mí.</p>
-      </div>
+    <div class="rejilla">
+      <div class="tarjeta"><span class="num">01</span><h3>Fotos y videos con tu cara</h3><p>Plantillas listas (UGC, editorial, fantasía, escenas de película) o tu propia idea. Expresiones naturales, nunca exageradas.</p></div>
+      <div class="tarjeta"><span class="num">02</span><h3>Chasquido mágico</h3><p>Chasqueás los dedos y cambiás de lugar y de ropa en el mismo video, con tu misma cara.</p></div>
+      <div class="tarjeta"><span class="num">03</span><h3>Sesiones completas</h3><p>Seis fotos de una sesión real — ascensor, viernes de noche, outfit del día — con el mismo look.</p></div>
+      <div class="tarjeta"><span class="num">04</span><h3>Lumina Motion</h3><p>Escribís una frase y sale una animación con tipografía en movimiento, tus colores y tu logo.</p></div>
+      <div class="tarjeta"><span class="num">05</span><h3>Anuncios en varias versiones</h3><p>Un producto, un objetivo, y la IA escribe de 2 a 6 versiones distintas del anuncio. Las revisás y se crean juntas.</p></div>
+      <div class="tarjeta"><span class="num">06</span><h3>Social Clip</h3><p>El editor adentro: subtítulos, cortes con IA, títulos y zoom. Listo para subir, sin pasar por otra app.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= QUÉ HAY ADENTRO ================= -->
-<section class="banda alterna">
+<!-- ================= PRECIO ================= -->
+<section class="banda alterna" id="precios">
   <div class="interior">
     <div class="encabezado">
-      <p class="eyebrow">Qué hay adentro</p>
-      <h2>Tres cosas, y las tres son concretas</h2>
-      <p class="bajada">Sin cursos de cuarenta horas que nadie termina. Esto es una comunidad de trabajo, no una biblioteca.</p>
+      <p class="eyebrow">Precio claro, en dólares</p>
+      <h2>Sabés lo que cuesta antes de crear</h2>
+      <p class="bajada">Una <b>creación</b> es una foto. Un video de 5 segundos usa 4. Cada plan trae creaciones por mes, sin marca de agua. Cancelás cuando quieras.</p>
     </div>
-    <div class="rejilla">
-      <div class="tarjeta">
-        <span class="num">01</span>
-        <h3>Los errores que te ahorran plata</h3>
-        <p>Lo que no hay que hacer, contado por quien ya lo hizo. Cada uno de esos errores me costó créditos, y a vos te los ahorra.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="num">02</span>
-        <h3>Un prompt real cada viernes</h3>
-        <p>No un prompt de ejemplo: uno que uso de verdad, con para qué sirve y qué cambiarle para que te sirva a vos.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="num">03</span>
-        <h3>Acceso a Lumina</h3>
-        <p>Mi herramienta. Cuando abra, entrás de las primeras — y para entonces ya vas a saber usarla.</p>
-      </div>
+    <div class="planes">
+      <div class="plan"><p class="eyebrow">Starter</p><p class="precio">US$ 12 <small>/ mes</small></p><p class="incluye"><b>50 creaciones por mes</b><br>≈ 50 fotos o 12 videos de 5 s<br>Para publicar todas las semanas.</p></div>
+      <div class="plan destacado"><p class="eyebrow">Pro · el más elegido</p><p class="precio">US$ 29 <small>/ mes</small></p><p class="incluye"><b>130 creaciones por mes</b><br>≈ 130 fotos o 32 videos de 5 s<br>Para publicar todos los días.</p></div>
+      <div class="plan"><p class="eyebrow">Studio</p><p class="precio">US$ 59 <small>/ mes</small></p><p class="incluye"><b>280 creaciones por mes</b><br>≈ 280 fotos o 70 videos de 5 s<br>Para negocios y agencias con clientes.</p></div>
     </div>
+    <p class="nota-precio"><b>Prueba gratis:</b> tu primer video de 5 segundos (o 4 fotos), con la marca de agua de Lumina y sin tarjeta. Se paga con tarjeta o PayPal.</p>
   </div>
 </section>
 
@@ -418,86 +398,38 @@
     <div class="encabezado">
       <p class="eyebrow">Cómo funciona</p>
       <h2>Tres pasos, en este orden</h2>
-      <p class="bajada">El orden importa más que las herramientas. Casi todo el tiempo que perdí fue por hacer el paso 3 antes del 2.</p>
+      <p class="bajada">El orden importa más que las herramientas. Lumina te lleva por él.</p>
     </div>
     <ol class="pasos">
-      <li>
-        <span class="cifra" aria-hidden="true">01</span>
-        <div><h3>Abrís tu cuenta</h3>
-        <p>Con tu propia cuenta y tus propios créditos. Nada pasa por mí: lo que creás es tuyo, y no dependés de nadie para seguir.</p></div>
-      </li>
-      <li>
-        <span class="cifra" aria-hidden="true">02</span>
-        <div><h3>Entrenás tu personaje</h3>
-        <p>Tu cara, o el personaje que quieras. <strong>Este es el paso que casi todo el mundo se saltea</strong>, y es el que hace que los cuatro videos de arriba sean la misma persona y no cuatro parecidas.</p></div>
-      </li>
-      <li>
-        <span class="cifra" aria-hidden="true">03</span>
-        <div><h3>Producís</h3>
-        <p>Con lo anterior hecho, generar deja de ser tirar monedas. Sabés qué pedir, cuánto va a costar y qué vas a recibir.</p></div>
-      </li>
+      <li><span class="cifra" aria-hidden="true">01</span><div><h3>Subís tus fotos</h3><p>De 3 a 5 fotos tuyas (o de tu personaje). Con eso Lumina arma tu ficha: tu cara, tu pelo, tu ropa fija.</p></div></li>
+      <li><span class="cifra" aria-hidden="true">02</span><div><h3>Creás</h3><p>Elegís una plantilla o escribís tu idea. Ves el costo, confirmás, y en un par de minutos lo tenés.</p></div></li>
+      <li><span class="cifra" aria-hidden="true">03</span><div><h3>Editás y publicás</h3><p>Subtítulos, cortes y títulos adentro de Lumina. Descargás y subís a Reels, TikTok o YouTube.</p></div></li>
     </ol>
   </div>
 </section>
 
-<!-- ================= LUMINA ================= -->
+<!-- ================= QUIÉN SOY ================= -->
 <section class="banda alterna">
   <div class="interior">
-    <div class="lumina-caja">
-      <svg viewBox="0 0 220 220" role="img" aria-label="Lumina">
-        <defs><clipPath id="ar2"><circle cx="110" cy="110" r="95"/></clipPath></defs>
-        <g transform="translate(110 110)" fill="none" stroke="#D7FF3F" stroke-width="6" opacity=".35"><circle r="99"/></g>
-        <g clip-path="url(#ar2)"><g transform="translate(110 110)" fill="#D7FF3F">
-          <g transform="rotate(0)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-          <g transform="rotate(60)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-          <g transform="rotate(120)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-          <g transform="rotate(180)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-          <g transform="rotate(240)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-          <g transform="rotate(300)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-        </g></g>
-      </svg>
-      <div>
-        <p class="eyebrow">La herramienta</p>
-        <h3 style="margin-top:10px">La armé porque no existía</h3>
-        <p>Lumina junta en una sola pantalla lo que yo hacía en cuatro: generar video, convertir una foto en movimiento, transferir el movimiento de un video a una imagen, y crear imágenes.</p>
-        <p><b>Te lo digo derecho:</b> Lumina corre sobre una herramienta que ya existe, y cada persona entra con su cuenta y gasta sus propios créditos. <b>No es más barata. Es más fácil.</b> Prometerte un precio que no existe sería la forma más rápida de que dejes de creerme.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PARA QUIÉN ================= -->
-<section class="banda">
-  <div class="interior">
     <div class="encabezado">
-      <p class="eyebrow">Antes de que dejes tu email</p>
-      <h2>Para quién es, y para quién no</h2>
+      <p class="eyebrow">Quién está detrás</p>
+      <h2>No soy una gurú. Soy la que se tropezó con todas.</h2>
     </div>
-    <div class="dos">
-      <div class="columna">
-        <h3>Entrá si</h3>
-        <ul>
-          <li><span class="s">→</span><span>Querés aprender a hacerlo vos, con tus manos</span></li>
-          <li><span class="s">→</span><span>Tenés paciencia para probar y equivocarte</span></li>
-          <li><span class="s">→</span><span>Querés usar video para tu negocio o tus redes</span></li>
-          <li><span class="s">→</span><span>Preferís entender cómo funciona antes de pagar nada</span></li>
-        </ul>
+    <div class="historia">
+      <div class="retrato">
+        <img loading="lazy" src="luna/onair.jpg" width="900" height="1120" alt="Luna sentada en un estudio de podcast, traje burdeos y anteojos, con un cartel de neón que dice ON AIR detrás.">
       </div>
-      <div class="columna no">
-        <h3>No entres si</h3>
-        <ul>
-          <li><span class="s">×</span><span>Buscás un botón que lo haga todo solo</span></li>
-          <li><span class="s">×</span><span>Querés resultados sin tocar una herramienta</span></li>
-          <li><span class="s">×</span><span>Esperás que sea gratis de punta a punta — los créditos de tu cuenta los pagás vos</span></li>
-        </ul>
+      <div>
+        <p>Soy <strong>Nidia</strong>. Tengo una agencia de marketing digital en el área de Washington DC, y hace un tiempo me obsesioné con el video hecho con inteligencia artificial.</p>
+        <p>Me llevó meses. Quemé créditos generando clips con duraciones que no entendía. Generé imágenes de mi propio personaje que <strong>no se parecían a mi personaje</strong>. Probé herramientas que prometían todo y hacían la mitad.</p>
+        <p>Hasta que entendí el orden correcto de las cosas. Y cuando lo entendí, <strong>armé Lumina</strong> para no volver a pasar por eso — y para que vos no tengas que pasar.</p>
       </div>
     </div>
-    <p class="puente">¿Necesitás el video hecho, no aprender a hacerlo? <b>Eso también lo hago, pero es otra cosa y se cobra.</b> Entrá igual a la comunidad y escribime ahí: te digo en dos líneas si te conviene aprenderlo o encargarlo.</p>
   </div>
 </section>
 
 <!-- ================= FAQ ================= -->
-<section class="banda alterna">
+<section class="banda">
   <div class="interior">
     <div class="encabezado">
       <p class="eyebrow">Preguntas</p>
@@ -505,45 +437,45 @@
     </div>
     <div class="faq">
       <details open>
-        <summary>¿Es realmente gratis?</summary>
-        <div class="respuesta">La comunidad sí, y no hay letra chica. Lo que sí se paga son <b>los créditos de tu propia cuenta</b> en la herramienta de generación — esa cuenta es tuya y el dinero no pasa por mí. Te voy a enseñar a gastar lo menos posible, que es justo lo que yo no supe hacer.</div>
+        <summary>¿Qué es una creación?</summary>
+        <div class="respuesta">Una foto. Un video de 5 segundos usa 4, uno de 8 usa 7. Antes de confirmar, Lumina te muestra cuántas usa lo que estás por crear. Si algo falla, no se descuenta.</div>
+      </details>
+      <details>
+        <summary>¿De verdad va a tener mi cara?</summary>
+        <div class="respuesta">Ese es el centro de Lumina: entrenás tu personaje una vez con tus fotos, y cada creación parte de esa ficha. Las expresiones son naturales por defecto: nada de caras exageradas.</div>
       </details>
       <details>
         <summary>¿Necesito saber algo de antes?</summary>
-        <div class="respuesta">No. Yo empecé sin saber nada y me llevó meses justamente porque nadie me explicó el orden. Si sabés usar Instagram, podés con esto.</div>
+        <div class="respuesta">No. Si sabés usar Instagram, podés con esto. Las plantillas ya traen todo lo que yo aprendí a los golpes.</div>
       </details>
       <details>
-        <summary>¿Cuánto tiempo me va a llevar?</summary>
-        <div class="respuesta">No te voy a dar un número inventado. Depende de cuánto pruebes. Lo que sí te puedo decir es <b>qué pasos te podés saltear</b>, que es donde se me fue a mí la mayor parte del tiempo.</div>
+        <summary>¿Qué incluye la prueba gratis?</summary>
+        <div class="respuesta">Tu primer video de 5 segundos (o 4 fotos) con la marca de agua de Lumina. Sin tarjeta. Si invitás a alguien, las dos ganan creaciones de regalo.</div>
       </details>
       <details>
-        <summary>¿Qué es Lumina exactamente?</summary>
-        <div class="respuesta">La herramienta que armé para mí: video, foto a video, transferencia de movimiento e imágenes, todo en una pantalla. Funciona, la uso todos los días, y quiero que la comunidad sea la primera en entrar.</div>
+        <summary>¿Puedo cancelar?</summary>
+        <div class="respuesta">Sí, cuando quieras, desde la app. Seguís con todo hasta que termine el mes ya pagado.</div>
       </details>
       <details>
         <summary>¿Me vas a llenar de correos?</summary>
-        <div class="respuesta">No. Escribo cuando hay algo que vale la pena — una herramienta que cambió, algo que descubrí, o cuando abra Lumina. El día a día pasa adentro del grupo, no en tu bandeja.</div>
-      </details>
-      <details>
-        <summary>¿Puedo irme cuando quiera?</summary>
-        <div class="respuesta">Salís del grupo y te borrás de la lista con un click al pie de cualquier correo. Sin preguntas y sin que te persiga nadie.</div>
+        <div class="respuesta">No. Te escribo el día que abre, y después solo cuando haya algo que valga la pena. Te borrás con un click al pie de cualquier correo.</div>
       </details>
     </div>
   </div>
 </section>
 
 <!-- ================= CIERRE ================= -->
-<section class="banda cierre">
+<section class="banda cierre alterna">
   <div class="interior">
     <p class="eyebrow">Último paso</p>
-    <h2 style="margin-top:14px">El camino corto empieza acá</h2>
-    <p class="bajada">Dejás tu nombre y tu email. El primer correo del reto te llega en menos de un minuto.</p>
+    <h2 style="margin-top:14px">Tu primer video, gratis</h2>
+    <p class="bajada">Dejás tu nombre y tu email. Te aviso el día que abre, y entrás de las primeras.</p>
     <form class="formulario" id="form-cierre" novalidate>
       <div class="fila">
         <input class="campo" id="c-nombre" type="text" name="FNAME" required placeholder="Tu nombre" autocomplete="given-name">
         <input class="campo" id="c-correo" type="email" name="EMAIL" required placeholder="Tu email" autocomplete="email">
       </div>
-      <button class="boton" type="submit">Empezar el reto</button>
+      <button class="boton" type="submit">Quiero mi primer video gratis</button>
       <label class="consentimiento" for="c-ok"><input type="checkbox" id="c-ok" required><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span></label>
       <p class="debajo">Gratis. Sin tarjeta. Te borrás con un click cuando quieras.</p>
     </form>
@@ -613,11 +545,11 @@
         }
 
         window[fn] = function(r){
-          if (r && r.result === 'success') { terminar('<b>¡Listo! Revisá tu correo</b> — el día 1 llega en unos minutos. Si no lo ves, fijate en Promociones o Spam.', true); }
+          if (r && r.result === 'success') { terminar('<b>¡Listo!</b> Te aviso el día que abre Lumina. Si no ves el correo de confirmación, fijate en Promociones o Spam.', true); }
           else {
             var m = (r && r.msg) ? String(r.msg) : '';
             if (m.toLowerCase().indexOf('already') !== -1 || m.indexOf('ya está') !== -1) {
-              terminar('<b>Ese correo ya estaba anotado.</b> Ya vas a recibir el reto, no hace falta nada más.', true);
+              terminar('<b>Ese correo ya estaba anotado.</b> Te aviso cuando abra, no hace falta nada más.', true);
             } else {
               terminar('No se pudo anotar: ' + m.replace(/<[^>]*>/g, ''), false);
             }
@@ -655,9 +587,9 @@
       var boton = f.querySelector('button[type="submit"]');
       var pie = f.querySelector('.debajo');
 
-      var asunto = encodeURIComponent('Quiero hacer el reto Clona tu Marca');
+      var asunto = encodeURIComponent('Quiero mi primer video gratis en Lumina');
       var cuerpo = encodeURIComponent(
-        'Hola Nidia, quiero hacer el reto Clona tu Marca.\n\n' +
+        'Hola Nidia, quiero entrar a Lumina cuando abra.\n\n' +
         'Nombre: ' + nombre + '\n' +
         'Email: ' + correo + '\n' +
         'Acepta la politica de privacidad: si\n'
