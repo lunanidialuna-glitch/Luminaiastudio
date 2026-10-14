@@ -161,6 +161,7 @@
 
   /* ---------- galería ---------- */
   .galeria{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.6vw,16px)}
+  @media (min-width:1000px){.galeria{grid-template-columns:repeat(5,minmax(0,1fr))}}
   @media (max-width:700px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .galeria figure{margin:0;position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--linea2);background:var(--panel)}
   .galeria img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
@@ -355,6 +356,8 @@
       <figure><span class="marcavideo">video</span><video data-audio poster="video/video2.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video2.mp4?v=4" type="video/mp4"><source src="video/video2.webm?v=4" type="video/webm"></video><figcaption>Personaje 2</figcaption></figure>
       <figure><span class="marcavideo">video</span><video data-audio poster="video/video3.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video3.mp4?v=4" type="video/mp4"><source src="video/video3.webm?v=4" type="video/webm"></video><figcaption>Personaje 3</figcaption></figure>
       <figure><span class="marcavideo">video</span><video data-audio poster="video/video4.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video4.mp4?v=4" type="video/mp4"><source src="video/video4.webm?v=4" type="video/webm"></video><figcaption>Personaje 4</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/video5.jpg?v=5" muted loop playsinline preload="metadata" aria-label="Luna con chaqueta rosa, varias Lunas con la misma cara."><source src="video/video5.mp4?v=5" type="video/mp4"><source src="video/video5.webm?v=5" type="video/webm"></video><figcaption>Personaje 5</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/video6.jpg?v=5" style="object-position:62% 50%" muted loop playsinline preload="metadata" aria-label="Luna corriendo por un salón de baile."><source src="video/video6.mp4?v=5" type="video/mp4"><source src="video/video6.webm?v=5" type="video/webm"></video><figcaption>Personaje 6</figcaption></figure>
     </div>
     <p class="pie-galeria"><b>La misma cara en los cuatro.</b> Eso no sale solo: sale de entrenar tu personaje una vez, con tus fotos. Lulumina lo hace en el primer paso y después no lo tocas más.</p>
   </div>
