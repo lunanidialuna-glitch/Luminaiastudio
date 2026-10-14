@@ -3,26 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Bootcamp de 30 días de Lumina IA Studio: salís con un personaje propio que es siempre la misma persona.">
-<link rel="canonical" href="https://luminaiastudio.com/bootcamp/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bootcamp · 30 días · Lumina IA Studio">
-<meta property="og:description" content="Al día 30 salís con un personaje que es siempre la misma persona.">
-<meta property="og:url" content="https://luminaiastudio.com/bootcamp/">
-<meta property="og:image" content="https://luminaiastudio.com/video/calle.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 220 220&apos;%3E%3Crect width=&apos;220&apos; height=&apos;220&apos; fill=&apos;%230A0A0C&apos;/%3E%3Ccircle cx=&apos;110&apos; cy=&apos;110&apos; r=&apos;70&apos; fill=&apos;none&apos; stroke=&apos;%23D7FF3F&apos; stroke-width=&apos;16&apos;/%3E%3C/svg%3E">
-<title>Bootcamp · Lumina IA Studio</title>
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="El Bootcamp de Lumina IA Studio llegará más adelante. Anótate en la lista de espera.">
+<link rel="canonical" href="https://luminaiastudio.com/">
+<title>Bootcamp · Próximamente · Lumina IA Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-<style>
-  *,*::before,*::after{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{margin:0}
-  img{max-width:100%;display:block}
-  [hidden]{display:none!important}
-</style>
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}[hidden]{display:none!important}</style>
 <style>
   :root{
     --fondo:#0A0A0C; --banda:#0F0F13; --panel:#141419; --linea:#26262C; --linea2:#33333B;
@@ -58,6 +46,8 @@
   .hero .interior{position:relative}
   .marca{display:flex;align-items:center;gap:12px;margin-bottom:clamp(28px,5vw,48px)}
   .marca svg{width:40px;height:40px;flex:none;display:block}
+  .marca .apellido{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--gris);text-transform:none;white-space:nowrap}
+  @media (max-width:420px){.marca .apellido{display:none}}
   .marca .nombre{font-family:var(--display);font-weight:700;font-size:26px;color:var(--verde);line-height:1;letter-spacing:-.01em}
   .idiomas{margin-inline-start:auto;display:flex;align-items:center;gap:2px;border:1px solid var(--linea2);border-radius:999px;padding:3px}
   .idiomas a{
@@ -193,11 +183,6 @@
   .alterna .tarjeta{background:var(--banda)}
   .tarjeta .num{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--verde)}
   .tarjeta p{font-size:15.5px;color:var(--gris);line-height:1.55}
-  /* Los números de «lo que me costó» son el argumento entero de esa sección:
-     con el gris de .tarjeta p quedaban del mismo peso que la explicación. */
-  .tarjeta .cifra{font-family:var(--display);font-weight:600;color:var(--verde);
-    font-size:clamp(38px,5.2vw,52px);line-height:1;letter-spacing:-.02em;margin-bottom:2px}
-  .afiliado a{color:var(--verde)}
 
   /* ---------- pasos ---------- */
   .pasos{list-style:none;padding:0;margin:0;max-width:760px}
@@ -255,518 +240,36 @@
   footer a{color:var(--gris2);text-decoration:none;transition:color .18s}
   footer a:hover{color:var(--verde)}
   footer .interior{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  /* ---------- precios ---------- */
+  .planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .plan{background:var(--panel);border:1px solid var(--linea2);border-radius:14px;padding:clamp(22px,3vw,30px);display:flex;flex-direction:column;gap:10px}
+  .plan.destacado{border-color:var(--verde-bor);background:linear-gradient(180deg,var(--verde-op),transparent 60%),var(--panel)}
+  .plan .precio{font-family:var(--display);font-size:clamp(30px,4.5vw,40px);line-height:1}
+  .plan .precio small{font-family:var(--cuerpo);font-size:15px;color:var(--gris)}
+  .plan .incluye{color:var(--gris);font-size:15px;line-height:1.5}
+  .plan .incluye b{color:var(--texto)}
+  .nota-precio{margin-top:18px;color:var(--gris);font-size:15px;max-width:60ch;line-height:1.6}
+  .nota-precio b{color:var(--texto)}
+  .cta-linea{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
+  .cta-linea .boton{width:auto;padding-inline:26px}
+  .cta-linea .secundario{color:var(--gris);font-size:14px}
 </style>
 <style>
-  /* ---------- propio de la página del bootcamp ---------- */
-  .hueco{
-    background:rgba(240,180,41,.14);color:#F0B429;border:1px dashed rgba(240,180,41,.5);
-    border-radius:5px;padding:1px 6px;font-family:var(--mono);font-size:.82em;letter-spacing:.06em;
-    white-space:nowrap;
-  }
-  /* Casi todos los huecos son etiquetas cortas y van en una línea. El del aviso
-     de afiliado es una frase larga: con nowrap se sale de la pantalla en el teléfono. */
-  .afiliado .hueco{white-space:normal}
-  a.boton{text-decoration:none;display:flex;align-items:center;justify-content:center}
-  a.boton.pendiente{
-    background:transparent;color:#F0B429;border:1px dashed rgba(240,180,41,.55);cursor:not-allowed;
-  }
-  a.boton.pendiente:hover{filter:none;translate:0}
-  .hero .boton{max-width:430px}
-  .idiomas a{color:var(--gris)}
-
-  .semanas{display:flex;flex-direction:column;gap:14px}
-  .semana{border:1px solid var(--linea2);border-radius:14px;background:var(--panel);padding:clamp(20px,3vw,26px)}
-  .alterna .semana{background:var(--fondo)}
-  .semana > header{display:flex;flex-direction:column;gap:8px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--linea)}
-  .chapa{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--verde)}
-  .semana h3{font-family:var(--display);font-size:clamp(21px,3.4vw,26px);font-weight:600;letter-spacing:-.015em}
-  .semana .que{font-size:14.5px;color:var(--gris);line-height:1.5;max-width:58ch}
-  .semana ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
-  .semana ul li{display:flex;gap:11px;font-size:15px;line-height:1.55;color:var(--gris)}
-  .semana ul li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--verde);opacity:.55;flex:none;margin-top:9px}
-  .semana ul li b{color:var(--texto)}
-  .entrega{margin-top:17px;padding-top:15px;border-top:1px solid var(--linea);font-size:14.5px;color:var(--gris)}
-
-  .dos{display:grid;grid-template-columns:minmax(0,1fr);gap:26px}
-  @media (min-width:760px){.dos{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:38px}}
-  .listado{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px}
-  .listado li{display:flex;gap:11px;font-size:15px;line-height:1.55;color:var(--gris)}
-  .listado li::before{flex:none;font-family:var(--mono);font-size:13px;padding-top:2px}
-  .listado.si li::before{content:"+";color:var(--verde)}
-  .listado.no li::before{content:"–";color:var(--gris2)}
-  .listado li b{color:var(--texto)}
-  /* El <li> es flex para separar el marcador del texto. Sin este envoltorio,
-     cada <a>, <b> y <span> de adentro se vuelve otro item flex y el renglón se parte. */
-  .listado li>span{flex:1;min-width:0}
-
-  .precio-caja{
-    border:1px solid var(--verde-bor);border-radius:18px;background:var(--panel);
-    padding:clamp(26px,4vw,38px);max-width:520px;margin-inline:auto;text-align:center;
-    display:flex;flex-direction:column;gap:11px;
-  }
-  .precio-caja .aviso{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;align-self:center;
-    background:var(--verde-op);border:1px solid var(--verde-bor);border-radius:999px;padding:8px 15px;
-    font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--verde);
-  }
-  .precio-caja .aviso .pt{width:6px;height:6px;border-radius:50%;background:var(--verde);flex:none}
-  .precio-caja .etiqueta{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gris2);margin-top:7px}
-  .precio-caja .monto{font-family:var(--display);font-size:clamp(40px,8vw,60px);line-height:1;font-weight:600}
-  .precio-caja .letra{font-size:14px;color:var(--gris);line-height:1.5}
-  .precio-caja .fijo{font-size:14px;color:var(--texto);line-height:1.5;border-top:1px solid var(--linea);padding-top:14px;margin-top:5px}
-  .precio-caja .boton{margin-top:9px}
-  .precio-caja .debajo{text-align:center}
-  /* Dos precios, uno al lado del otro. En el teléfono van apilados, y el
-     bootcamp queda primero: es el que compra la mayoría. */
-  .dos-precios{display:grid;gap:18px;max-width:1080px;margin-inline:auto;align-items:start}
-  @media (min-width:860px){.dos-precios{grid-template-columns:1fr 1fr}}
-  .dos-precios .precio-caja{max-width:none;margin-inline:0;height:100%}
-  .precio-caja.fundadora{border-color:var(--linea2);background:var(--banda)}
-  .precio-caja.fundadora .aviso{color:var(--gris);background:transparent;border-color:var(--linea2)}
-  .precio-caja.fundadora .aviso .pt{background:var(--gris)}
-  .precio-caja.fundadora .boton{background:transparent;color:var(--verde);border:1px solid var(--verde-bor)}
-  .precio-caja.fundadora .boton:hover{background:var(--verde);color:#0A0A0C}
-  .incluye{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:9px;text-align:left}
-  .incluye li{display:flex;gap:10px;font-size:14.5px;line-height:1.5;color:var(--texto)}
-  .incluye li>span{flex:1}   /* sin esto, un <b> adentro del li se vuelve otro item y parte la línea */
-  .incluye li::before{content:"+";color:var(--verde);font-family:var(--mono);font-size:13px;flex:none;padding-top:1px}
-  .cuenta{font-size:14px;color:var(--gris);line-height:1.6;border-top:1px solid var(--linea);padding-top:14px;margin-top:5px}
-  .cuenta b{color:var(--texto)}
-  .nota-precio{max-width:520px;margin:18px auto 0;text-align:center;font-size:13.5px;color:var(--gris2);line-height:1.55}
+  .proximamente{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:40px var(--gutter);text-align:center}
+  .proximamente .caja{max-width:560px}
+  .proximamente h1{margin:14px 0 18px}
+  .proximamente p{color:var(--gris);margin-bottom:26px}
+  .proximamente .boton{display:inline-block;width:auto;padding-inline:28px;text-decoration:none}
 </style>
 </head>
 <body>
-
-<!-- ================= HERO ================= -->
-<header class="hero banda">
-  <div class="interior">
-    <div class="marca">
-      <svg viewBox="0 0 220 220" role="img" aria-label="Lumina">
-        <defs><clipPath id="ar1"><circle cx="110" cy="110" r="95"/></clipPath></defs>
-        <g transform="translate(110 110)" fill="none" stroke="#D7FF3F" stroke-width="6" opacity=".35"><circle r="99"/></g>
-        <g clip-path="url(#ar1)"><g transform="translate(110 110)" fill="#D7FF3F">
-          <g transform="rotate(0)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-          <g transform="rotate(60)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-          <g transform="rotate(120)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-          <g transform="rotate(180)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-          <g transform="rotate(240)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-          <g transform="rotate(300)"><g class="hoja"><rect x="0" y="-200" width="400" height="400"/></g></g>
-        </g></g>
-      </svg>
-      <span class="nombre">Lumina</span>
-      <nav class="idiomas" aria-label="Volver"><a href="../">← Inicio</a></nav>
+  <main class="proximamente">
+    <div class="caja">
+      <p class="eyebrow">Bootcamp · Próximamente</p>
+      <h1>Esto llegará más adelante</h1>
+      <p>Primero abre Lumina. El Bootcamp es el siguiente paso, y quienes estén en la lista de espera serán los primeros en enterarse.</p>
+      <a class="boton" href="/">Anótate en la lista de espera</a>
     </div>
-
-    <div class="hero-grid">
-      <div>
-        <p class="eyebrow">Bootcamp · 30 días · 15 lugares</p>
-        <h1>Al día 30 salís con un personaje que es siempre la misma persona</h1>
-        <p class="entrada">No un prompt mejor. <b>Un personaje terminado</b> — con su ficha, su cara, su voz y su ritmo — que podés usar cien veces y nunca se te va a deformar.</p>
-        <a class="boton" href="#precio">Quiero mi personaje</a>
-        <p class="debajo">Empieza el lunes 12 de octubre. Cupos limitados de verdad: son 15 y los reviso uno por uno.</p>
-      </div>
-      <div class="hero-foto">
-        <video data-audio poster="../video/luna-misma-cara-poster.jpg" muted loop playsinline preload="auto" aria-label="Cinco escenas distintas de Luna con la misma cara en todas."><source src="../video/luna-misma-cara.mp4" type="video/mp4"><source src="../video/luna-misma-cara.webm" type="video/webm"></video>
-        <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · 5 escenas · 1 sola cara</span></div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- ================= LO QUE TE PASÓ ================= -->
-<section class="banda">
-  <div class="interior">
-    <div class="encabezado">
-      <p class="eyebrow">Si hiciste el reto de cinco días</p>
-      <h2>Ya sabés cuál es el problema</h2>
-      <p class="bajada">Pusiste los cuatro videos uno al lado del otro y eran cuatro mujeres distintas. Parecidas, pero distintas. Y vos no cambiaste el personaje ni una sola vez — cambiaste la escena.</p>
-    </div>
-    <ul class="dolores">
-      <li><span class="marca-x">01</span><span>Cada generación te devuelve una cara un poco distinta, y no entendés qué estás haciendo mal.</span></li>
-      <li><span class="marca-x">02</span><span>Encontrás un resultado que te encanta, querés otro igual en otra escena, y no lo podés repetir.</span></li>
-      <li><span class="marca-x">03</span><span>Quemás créditos probando variantes hasta que alguna «se le parece bastante».</span></li>
-      <li><span class="marca-x">04</span><span>No podés construir una marca con una cara que cambia. Nadie te reconoce.</span></li>
-    </ul>
-    <p class="remate">El prompt no es el problema. <span>Lo que falta es algo que se arma una sola vez, antes de escribir ningún prompt</span> — y que después se arrastra sin cambiar entre todas las generaciones.</p>
-  </div>
-</section>
-
-<!-- ================= LO QUE TE LLEVÁS ================= -->
-<section class="banda alterna">
-  <div class="interior">
-    <div class="encabezado">
-      <p class="eyebrow">Lo que tenés el día 30</p>
-      <h2>Cuatro cosas, y las cuatro son tuyas</h2>
-      <p class="bajada">Esto no es un curso que mirás. Es un mes en el que construís algo y salís con eso construido.</p>
-    </div>
-    <div class="rejilla">
-      <div class="tarjeta">
-        <span class="num">01</span>
-        <h3>Tu ficha de personaje</h3>
-        <p>El documento con las 14 ranuras llenas. Es el archivo del que sale todo lo demás, y es lo que hace que la cara no se mueva.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="num">02</span>
-        <h3>El mismo personaje en cinco escenas</h3>
-        <p>Hecho por vos, con la misma cara en las cinco. Es la prueba de que el sistema te funciona, no de que a mí me funciona.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="num">03</span>
-        <h3>Tu personaje hablando</h3>
-        <p>Con el idioma y el ritmo declarados, y la cuenta de palabras hecha antes de generar. Que es la diferencia entre «video con IA» y «persona».</p>
-      </div>
-      <div class="tarjeta">
-        <span class="num">04</span>
-        <h3>Un video terminado y publicado</h3>
-        <p>Armado de varios pedazos, con su corte y su música. Porque una generación es un pedazo, no un video — y eso casi nadie lo enseña.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= TEMARIO ================= -->
-<section class="banda">
-  <div class="interior">
-    <div class="encabezado">
-      <p class="eyebrow">El temario completo, a la vista</p>
-      <h2>Cuatro semanas, en este orden</h2>
-      <p class="bajada">Te dejo el programa entero antes de que pagues, para que sepas exactamente qué comprás. El orden no es decorativo: cada semana usa lo de la anterior.</p>
-    </div>
-
-    <div class="semanas">
-
-      <article class="semana">
-        <header>
-          <span class="chapa">Semana 1</span>
-          <h3>La ficha de personaje</h3>
-          <p class="que">El corazón de todo. Si esta semana sale bien, el resto es consecuencia.</p>
-        </header>
-        <ul>
-          <li>Las cuatro reglas que no se negocian — empezando por la que más caras arruina: <b>realista no quiere decir perfecto</b>.</li>
-          <li>Las 14 ranuras, y por qué el orden importa: los modelos le dan más peso a lo que va primero.</li>
-          <li>El módulo de realismo, textual — el bloque que reemplaza la piel de plástico por poros, asimetría y maquillaje disparejo.</li>
-          <li>La cola negativa: qué hay que prohibirle al modelo por escrito.</li>
-          <li>Los cuatro tipos de ficha y cuándo sirve cada uno.</li>
-        </ul>
-        <p class="entrega"><b>Entregás:</b> tu ficha completa, con las 14 ranuras llenas.</p>
-      </article>
-
-      <article class="semana">
-        <header>
-          <span class="chapa">Semana 2</span>
-          <h3>Que no se deforme</h3>
-          <p class="que">Tener la ficha no alcanza. Hay que saber arrastrarla sin romperla.</p>
-        </header>
-        <ul>
-          <li>Foto de referencia o Soul entrenado: no son lo mismo y no sirven para lo mismo. Cuándo va cada uno.</li>
-          <li>La regla de arrastre: lo ya definido se repite <b>entero y textual</b>. Si no se repite, deriva sola.</li>
-          <li>Cambiar de escena sin perder la cara: qué se toca y qué no se toca nunca.</li>
-          <li>Qué modelo usar y cuándo. No es preferencia estética: es la decisión que más cambia el resultado.</li>
-          <li>Los errores que me costaron meses, uno por uno, para que no los repitas.</li>
-        </ul>
-        <p class="entrega"><b>Entregás:</b> tu personaje en cinco escenas distintas, con la misma cara.</p>
-      </article>
-
-      <article class="semana">
-        <header>
-          <span class="chapa">Semana 3</span>
-          <h3>Que hable como persona</h3>
-          <p class="que">Acá está el detalle que casi nadie menciona y que delata cualquier video.</p>
-        </header>
-        <ul>
-          <li>Por qué tu personaje habla apurado: cuánto texto entra en cuántos segundos, con la tabla.</li>
-          <li>Declarar el idioma y declarar el ritmo. Los dos, explícitos, siempre.</li>
-          <li>Una idea por clip — y qué hacer cuando no entra (cortar la frase, nunca alargar el clip).</li>
-          <li>La plantilla UGC de nueve ranuras, aplicada a tu tema y a tu cliente.</li>
-          <li>Cómo contar las palabras antes de generar, que es plata que no gastás.</li>
-        </ul>
-        <p class="entrega"><b>Entregás:</b> tu personaje hablando, con el ritmo bajo control.</p>
-      </article>
-
-      <article class="semana">
-        <header>
-          <span class="chapa">Semana 4</span>
-          <h3>Armar y publicar</h3>
-          <p class="que">Todo el mundo enseña a generar. Casi nadie enseña a armar — y sin armar no hay nada que publicar.</p>
-        </header>
-        <ul>
-          <li>Una generación es un pedazo, no un video. El video terminado se arma en el montaje.</li>
-          <li>El logo como tapa-costuras y la música como pegamento del audio.</li>
-          <li>Las cinco reglas de continuidad para que los pedazos parezcan una sola pieza.</li>
-          <li>Cortar en movimiento, no en quieto.</li>
-          <li>Matemática de créditos: cuánto cuesta cada cosa, y dónde se va la plata sin que te des cuenta.</li>
-        </ul>
-        <p class="entrega"><b>Entregás:</b> tu primer video terminado, armado de varios pedazos.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= INCLUYE ================= -->
-<section class="banda alterna">
-  <div class="interior">
-    <div class="encabezado">
-      <p class="eyebrow">Qué incluye</p>
-      <h2>Y qué no</h2>
-    </div>
-    <div class="dos">
-      <div class="columna">
-        <h3 style="color:var(--verde);margin-bottom:14px">Incluye</h3>
-        <ul class="listado si">
-          <li><span>Los 30 días de programa, con una entrega por semana.</span></li>
-          <li><span>Mis plantillas reales — la ficha, el módulo de realismo, la cola negativa y la plantilla UGC — para copiar y llenar.</span></li>
-          <li><span>Revisión de tu ficha de personaje. La miro yo y te digo qué está mal antes de que quemes créditos.</span></li>
-          <li><span>El grupo, para preguntar mientras lo hacés.</span></li>
-          <li><span>Las actualizaciones: cuando cambia algo de la herramienta, te llega.</span></li>
-        </ul>
-      </div>
-      <div class="columna">
-        <h3 style="color:var(--gris);margin-bottom:14px">No incluye</h3>
-        <ul class="listado no">
-          <li><span><b>Los créditos de generación.</b> Esa cuenta es tuya y el dinero no pasa por mí. Te enseño a gastar lo menos posible, que es justo lo que yo no supe hacer.</span></li>
-          <!-- El 31% va atado al link de afiliada: Higgsfield se lo comunico a Nidia por email
-               cuando la dieron de alta en el programa. Confirmado por ella el 21/09/2026.
-               Si cambian las condiciones del programa, esta linea miente: revisar.
-     La relacion comercial se declara con "mi link de afiliada" y nada mas: decision de
-     Nidia, 21/09/2026. Declarar el monto de la comision no lo exige ninguna norma. -->
-          <li class="afiliado"><span>Si todavía no tenés cuenta, podés abrirla por acá: <a href="https://higgsfield.ai?fpr=nidia-fa4411" target="_blank" rel="noopener sponsored">higgsfield.ai</a> (mi link de afiliada) — entrando por ahí te hacen un <b>31% de descuento</b>, y la ventana es corta: dura las <b>dos primeras horas</b>.</span></li>
-          <li><span>Que yo te haga los videos. Eso también lo hago, pero es otra cosa y se cobra aparte.</span></li>
-          <li><span>Promesas de views, de seguidores ni de clientes. No las puedo garantizar y no te las voy a vender.</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= QUIÉN ================= -->
-<section class="banda">
-  <div class="interior medio">
-    <p class="eyebrow">Quién te va a enseñar</p>
-    <h2 style="margin-top:14px">No soy una gurú. Soy la que se tropezó con todas.</h2>
-    <div class="historia" style="margin-top:22px">
-      <p>Soy Nidia. Tengo una agencia de marketing digital en el área de Washington DC, y hace un tiempo me obsesioné con el video hecho con IA.</p>
-      <p>Me llevó meses. Quemé créditos generando clips en duraciones que no entendía. Generé imágenes de mi propio personaje que <strong>no se parecían en nada a mi personaje</strong>. Probé herramientas que prometían todo y entregaban la mitad.</p>
-      <p>Armar un personaje me llevaba <strong>un día y medio</strong>, hasta que entendí que el problema no era escribir mejor: era llenar ranuras en un orden fijo.</p>
-      <p>Eso es lo que te voy a enseñar. No la parte linda — <strong>la parte del medio</strong>, la que va entre el tutorial de dos minutos y el resultado que te gustó.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PARA QUIÉN NO ================= -->
-<section class="banda alterna">
-  <div class="interior medio">
-    <p class="eyebrow">Antes de que pagues</p>
-    <h2 style="margin-top:14px">Para quién no es</h2>
-    <ul class="dolores" style="margin-top:20px">
-      <li><span class="marca-x">—</span><span>Si querés el video hecho y no aprender a hacerlo. Eso es otro servicio.</span></li>
-      <li><span class="marca-x">—</span><span>Si no vas a poder poner unas horas por semana. Hay una entrega por semana y sin hacerla no sirve.</span></li>
-      <li><span class="marca-x">—</span><span>Si no estás dispuesta a gastar nada en créditos. Son tuyos y hacen falta para practicar.</span></li>
-      <li><span class="marca-x">—</span><span>Si buscás un atajo para volverte viral. Esto es un sistema de producción, no una fórmula de alcance.</span></li>
-    </ul>
-    <p class="remate" style="margin-top:22px">Prefiero decírtelo ahora. <span>Un cupo que no aprovechás es un cupo que le sacaste a alguien.</span></p>
-  </div>
-</section>
-
-<!-- ================= LO QUE ME COSTO ================= -->
-<section class="banda alterna">
-  <div class="interior">
-    <div class="encabezado">
-      <p class="eyebrow">Lo que me costó a mí</p>
-      <h2>38 generaciones para cinco clips que sirvieran</h2>
-    </div>
-    <p class="bajada">No te lo cuento para darte lástima. Te lo cuento porque es exactamente lo que vas a
-    gastar vos si arrancás sola, y es el número que hace que este precio tenga sentido.</p>
-
-    <div class="rejilla">
-      <div class="tarjeta"><p class="cifra">$212</p><p class="txt">Pagados en créditos en mi cuenta actual. Me quedan 140 — el 8&nbsp;%.</p></div>
-      <div class="tarjeta"><p class="cifra">38</p><p class="txt">Generaciones. Las que terminaron en un video publicado se cuentan con los dedos de una mano.</p></div>
-      <div class="tarjeta"><p class="cifra">+$200</p><p class="txt">En una cuenta anterior, de la que perdí el acceso. Ese no lo puedo probar: es lo que me acuerdo.</p></div>
-      <div class="tarjeta"><p class="cifra">meses</p><p class="txt">Hasta entender que el problema no era escribir mejor, sino llenar ranuras en un orden fijo.</p></div>
-    </div>
-
-    <p class="remate">Cada clip que me quedó usable salió unos <span>$80</span>. Este bootcamp sale <span>$79</span>.</p>
-
-    <p class="bajada" style="margin-top:26px"><b>Y ojo, que esto no te ahorra los créditos.</b> Los vas a gastar
-    igual, son tuyos y esa cuenta no pasa por mí. Lo que te ahorra es gastarlos en <b>los mismos 38 intentos que
-    ya pagué yo</b>.</p>
-  </div>
-</section>
-
-<!-- ================= PRECIO ================= -->
-<section class="banda" id="precio">
-  <div class="interior">
-    <div class="encabezado">
-      <p class="eyebrow">Precio</p>
-      <h2>Lo que sale y hasta cuándo</h2>
-    </div>
-
-    <div class="dos-precios">
-    <div class="precio-caja">
-      <p class="aviso"><span class="pt" aria-hidden="true"></span> $79 hasta el <b>viernes 10 de octubre</b>. Después, $125.</p>
-      <p class="etiqueta">Bootcamp completo · 30 días</p>
-      <p class="monto">$79</p>
-      <p class="letra">Precio de lanzamiento, hasta el viernes 10 de octubre. Después pasa a $125.</p>
-      <p class="fijo">El precio que agarrás hoy es el que pagás. Si entrás ahora, no te sube nunca.</p>
-      <a class="boton" href="https://www.paypal.com/qrcodes/managed/e5e93413-ecb5-4eae-9466-f17bca61169d" target="_blank" rel="noopener" id="cta-pago">Pagar con PayPal</a>
-      <p class="debajo">Se abre PayPal en una pestaña nueva. Escribí el monto: $79. Cuando termines, mandame el comprobante y te confirmo el lugar.</p>
-      <p class="debajo">Empieza el lunes 12 de octubre · devolución de 7 días, sin preguntas</p>
-    </div>
-
-    <div class="precio-caja fundadora">
-      <p class="aviso"><span class="pt" aria-hidden="true"></span> 3 lugares</p>
-      <p class="etiqueta">Fundadora · para siempre</p>
-      <p class="monto">$197</p>
-      <p class="letra">Para la que no quiere hacer esto una vez, sino quedarse.</p>
-      <ul class="incluye">
-        <li><span>Todo el bootcamp de 30 días</span></li>
-        <li><span><b>Todas las ediciones que haga de acá en adelante</b>, sin volver a pagar</span></li>
-        <li><span>El material actualizado siempre — cuando cambia la herramienta, te llega</span></li>
-      </ul>
-      <p class="cuenta">Dos ediciones sueltas te salen <b>$204</b> ($79 ahora + $125 la próxima).
-      Esta sale <b>$197</b> y te da todas.</p>
-      <a class="boton" href="https://www.paypal.com/qrcodes/managed/e5e93413-ecb5-4eae-9466-f17bca61169d" target="_blank" rel="noopener">Quiero el lugar de Fundadora</a>
-      <p class="debajo">Escribí el monto: <b>$197</b>. Cuando termines, mandame el comprobante.</p>
-      <p class="debajo">Si algún día dejo de dar el bootcamp, el material te queda igual, para siempre.</p>
-    </div>
-    </div>
-
-    <p class="nota-precio">El bootcamp a $79 sube a $125 el viernes 10 a medianoche, y <b>no se reinicia</b>. No hay contador que vuelva a empezar cada vez que entrás a la página. Y son 15 lugares de verdad, porque reviso cada ficha a mano.</p>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section class="banda alterna">
-  <div class="interior medio">
-    <p class="eyebrow">Lo que me preguntan siempre</p>
-    <h2 style="margin-top:14px">Antes de decidir</h2>
-    <div class="faq" style="margin-top:24px">
-      <details>
-        <summary>¿Necesito saber editar o tener una cámara buena?</summary>
-        <div class="respuesta">Ninguna de las dos. No vas a grabar nada: el personaje se genera. Lo que sí vas a necesitar es una cuenta en la herramienta de generación y paciencia para la primera semana.</div>
-      </details>
-      <details>
-        <summary>¿Tengo que mostrar mi cara?</summary>
-        <div class="respuesta"><b>No, y esta es la diferencia grande.</b> Casi todo lo que hay afuera te enseña a clonar tu propia cara y tu propia voz. Acá construís un personaje que no sos vos. Luna no existe, y con ella se puede sostener una marca entera. Si no querés mostrarte, esto está hecho para vos.</div>
-      </details>
-      <details>
-        <summary>¿Cuánto voy a gastar en créditos?</summary>
-        <div class="respuesta">Depende de cuánto practiques, pero te doy el número real con el que yo trabajo: son <b>18 créditos por dólar</b>, y un video de 56 créditos me sale alrededor de <b>3,11 dólares</b>. En la semana 4 hacemos la cuenta completa para que sepas exactamente en qué se te va. Esa plata no pasa por mí: la cuenta es tuya.</div>
-      </details>
-      <details>
-        <summary>¿Cuánto tiempo por semana?</summary>
-        <div class="respuesta">Hay una entrega por semana. Calculá unas pocas horas, repartidas como te quede cómodo. No hay clases en vivo obligatorias a una hora fija que después no podés hacer.</div>
-      </details>
-      <details>
-        <summary>¿Sirve si ya hice el reto de cinco días?</summary>
-        <div class="respuesta">Sirve <b>sobre todo</b> si lo hiciste. El reto te da cuatro clips sueltos y te muestra el problema: cuatro caras distintas. El bootcamp es la solución de ese problema — el sistema que hace que las cuatro sean la misma.</div>
-      </details>
-      <details>
-        <summary>¿Y si no me sirve?</summary>
-        <div class="respuesta">Te devuelvo todo dentro de los <b>primeros 7 días</b>, sin preguntarte nada y sin que tengas que justificar nada. Para entonces ya viste la semana 1 entera — que es la ficha de personaje, el corazón de todo. Si con eso no te sirve, no te va a servir después, y prefiero devolverte la plata a que termines el mes enojada.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CIERRE ================= -->
-<section class="banda cierre">
-  <div class="interior">
-    <p class="eyebrow">Último paso</p>
-    <h2 style="margin-top:14px">Un mes, y salís con tu personaje</h2>
-    <p class="bajada">Son 15 lugares y empieza el lunes 12 de octubre.</p>
-    <a class="boton" href="#precio" style="max-width:430px;margin:26px auto 0">Quiero mi lugar</a>
-    <p class="debajo" style="text-align:center">El precio que agarrás hoy no te sube nunca.</p>
-  </div>
-</section>
-
-<footer class="banda">
-  <div class="interior">
-    <span>Lumina IA Studio</span>
-    <span class="enlaces"><a href="../privacidad.html">Privacidad</a><a href="../terminos.html">Términos</a><span>Washington DC · Maryland · Virginia</span></span>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var videos = Array.prototype.slice.call(document.querySelectorAll('.hero-foto video'));
-  if (!videos.length) return;
-  if (quieto) { videos.forEach(function(v){ v.setAttribute('controls',''); }); return; }
-  function arrancar(v){ var p = v.play(); if (p && p.catch) { p.catch(function(){ v.setAttribute('controls',''); }); } }
-  if (!('IntersectionObserver' in window)) { videos.forEach(arrancar); return; }
-  var obs = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting) { arrancar(e.target); } else { e.target.pause(); e.target.muted = true; } });
-  }, { threshold: 0.25 });
-  videos.forEach(function(v){ obs.observe(v); });
-})();
-
-(function(){
-  /* Sonido a pedido: los videos arrancan en silencio (los navegadores lo exigen
-     para reproducir solos) y se escuchan cuando la persona toca. Solo suena uno
-     por vez, y se silencia al salir de la pantalla. */
-  var videos = Array.prototype.slice.call(
-    document.querySelectorAll('.galeria video[data-audio], .hero-foto video[data-audio]'));
-  if (!videos.length) return;
-
-  var OFF = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l4 6m0-6l-4 6"/></svg>';
-  var ON  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 8.5a5 5 0 010 7M20 6a9 9 0 010 12"/></svg>';
-  var DECIR_ENCENDER = 'Escuchar el audio de este video';
-  var DECIR_APAGAR   = 'Silenciar este video';
-
-  function pintar(b, sonando){
-    b.setAttribute('aria-pressed', sonando ? 'true' : 'false');
-    b.setAttribute('aria-label', sonando ? DECIR_APAGAR : DECIR_ENCENDER);
-    b.innerHTML = (sonando ? ON : OFF) + '<span class="txt">sonido</span>';
-  }
-  function silenciarOtros(menos){
-    videos.forEach(function(v){
-      if (v === menos || v.muted) return;
-      v.muted = true;
-      if (v.__boton) pintar(v.__boton, false);
-    });
-  }
-
-  videos.forEach(function(v){
-    var caja = v.closest('figure') || v.closest('.hero-foto');
-    if (!caja) return;
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'sonido';
-    pintar(b, false);
-    caja.appendChild(b);
-    v.__boton = b;
-
-    function alternar(e){
-      if (e) { e.preventDefault(); e.stopPropagation(); }
-      if (v.muted) {
-        silenciarOtros(v);
-        v.muted = false;
-        var p = v.play(); if (p && p.catch) { p.catch(function(){}); }
-      } else {
-        v.muted = true;
-      }
-      pintar(b, !v.muted);
-    }
-    b.addEventListener('click', alternar);
-    v.addEventListener('click', alternar);
-    v.addEventListener('volumechange', function(){ pintar(b, !v.muted); });
-  });
-
-  /* al salir de la pantalla, se silencia solo */
-  if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if (!e.isIntersecting && !e.target.muted) {
-          e.target.muted = true;
-          if (e.target.__boton) pintar(e.target.__boton, false);
-        }
-      });
-    }, { threshold: 0.2 });
-    videos.forEach(function(v){ obs.observe(v); });
-  }
-})();
-</script>
-
+  </main>
 </body>
 </html>
