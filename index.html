@@ -92,9 +92,9 @@
     width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;
     border-radius:16px;border:1px solid var(--linea2);display:block;background:var(--panel);
   }
-  @media (max-width:800px){.hero-foto img,.hero-foto video{aspect-ratio:4/5;object-position:50% 20%}}
+  @media (max-width:800px){.hero-foto img,.hero-foto video{aspect-ratio:3/4;object-position:50% 100%}}
   .sello{
-    position:absolute;left:14px;bottom:14px;right:14px;
+    position:absolute;left:14px;top:14px;right:auto;max-width:calc(100% - 128px);
     display:flex;align-items:center;gap:9px;
     background:rgba(10,10,12,.82);backdrop-filter:blur(8px);
     border:1px solid var(--linea2);border-radius:10px;padding:9px 12px;
@@ -314,7 +314,7 @@
         </form>
       </div>
       <div class="hero-foto">
-        <video data-audio poster="video/hero-jardin.jpg?v=2" muted loop playsinline preload="auto" aria-label="Video de Luna entre flores, con la misma cara en cada plano."><source src="video/hero-jardin.mp4?v=2" type="video/mp4"></video>
+        <video data-audio poster="video/hero-lulumina.jpg?v=3" muted loop playsinline preload="auto" aria-label="Video de Luna con corona, con la misma cara en cada plano."><source src="video/hero-lulumina.mp4?v=3" type="video/mp4"><source src="video/hero-lulumina.webm?v=3" type="video/webm"></video>
         <div class="sello"><span class="pt" aria-hidden="true"></span><span>Luna · hecha con Lulumina</span></div>
       </div>
     </div>
