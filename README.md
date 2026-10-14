@@ -1,4 +1,4 @@
-# Lumina IA Studio
+# Lulumina AI
 
 Sitio de **luminaiastudio.com** — la página de inscripción a la comunidad.
 
