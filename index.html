@@ -174,6 +174,10 @@
     background:linear-gradient(transparent,rgba(10,10,12,.92));
   }
   .galeria video{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:var(--panel)}
+  /* video horizontal: ocupa dos columnas para no recortarlo */
+  .galeria figure.ancha{grid-column:span 2}
+  .galeria figure.ancha video{aspect-ratio:3/2}
+  @media (max-width:700px){.galeria figure.ancha{order:-1}}
   
   .marcavideo{
     position:absolute;top:10px;left:10px;z-index:2;
@@ -339,20 +343,19 @@
   <div class="interior">
     <div class="encabezado">
       <p class="eyebrow">Hecho con Lulumina</p>
-      <h2>La misma persona, en todos lados</h2>
-      <p class="bajada">Todas estas son la misma persona, en lugares distintos, con la misma cara y el mismo pelo. Esa constancia es lo difícil, y es lo que Lulumina hace por ti. <b>Toca cualquiera para escuchar el audio.</b></p>
+      <h2>Tú, en cualquier escena</h2>
+      <p class="bajada">En cada video, la misma persona de principio a fin: misma cara, mismo pelo, en lugares distintos. Esa constancia es lo difícil, y es lo que Lulumina hace por ti. <b>Toca cualquiera para escuchar el audio.</b></p>
     </div>
     <div class="galeria">
-      <figure><span class="marcavideo">video</span><video poster="video/looks.jpg?v=2" muted loop playsinline preload="metadata" aria-label="Tres Lunas idénticas caminando juntas por la calle con abrigos grises."><source src="video/looks.mp4?v=2" type="video/mp4"><source src="video/looks.webm?v=2" type="video/webm"></video><figcaption>Calle · tres Lunas</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/fiesta.jpg?v=8" muted loop playsinline preload="metadata" aria-label="Un hombre bailando sobre una plataforma en una fiesta nocturna con luces de guirnalda."><source src="video/fiesta.mp4?v=8" type="video/mp4"><source src="video/fiesta.webm?v=8" type="video/webm"></video><figcaption>Fiesta · todos bailando</figcaption></figure>
+      <figure class="ancha"><span class="marcavideo">video</span><video data-audio poster="video/moto.jpg?v=8" muted loop playsinline preload="metadata" aria-label="Dos hombres en un estudio con una pelota de básquet y después uno en una moto de agua de noche."><source src="video/moto.mp4?v=8" type="video/mp4"><source src="video/moto.webm?v=8" type="video/webm"></video><figcaption>Estudio y moto de agua</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/set.jpg?v=8" muted loop playsinline preload="metadata" aria-label="Un hombre haciéndose selfies en un set de filmación, en un cementerio con el equipo detrás."><source src="video/set.mp4?v=8" type="video/mp4"><source src="video/set.webm?v=8" type="video/webm"></video><figcaption>En el set</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/alas.jpg?v=8" muted loop playsinline preload="metadata" aria-label="Una mujer con alas grandes de plumas blancas y un body de plumas en un estudio claro."><source src="video/alas.mp4?v=8" type="video/mp4"><source src="video/alas.webm?v=8" type="video/webm"></video><figcaption>Alas de ángel</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/multitud.jpg?v=8" style="object-position:100% 50%" muted loop playsinline preload="metadata" aria-label="Una multitud de personas con camisas rosas y celestes que se inclinan a la vez."><source src="video/multitud.mp4?v=8" type="video/mp4"><source src="video/multitud.webm?v=8" type="video/webm"></video><figcaption>Multitud</figcaption></figure>
       <figure><span class="marcavideo">video</span><video data-audio poster="video/oficina.jpg?v=6" style="object-position:10% 50%" muted loop playsinline preload="metadata"><source src="video/oficina.mp4?v=6" type="video/mp4"><source src="video/oficina.webm?v=6" type="video/webm"></video><figcaption>Oficina</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/ventana.jpg?v=2" muted loop playsinline preload="metadata"><source src="video/ventana.mp4?v=2" type="video/mp4"><source src="video/ventana.webm?v=2" type="video/webm"></video><figcaption>Primer plano</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/bano.jpg?v=2" muted loop playsinline preload="metadata"><source src="video/bano.mp4?v=2" type="video/mp4"><source src="video/bano.webm?v=2" type="video/webm"></video><figcaption>A cámara</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/video1.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video1.mp4?v=7" type="video/mp4"><source src="video/video1.webm?v=7" type="video/webm"></video><figcaption>Personaje 1</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/video2.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video2.mp4?v=4" type="video/mp4"><source src="video/video2.webm?v=4" type="video/webm"></video><figcaption>Personaje 2</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/video3.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video3.mp4?v=7" type="video/mp4"><source src="video/video3.webm?v=7" type="video/webm"></video><figcaption>Personaje 3</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/video4.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video4.mp4?v=4" type="video/mp4"><source src="video/video4.webm?v=4" type="video/webm"></video><figcaption>Personaje 4</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/video5.jpg?v=5" muted loop playsinline preload="metadata" aria-label="Luna con chaqueta rosa, varias Lunas con la misma cara."><source src="video/video5.mp4?v=7" type="video/mp4"><source src="video/video5.webm?v=7" type="video/webm"></video><figcaption>Personaje 5</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/video6.jpg?v=5" style="object-position:62% 50%" muted loop playsinline preload="metadata" aria-label="Luna corriendo por un salón de baile."><source src="video/video6.mp4?v=7" type="video/mp4"><source src="video/video6.webm?v=7" type="video/webm"></video><figcaption>Personaje 6</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video poster="video/looks.jpg?v=2" muted loop playsinline preload="metadata" aria-label="Tres Lunas idénticas caminando juntas por la calle con abrigos grises."><source src="video/looks.mp4?v=2" type="video/mp4"><source src="video/looks.webm?v=2" type="video/webm"></video><figcaption>Calle · tres Lunas</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/video4.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video4.mp4?v=4" type="video/mp4"><source src="video/video4.webm?v=4" type="video/webm"></video><figcaption>En el metro</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/video6.jpg?v=5" style="object-position:62% 50%" muted loop playsinline preload="metadata" aria-label="Luna corriendo por un salón de baile."><source src="video/video6.mp4?v=7" type="video/mp4"><source src="video/video6.webm?v=7" type="video/webm"></video><figcaption>Salón de baile</figcaption></figure>
     </div>
     <p class="pie-galeria"><b>La misma cara en los cuatro.</b> Eso no sale solo: sale de entrenar tu personaje una vez, con tus fotos. Lulumina lo hace en el primer paso y después no lo tocas más.</p>
   </div>
