@@ -203,6 +203,10 @@
   .alterna .tarjeta{background:var(--banda)}
   .tarjeta .num{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--verde)}
   .tarjeta p{font-size:15.5px;color:var(--gris);line-height:1.55}
+  /* 6 tarjetas: 3 columnas x 2 filas en compu, 2 x 3 en tablet, 1 en celular (sin casillas vacías) */
+  .rejilla.seis{grid-template-columns:1fr}
+  @media (min-width:560px){.rejilla.seis{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:960px){.rejilla.seis{grid-template-columns:repeat(3,1fr)}}
 
   /* ---------- pasos ---------- */
   .pasos{list-style:none;padding:0;margin:0;max-width:760px}
@@ -343,12 +347,12 @@
       <figure><span class="marcavideo">video</span><video data-audio poster="video/oficina.jpg?v=6" style="object-position:10% 50%" muted loop playsinline preload="metadata"><source src="video/oficina.mp4?v=6" type="video/mp4"><source src="video/oficina.webm?v=6" type="video/webm"></video><figcaption>Oficina</figcaption></figure>
       <figure><span class="marcavideo">video</span><video data-audio poster="video/ventana.jpg?v=2" muted loop playsinline preload="metadata"><source src="video/ventana.mp4?v=2" type="video/mp4"><source src="video/ventana.webm?v=2" type="video/webm"></video><figcaption>Primer plano</figcaption></figure>
       <figure><span class="marcavideo">video</span><video data-audio poster="video/bano.jpg?v=2" muted loop playsinline preload="metadata"><source src="video/bano.mp4?v=2" type="video/mp4"><source src="video/bano.webm?v=2" type="video/webm"></video><figcaption>A cámara</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/video1.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video1.mp4?v=4" type="video/mp4"><source src="video/video1.webm?v=4" type="video/webm"></video><figcaption>Personaje 1</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/video1.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video1.mp4?v=7" type="video/mp4"><source src="video/video1.webm?v=7" type="video/webm"></video><figcaption>Personaje 1</figcaption></figure>
       <figure><span class="marcavideo">video</span><video data-audio poster="video/video2.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video2.mp4?v=4" type="video/mp4"><source src="video/video2.webm?v=4" type="video/webm"></video><figcaption>Personaje 2</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/video3.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video3.mp4?v=4" type="video/mp4"><source src="video/video3.webm?v=4" type="video/webm"></video><figcaption>Personaje 3</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/video3.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video3.mp4?v=7" type="video/mp4"><source src="video/video3.webm?v=7" type="video/webm"></video><figcaption>Personaje 3</figcaption></figure>
       <figure><span class="marcavideo">video</span><video data-audio poster="video/video4.jpg?v=4" muted loop playsinline preload="metadata"><source src="video/video4.mp4?v=4" type="video/mp4"><source src="video/video4.webm?v=4" type="video/webm"></video><figcaption>Personaje 4</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/video5.jpg?v=5" muted loop playsinline preload="metadata" aria-label="Luna con chaqueta rosa, varias Lunas con la misma cara."><source src="video/video5.mp4?v=5" type="video/mp4"><source src="video/video5.webm?v=5" type="video/webm"></video><figcaption>Personaje 5</figcaption></figure>
-      <figure><span class="marcavideo">video</span><video data-audio poster="video/video6.jpg?v=5" style="object-position:62% 50%" muted loop playsinline preload="metadata" aria-label="Luna corriendo por un salón de baile."><source src="video/video6.mp4?v=5" type="video/mp4"><source src="video/video6.webm?v=5" type="video/webm"></video><figcaption>Personaje 6</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/video5.jpg?v=5" muted loop playsinline preload="metadata" aria-label="Luna con chaqueta rosa, varias Lunas con la misma cara."><source src="video/video5.mp4?v=7" type="video/mp4"><source src="video/video5.webm?v=7" type="video/webm"></video><figcaption>Personaje 5</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="video/video6.jpg?v=5" style="object-position:62% 50%" muted loop playsinline preload="metadata" aria-label="Luna corriendo por un salón de baile."><source src="video/video6.mp4?v=7" type="video/mp4"><source src="video/video6.webm?v=7" type="video/webm"></video><figcaption>Personaje 6</figcaption></figure>
     </div>
     <p class="pie-galeria"><b>La misma cara en los cuatro.</b> Eso no sale solo: sale de entrenar tu personaje una vez, con tus fotos. Lulumina lo hace en el primer paso y después no lo tocas más.</p>
   </div>
@@ -362,7 +366,7 @@
       <h2>Crear y editar, en un solo lugar</h2>
       <p class="bajada">Todo con tu personaje. Todo con el precio a la vista antes de confirmar.</p>
     </div>
-    <div class="rejilla">
+    <div class="rejilla seis">
       <div class="tarjeta"><span class="num">01</span><h3>Fotos y videos con tu cara</h3><p>Plantillas listas (UGC, editorial, fantasía, escenas de película) o tu propia idea. Expresiones naturales, nunca exageradas.</p></div>
       <div class="tarjeta"><span class="num">02</span><h3>Chasquido mágico</h3><p>Chasqueas los dedos y cambias de lugar y de ropa en el mismo video, con tu misma cara.</p></div>
       <div class="tarjeta"><span class="num">03</span><h3>Sesiones completas</h3><p>Seis fotos de una sesión real — ascensor, viernes de noche, outfit del día — con el mismo look.</p></div>
