@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Four questions — Lulumina AI</title>
+<title>Your gift photo — Lulumina AI</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 220 220&apos;%3E%3Crect width=&apos;220&apos; height=&apos;220&apos; fill=&apos;%230A0A0C&apos;/%3E%3Ccircle cx=&apos;110&apos; cy=&apos;110&apos; r=&apos;70&apos; fill=&apos;none&apos; stroke=&apos;%23D7FF3F&apos; stroke-width=&apos;16&apos;/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,24 +55,28 @@
   .nota{font-size:14px;color:var(--gris);margin:14px 0 0}
   .nota a{color:var(--verde)}
   #ok{display:none}
+  label.chk{align-items:flex-start;font-size:15px;line-height:1.5}
+  label.chk input{margin-top:3px}
+  label.chk a{color:var(--verde)}
 </style>
 </head>
 <body>
   <div class="caja">
-    <p class="eyebrow">Help me build the right thing</p>
-    <h1>Four questions, one minute</h1>
-    <p>Before launching I want to know what you actually need, not guess. There are no right or wrong answers.</p>
+    <p class="eyebrow">Your free photo</p>
+    <h1>Four questions, one gift photo</h1>
+    <p>Answer, leave your email, and when we open we make <b>one photo of you</b>, free. Your answers help me build the right thing.</p>
     <form id="f" novalidate>
       <fieldset><legend>1. What problem do you want to solve?</legend><label class="op"><input type="radio" name="problema" value="Make content faster" required><span>Make content faster</span></label><label class="op"><input type="radio" name="problema" value="Look good on camera without filming" required><span>Look good on camera without filming</span></label><label class="op"><input type="radio" name="problema" value="Get my time back" required><span>Get my time back</span></label><label class="op"><input type="radio" name="problema" value="Just curious" required><span>Just curious</span></label></fieldset>
       <fieldset><legend>2. Why might LuLumina be useful to you? (optional)</legend><textarea name="porque" rows="3" maxlength="400"></textarea></fieldset>
       <fieldset><legend>3. How do you make video today, and what is the most annoying part? (optional)</legend><textarea name="hoy" rows="3" maxlength="400"></textarea></fieldset>
       <fieldset><legend>4. Would you use a clone of yourself that records for you?</legend><label class="op"><input type="radio" name="clon" value="Yes" required><span>Yes</span></label><label class="op"><input type="radio" name="clon" value="Maybe" required><span>Maybe</span></label><label class="op"><input type="radio" name="clon" value="No" required><span>No</span></label></fieldset>
-      <fieldset><legend>Your email, to send you access (optional; without it I can't invite you)</legend><input type="email" name="correo" autocomplete="email" maxlength="120"></fieldset>
-      <button type="submit" id="b">Send</button>
+      <fieldset><legend>Your email (required): that is where I tell you when we open and send your photo. It also puts you on the waitlist.</legend><input type="email" name="correo" autocomplete="email" maxlength="120" required></fieldset>
+      <fieldset><label class="op chk"><input type="checkbox" name="autoriza_foto" value="si"><span>I authorize LuLumina to create <b>one photo of me</b> from the picture I upload when the app opens. I understand it is made only to be sent to me: it is not shared, not published, and not used to create anything else. It is sent only to the image service needed to generate it, and deleted within 30 days at most if I ask (<a href="privacy.html">privacy policy</a>).</span></label><label class="op chk"><input type="checkbox" name="cita_respuestas" value="si"><span>You may quote my answers in public, without my name or email. (Optional)</span></label></fieldset>
+      <button type="submit" id="b">Get my gift photo</button>
       <p class="nota" id="msg" role="status"></p>
     </form>
-    <div class="aviso" id="ok"><b>Thank you!</b> Every answer changes what I build.</div>
-    <p class="nota">It is anonymous if you leave no email. Answers go to my inbox. More in the <a href="privacy.html">privacy policy</a>.</p>
+    <div class="aviso" id="ok"><b>Thank you!</b> You are on the list. When we open I will email you and we make your gift photo. Nothing else to do for now.</div>
+    <p class="nota">Your photo is used only for you. Answers reach me by email through FormSubmit and your email joins my waitlist. More in the <a href="privacy.html">privacy policy</a>.</p>
     <p class="firma">Lulumina AI</p>
   </div>
 <script>
@@ -80,20 +84,32 @@
   var f=document.getElementById('f'),b=document.getElementById('b'),m=document.getElementById('msg'),ok=document.getElementById('ok');
   var ES=false;
   var CORREO="wavemarketingone@gmail.com";
+  var MC="https://gmail.us5.list-manage.com/subscribe/post?u=64357cc0bdae80b13b0816b34&id=8bf4838e02&f_id=00f319e0f0";
+  var BTN="Get my gift photo";
   function datos(){var d={};new FormData(f).forEach(function(v,k){d[k]=v;});return d;}
+  /* Lista de espera: JSONP, igual que la portada. Mejor esfuerzo: si falla, la encuesta igual llega por correo. */
+  function mailchimp(email){
+    var fn='mc_'+Date.now(),sc=document.createElement('script');
+    window[fn]=function(){try{delete window[fn];}catch(x){window[fn]=undefined;}if(sc.parentNode)sc.parentNode.removeChild(sc);};
+    sc.src=MC.replace('/post?','/post-json?')+'&EMAIL='+encodeURIComponent(email)+'&c='+fn;
+    document.body.appendChild(sc);
+  }
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var d=datos();
-    var faltan=['problema','clon'].filter(function(k){return !d[k];});
-    if(faltan.length){m.textContent=ES?'Faltan respuestas: marca una opción en cada pregunta.':'Missing answers: pick one option in each question.';return;}
-    b.disabled=true;b.textContent=ES?'Enviando…':'Sending…';m.textContent='';
+    var mailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.correo||'');
+    if(!d.problema||!d.clon||!mailOk){m.textContent="Something is missing: pick an option in questions 1 and 4, and enter a valid email.";return;}
+    if(!d.autoriza_foto){m.textContent="To make your photo I need your authorization: tick the first box.";return;}
+    b.disabled=true;b.textContent="Sending…";m.textContent='';
     d._subject='Encuesta Lulumina';d._captcha='false';d._template='table';d.idioma=ES?'es':'en';
-    var fin=function(){f.style.display='none';ok.style.display='block';};
+    d.autoriza_foto='SÍ: autoriza una sola foto, solo para enviársela, sin compartir ni crear nada más';
+    d.cita_respuestas=d.cita_respuestas?'SÍ':'NO';
+    var fin=function(){mailchimp(d.correo);f.style.display='none';ok.style.display='block';};
     var respaldo=function(){
       var cuerpo=Object.keys(d).filter(function(k){return k.charAt(0)!=='_';}).map(function(k){return k+': '+d[k];}).join('\n');
       window.location.href='mailto:'+CORREO+'?subject='+encodeURIComponent('Encuesta Lulumina')+'&body='+encodeURIComponent(cuerpo);
-      b.disabled=false;b.textContent=ES?'Enviar':'Send';
-      m.textContent=ES?'No pude enviarla directo; se abrió tu correo con las respuestas. Solo toca enviar.':'I could not send it directly; your email opened with the answers. Just tap send.';
+      b.disabled=false;b.textContent=BTN;
+      m.textContent="I could not send it directly; your email opened with the answers. Just tap send.";
     };
     var t=setTimeout(respaldo,12000),hecho=false;
     fetch('https://formsubmit.co/ajax/'+CORREO,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
