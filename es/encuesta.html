@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tu foto de regalo — Lulumina AI</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 220 220&apos;%3E%3Crect width=&apos;220&apos; height=&apos;220&apos; fill=&apos;%230A0A0C&apos;/%3E%3Ccircle cx=&apos;110&apos; cy=&apos;110&apos; r=&apos;70&apos; fill=&apos;none&apos; stroke=&apos;%23D7FF3F&apos; stroke-width=&apos;16&apos;/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{
+    --fondo:#0A0A0C; --panel:#141419; --linea:#26262C;
+    --verde:#D7FF3F; --gris:#8F8F88; --texto:#EFEEE9;
+    --display:"Playfair Display",Georgia,serif;
+    --cuerpo:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  html,body{height:100%}
+  body{
+    margin:0;background:var(--fondo);color:var(--texto);
+    font-family:var(--cuerpo);font-size:17px;line-height:1.6;
+    display:flex;align-items:center;justify-content:center;
+    padding:32px 20px;-webkit-font-smoothing:antialiased;
+  }
+  .caja{max-width:440px;width:100%;text-align:center}
+  .aro{width:64px;height:64px;margin:0 auto 26px;display:block}
+  .hoja{transform-origin:0 0;transform-box:view-box;animation:dia 3.4s cubic-bezier(.5,0,.3,1) infinite}
+  @keyframes dia{0%,10%{transform:rotate(0) translateX(0)}48%,66%{transform:rotate(15deg) translateX(52px)}100%{transform:rotate(0) translateX(0)}}
+  @media (prefers-reduced-motion:reduce){.hoja{animation:none;transform:rotate(15deg) translateX(52px)}}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde);margin:0 0 14px}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(28px,7vw,38px);line-height:1.12;margin:0 0 14px;letter-spacing:-.015em;text-wrap:balance}
+  p{margin:0 0 18px;color:var(--gris)}
+  .aviso{
+    border:1px dashed var(--linea);border-radius:12px;padding:16px 18px;
+    background:var(--panel);text-align:left;font-size:15px;color:var(--gris);line-height:1.55;
+  }
+  .aviso b{color:var(--texto);font-weight:600}
+  .firma{margin-top:30px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6B6B66}
+
+  body{align-items:flex-start}
+  .caja{max-width:560px;text-align:left}
+  .caja h1,.caja .eyebrow{text-align:left}
+  fieldset{border:0;padding:0;margin:0 0 26px}
+  legend{font-weight:600;color:var(--texto);margin:0 0 10px;font-size:17px;line-height:1.35}
+  label.op{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--linea);border-radius:12px;background:var(--panel);margin:0 0 8px;color:var(--texto);font-size:16px;cursor:pointer;min-height:48px}
+  label.op input{accent-color:#D7FF3F;width:20px;height:20px;flex:none}
+  label.op:has(input:checked){border-color:var(--verde)}
+  input[type=text],input[type=email],textarea{width:100%;background:var(--panel);border:1px solid var(--linea);border-radius:12px;color:var(--texto);padding:13px 14px;font:inherit;font-size:16px;min-height:48px}
+  input:focus-visible,textarea:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  button{width:100%;min-height:52px;border:0;border-radius:999px;background:var(--verde);color:#0A0A0C;font:600 17px var(--cuerpo);cursor:pointer}
+  button[disabled]{opacity:.6}
+  .nota{font-size:14px;color:var(--gris);margin:14px 0 0}
+  .nota a{color:var(--verde)}
+  #ok{display:none}
+  label.chk{align-items:flex-start;font-size:15px;line-height:1.5}
+  label.chk input{margin-top:3px}
+  label.chk a{color:var(--verde)}
+</style>
+</head>
+<body>
+  <div class="caja">
+    <p class="eyebrow">Tu foto de regalo</p>
+    <h1>Cuatro preguntas y una foto de regalo</h1>
+    <p>Contesta, deja tu correo y cuando abramos te hacemos <b>una foto tuya</b>, gratis. Tus respuestas me ayudan a construir lo correcto.</p>
+    <form id="f" novalidate>
+      <fieldset><legend>1. ¿Qué problema quieres resolver?</legend><label class="op"><input type="radio" name="problema" value="Hacer contenido más rápido" required><span>Hacer contenido más rápido</span></label><label class="op"><input type="radio" name="problema" value="Verme bien en cámara sin grabar" required><span>Verme bien en cámara sin grabar</span></label><label class="op"><input type="radio" name="problema" value="Recuperar mi tiempo" required><span>Recuperar mi tiempo</span></label><label class="op"><input type="radio" name="problema" value="Solo curiosidad" required><span>Solo curiosidad</span></label></fieldset>
+      <fieldset><legend>2. ¿Por qué crees que LuLumina podría servirte? (opcional)</legend><textarea name="porque" rows="3" maxlength="400"></textarea></fieldset>
+      <fieldset><legend>3. ¿Cómo haces video hoy y qué es lo más molesto? (opcional)</legend><textarea name="hoy" rows="3" maxlength="400"></textarea></fieldset>
+      <fieldset><legend>4. ¿Usarías un clon tuyo que grabe por ti?</legend><label class="op"><input type="radio" name="clon" value="Sí" required><span>Sí</span></label><label class="op"><input type="radio" name="clon" value="Quizás" required><span>Quizás</span></label><label class="op"><input type="radio" name="clon" value="No" required><span>No</span></label></fieldset>
+      <fieldset><legend>Tu correo (obligatorio): ahí te aviso cuando abramos y te mando tu foto. Con él entras a la lista de espera.</legend><input type="email" name="correo" autocomplete="email" maxlength="120" required></fieldset>
+      <fieldset><label class="op chk"><input type="checkbox" name="autoriza_foto" value="si"><span>Autorizo a LuLumina a crear <b>una sola foto mía</b> a partir de la imagen que suba cuando abra la app. Entiendo que se hace solo para enviármela a mí: no se comparte, no se publica y no se usa para crear nada más. Solo se envía al servicio de imagen necesario para generarla, y se borra en un máximo de 30 días si lo pido (<a href="privacidad.html">política de privacidad</a>).</span></label><label class="op chk"><input type="checkbox" name="cita_respuestas" value="si"><span>Pueden citar mis respuestas en público, sin mi nombre ni mi correo. (Opcional)</span></label></fieldset>
+      <button type="submit" id="b">Quiero mi foto de regalo</button>
+      <p class="nota" id="msg" role="status"></p>
+    </form>
+    <div class="aviso" id="ok"><b>¡Gracias!</b> Quedaste en la lista. Cuando abramos te escribo y te hacemos tu foto de regalo. No hace falta nada más por ahora.</div>
+    <p class="nota">Tu foto se usa solo para ti. Las respuestas me llegan por correo a través de FormSubmit y tu correo entra a mi lista de espera. Más en la <a href="privacidad.html">política de privacidad</a>.</p>
+    <p class="firma">Lulumina AI</p>
+  </div>
+<script>
+(function(){
+  var f=document.getElementById('f'),b=document.getElementById('b'),m=document.getElementById('msg'),ok=document.getElementById('ok');
+  var ES=true;
+  var CORREO="wavemarketingone@gmail.com";
+  var MC="https://gmail.us5.list-manage.com/subscribe/post?u=64357cc0bdae80b13b0816b34&id=8bf4838e02&f_id=00f319e0f0";
+  var BTN="Quiero mi foto de regalo";
+  function datos(){var d={};new FormData(f).forEach(function(v,k){d[k]=v;});return d;}
+  /* Lista de espera: JSONP, igual que la portada. Mejor esfuerzo: si falla, la encuesta igual llega por correo. */
+  function mailchimp(email){
+    var fn='mc_'+Date.now(),sc=document.createElement('script');
+    window[fn]=function(){try{delete window[fn];}catch(x){window[fn]=undefined;}if(sc.parentNode)sc.parentNode.removeChild(sc);};
+    sc.src=MC.replace('/post?','/post-json?')+'&EMAIL='+encodeURIComponent(email)+'&c='+fn;
+    document.body.appendChild(sc);
+  }
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=datos();
+    var mailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.correo||'');
+    if(!d.problema||!d.clon||!mailOk){m.textContent="Falta algo: elige una opción en las preguntas 1 y 4, y escribe un correo válido.";return;}
+    if(!d.autoriza_foto){m.textContent="Para hacer tu foto necesito tu autorización: marca la primera casilla.";return;}
+    b.disabled=true;b.textContent="Enviando…";m.textContent='';
+    d._subject='Encuesta Lulumina';d._captcha='false';d._template='table';d.idioma=ES?'es':'en';
+    d.autoriza_foto='SÍ: autoriza una sola foto, solo para enviársela, sin compartir ni crear nada más';
+    d.cita_respuestas=d.cita_respuestas?'SÍ':'NO';
+    var fin=function(){mailchimp(d.correo);f.style.display='none';ok.style.display='block';};
+    var respaldo=function(){
+      var cuerpo=Object.keys(d).filter(function(k){return k.charAt(0)!=='_';}).map(function(k){return k+': '+d[k];}).join('\n');
+      window.location.href='mailto:'+CORREO+'?subject='+encodeURIComponent('Encuesta Lulumina')+'&body='+encodeURIComponent(cuerpo);
+      b.disabled=false;b.textContent=BTN;
+      m.textContent="No pude enviarla directo; se abrió tu correo con las respuestas. Solo toca enviar.";
+    };
+    var t=setTimeout(respaldo,12000),hecho=false;
+    fetch('https://formsubmit.co/ajax/'+CORREO,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){return r.json();}).then(function(j){if(hecho)return;hecho=true;clearTimeout(t);if(j&&String(j.success)==='true')fin();else respaldo();})
+      .catch(function(){if(hecho)return;hecho=true;clearTimeout(t);respaldo();});
+  });
+})();
+</script>
+</body>
+</html>

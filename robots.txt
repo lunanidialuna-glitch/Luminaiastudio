@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /gracias.html
-Disallow: /en/thanks.html
+Disallow: /thanks.html
+Disallow: /survey.html
+Disallow: /es/gracias.html
+Disallow: /es/encuesta.html
 
-Sitemap: https://luminaiastudio.com/sitemap.xml
+Sitemap: https://luluminaai.com/sitemap.xml

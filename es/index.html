@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Lulumina AI: tu personaje con tu cara, siempre igual. Fotos, videos, anuncios y edición con IA en un solo lugar, con precio claro.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luluminaai.com/es/">
+<link rel="alternate" hreflang="es" href="https://luluminaai.com/es/">
+<link rel="alternate" hreflang="en" href="https://luluminaai.com/">
+<link rel="alternate" hreflang="x-default" href="https://luluminaai.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lulumina AI — tu personaje, siempre con tu cara">
+<meta property="og:description" content="Fotos, videos, anuncios y edición con IA en un solo lugar. Precio claro. Prueba gratis tu primera foto.">
+<meta property="og:url" content="https://luluminaai.com/es/">
+<meta property="og:image" content="https://luluminaai.com/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="48x48" href="/brand/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/brand/icon-192.png">
+<link rel="apple-touch-icon" href="/brand/apple-touch-icon.png">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0}
+  img{max-width:100%;display:block}
+  [hidden]{display:none!important}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://luluminaai.com/es/#org", "name": "Lulumina AI", "alternateName": ["Lulumina", "luluminaai.com"], "url": "https://luluminaai.com/es/", "logo": "https://luluminaai.com/es/video/hero-jardin.jpg", "description": "App web para crear fotos y videos con IA con tu propio personaje. Abre muy pronto.", "founder": {"@type": "Person", "name": "Nidia"}, "address": {"@type": "PostalAddress", "addressRegion": "Washington DC area", "addressCountry": "US"}}, {"@type": "WebSite", "@id": "https://luluminaai.com/es/#site", "url": "https://luluminaai.com/es/", "name": "Lulumina AI", "inLanguage": ["es", "en"], "publisher": {"@id": "https://luluminaai.com/es/#org"}}]}</script>
+<title>Lulumina AI — tu personaje, siempre con tu cara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --fondo:#0A0A0C; --banda:#0F0F13; --panel:#141419; --linea:#26262C; --linea2:#33333B;
+    --verde:#D7FF3F; --verde-op:rgba(215,255,63,.10); --verde-bor:rgba(215,255,63,.28);
+    --gris:#8F8F88; --gris2:#6B6B66; --texto:#EFEEE9;
+    --display:"Playfair Display",Georgia,"Times New Roman",serif;
+    --cuerpo:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --gutter:clamp(20px,5vw,40px);
+  }
+  body{background:var(--fondo);color:var(--texto);font-family:var(--cuerpo);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  *,*::before,*::after{box-sizing:border-box}
+  .banda{padding-inline:var(--gutter)}
+  .interior{max-width:1020px;margin-inline:auto}
+  .medio{max-width:680px}
+
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.018em;text-wrap:balance;margin:0}
+  h1{font-size:clamp(33px,6.6vw,58px);line-height:1.07}
+  h2{font-size:clamp(27px,5.2vw,42px);line-height:1.12}
+  h3{font-size:clamp(19px,3vw,23px);line-height:1.25;letter-spacing:-.01em}
+  p{margin:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde);margin:0}
+
+  img{display:block;max-width:100%;height:auto}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding-block:clamp(30px,6vw,60px) clamp(52px,9vw,88px);border-bottom:1px solid var(--linea);overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:auto auto -30% 60%;translate:-50% 0;
+    width:min(820px,130%);aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle,rgba(215,255,63,.11),transparent 62%);pointer-events:none;
+  }
+  .hero .interior{position:relative}
+  .marca{display:flex;align-items:center;gap:12px;margin-bottom:clamp(28px,5vw,48px)}
+  .marca svg,.marca img{width:40px;height:40px;flex:none;display:block}
+  .marca .apellido{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--gris);text-transform:none;white-space:nowrap}
+  @media (max-width:420px){.marca .apellido{display:none}}
+  .marca .nombre{font-family:var(--display);font-weight:700;font-size:26px;color:var(--verde);line-height:1;letter-spacing:-.01em}
+  .idiomas{margin-inline-start:auto;display:flex;align-items:center;gap:2px;border:1px solid var(--linea2);border-radius:999px;padding:3px}
+  .idiomas a{
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-decoration:none;
+    color:var(--gris);padding:6px 11px;border-radius:999px;line-height:1;transition:color .18s,background .18s;
+  }
+  .idiomas a:hover{color:var(--texto)}
+  .idiomas a[aria-current="true"]{background:var(--verde);color:#0A0A0C;font-weight:500}
+  .idiomas a:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .hoja{transform-origin:0 0;transform-box:view-box;animation:diafragma 4.2s cubic-bezier(.5,0,.3,1) infinite}
+  @keyframes diafragma{0%,10%{transform:rotate(0) translateX(0)}48%,66%{transform:rotate(15deg) translateX(52px)}100%{transform:rotate(0) translateX(0)}}
+  @media (prefers-reduced-motion:reduce){.hoja{animation:none;transform:rotate(15deg) translateX(52px)}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:clamp(28px,4.5vw,56px);align-items:center}
+  @media (max-width:800px){
+    .hero-grid{grid-template-columns:1fr;gap:26px}
+    .hero-foto{order:-1}
+  }
+  .hero h1{margin:14px 0 20px;max-width:14ch}
+  .hero .entrada{font-size:clamp(16.5px,2.2vw,19px);color:var(--gris);max-width:46ch;margin-bottom:30px}
+  .hero .entrada b{color:var(--texto);font-weight:500}
+
+  .hero-foto{position:relative}
+  .hero-foto img,.hero-foto video{
+    width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;
+    border-radius:16px;border:1px solid var(--linea2);display:block;background:var(--panel);
+  }
+  @media (max-width:800px){.hero-foto img,.hero-foto video{aspect-ratio:3/4;object-position:50% 100%}}
+  .sello{
+    position:absolute;left:14px;top:14px;right:auto;max-width:calc(100% - 128px);
+    display:flex;align-items:center;gap:9px;
+    background:rgba(10,10,12,.82);backdrop-filter:blur(8px);
+    border:1px solid var(--linea2);border-radius:10px;padding:9px 12px;
+  }
+  .sello .pt{width:7px;height:7px;border-radius:50%;background:var(--verde);flex:none}
+  .sello span{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--gris);line-height:1.4}
+
+  /* ---------- formulario ---------- */
+  .formulario{display:flex;flex-direction:column;gap:9px;max-width:430px}
+  .fila{display:flex;gap:9px;flex-wrap:wrap}
+  .fila > *{flex:1 1 150px;min-width:0}
+  .campo{
+    width:100%;background:var(--panel);border:1px solid var(--linea2);color:var(--texto);
+    font-family:var(--cuerpo);font-size:16px;padding:14px 15px;border-radius:10px;
+  }
+  .campo::placeholder{color:var(--gris2)}
+  .campo:focus{outline:2px solid var(--verde);outline-offset:1px;border-color:transparent}
+  .boton{
+    display:block;width:100%;background:var(--verde);color:#0A0A0C;border:none;
+    font-family:var(--cuerpo);font-weight:600;font-size:17px;padding:15px;
+    border-radius:10px;cursor:pointer;transition:filter .18s,translate .18s;text-align:center;
+  }
+  .boton:hover{filter:brightness(1.07);translate:0 -1px}
+  .boton:focus-visible{outline:2px solid var(--texto);outline-offset:3px}
+  .boton:disabled{cursor:default;translate:0}
+  .debajo{font-size:13.5px;color:var(--gris2);margin-top:4px}
+  /* ---------- botón de sonido ---------- */
+  .sonido{
+    position:absolute;top:10px;right:10px;z-index:3;
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(10,10,12,.80);backdrop-filter:blur(8px);
+    border:1px solid var(--linea2);border-radius:999px;padding:7px 10px;cursor:pointer;
+    font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--gris);line-height:1;transition:color .18s,border-color .18s,background .18s;
+  }
+  .sonido:hover{color:var(--texto);border-color:var(--gris2)}
+  .sonido:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .sonido svg{width:13px;height:13px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .sonido[aria-pressed="true"]{background:var(--verde);color:#0A0A0C;border-color:var(--verde)}
+  .hero-foto .sonido{top:13px;right:13px;padding:8px 12px;font-size:10.5px}
+  .galeria .sonido .txt{display:none}
+  @media (max-width:700px){.sonido .txt{display:none}}
+  video[data-audio]{cursor:pointer}
+  .consentimiento{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--gris2);line-height:1.45;cursor:pointer;margin-top:2px}
+  .consentimiento input{margin:2px 0 0;flex:none;width:15px;height:15px;accent-color:var(--verde);cursor:pointer}
+  .consentimiento input:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  .consentimiento a{color:var(--gris);text-decoration:underline;text-underline-offset:2px}
+  .consentimiento a:hover{color:var(--verde)}
+  .cierre .consentimiento{max-width:430px;margin-inline:auto}
+
+  /* ---------- secciones ---------- */
+  section{padding-block:clamp(52px,8.5vw,92px)}
+  .alterna{background:var(--banda);border-block:1px solid var(--linea)}
+  .encabezado{margin-bottom:clamp(28px,4.5vw,44px)}
+  .encabezado h2{margin-top:12px}
+  .encabezado .bajada{color:var(--gris);margin-top:16px;max-width:54ch;font-size:17px}
+
+  .dolores{list-style:none;padding:0;margin:0;max-width:680px}
+  .dolores li{display:flex;gap:16px;align-items:flex-start;padding-block:18px;border-top:1px solid var(--linea);font-size:17px;line-height:1.5}
+  .dolores li:last-child{border-bottom:1px solid var(--linea)}
+  .dolores .marca-x{color:var(--verde);font-family:var(--mono);font-size:13px;padding-top:4px;flex:none}
+  .remate{font-family:var(--display);font-style:italic;font-size:clamp(21px,3.6vw,28px);line-height:1.35;margin-top:32px;text-wrap:balance;max-width:680px}
+  .remate span{color:var(--verde);font-style:normal}
+
+  /* ---------- galería ---------- */
+  .galeria{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.6vw,16px)}
+  @media (min-width:1000px){.galeria{grid-template-columns:repeat(5,minmax(0,1fr))}}
+  @media (max-width:700px){.galeria{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .galeria figure{margin:0;position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--linea2);background:var(--panel)}
+  .galeria img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
+  
+  .galeria figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:26px 12px 11px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#E6E5E0;
+    background:linear-gradient(transparent,rgba(10,10,12,.92));
+  }
+  .galeria video{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:var(--panel)}
+  /* video horizontal: ocupa dos columnas para no recortarlo */
+  .galeria figure.ancha{grid-column:span 2}
+  .galeria figure.ancha video{aspect-ratio:3/2}
+  
+  .marcavideo{
+    position:absolute;top:10px;left:10px;z-index:2;
+    display:flex;align-items:center;gap:6px;
+    background:rgba(10,10,12,.7);backdrop-filter:blur(6px);
+    border-radius:999px;padding:5px 9px;
+    font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#E6E5E0;
+  }
+  .marcavideo::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--verde);animation:latir 2s ease-in-out infinite}
+  @keyframes latir{0%,100%{opacity:1}50%{opacity:.25}}
+  @media (prefers-reduced-motion:reduce){.marcavideo::before{animation:none}}
+  .pie-galeria{margin-top:20px;color:var(--gris);font-size:15.5px;max-width:58ch;line-height:1.6}
+  .pie-galeria b{color:var(--texto);font-weight:600}
+
+  /* ---------- historia ---------- */
+  .historia{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(24px,4vw,46px);align-items:start}
+  @media (max-width:760px){.historia{grid-template-columns:1fr}}
+  .historia .retrato img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 35%;border-radius:14px;border:1px solid var(--linea2)}
+  @media (max-width:760px){.historia .retrato img{aspect-ratio:16/10;object-position:50% 18%}}
+  .historia p{margin-bottom:18px;color:#D9D8D2}
+  .historia p:last-child{margin-bottom:0}
+  .historia strong{color:var(--texto);font-weight:600}
+
+  /* ---------- tarjetas ---------- */
+  .rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+  .tarjeta{background:var(--fondo);padding:clamp(24px,3.2vw,32px);display:flex;flex-direction:column;gap:12px}
+  .alterna .tarjeta{background:var(--banda)}
+  .tarjeta .num{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--verde)}
+  .tarjeta p{font-size:15.5px;color:var(--gris);line-height:1.55}
+  /* 6 tarjetas: 3 columnas x 2 filas en compu, 2 x 3 en tablet, 1 en celular (sin casillas vacías) */
+  .rejilla.seis{grid-template-columns:1fr}
+  @media (min-width:560px){.rejilla.seis{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:960px){.rejilla.seis{grid-template-columns:repeat(3,1fr)}}
+
+  /* ---------- pasos ---------- */
+  .pasos{list-style:none;padding:0;margin:0;max-width:760px}
+  .pasos li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start;padding-block:26px;border-top:1px solid var(--linea)}
+  .pasos li:last-child{border-bottom:1px solid var(--linea)}
+  .pasos .cifra{font-family:var(--display);font-size:clamp(30px,5vw,44px);line-height:.9;color:transparent;-webkit-text-stroke:1px var(--verde-bor);font-weight:700}
+  .pasos h3{margin-bottom:7px}
+  .pasos p{color:var(--gris);font-size:16px}
+
+  /* ---------- lumina ---------- */
+  .lumina-caja{
+    border:1px solid var(--verde-bor);border-radius:16px;padding:clamp(26px,4.2vw,44px);
+    background:linear-gradient(160deg,var(--verde-op),transparent 58%);
+    display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(22px,3.4vw,38px);align-items:center;
+  }
+  @media (max-width:620px){.lumina-caja{grid-template-columns:1fr}}
+  .lumina-caja svg{width:clamp(72px,12vw,100px);height:auto;flex:none;display:block}
+  .lumina-caja h3{margin-bottom:12px}
+  .lumina-caja p{color:var(--gris);font-size:16px;margin-bottom:12px}
+  .lumina-caja p:last-child{margin-bottom:0}
+  .lumina-caja b{color:var(--texto);font-weight:600}
+
+  /* ---------- para quién ---------- */
+  .dos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,3vw,32px)}
+  .columna{border-top:2px solid var(--verde);padding-top:20px}
+  .columna.no{border-top-color:var(--linea2)}
+  .columna h3{margin-bottom:16px;font-size:20px}
+  .columna ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px}
+  .columna li{display:flex;gap:11px;font-size:16px;line-height:1.5;color:#D9D8D2}
+  .columna .s{color:var(--verde);flex:none;font-weight:600}
+  .columna.no .s{color:var(--gris2)}
+  .puente{margin-top:28px;padding:18px 20px;border-radius:12px;background:var(--panel);border:1px solid var(--linea);font-size:15.5px;color:var(--gris);line-height:1.55}
+  .puente b{color:var(--texto);font-weight:600}
+
+  /* ---------- faq ---------- */
+  .faq{max-width:700px}
+  details{border-top:1px solid var(--linea)}
+  details:last-of-type{border-bottom:1px solid var(--linea)}
+  summary{cursor:pointer;padding-block:20px;font-size:17px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:18px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--verde);font-family:var(--mono);font-size:20px;flex:none;transition:rotate .2s}
+  details[open] summary::after{rotate:45deg}
+  summary:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+  details .respuesta{padding:0 0 22px;color:var(--gris);font-size:16px;line-height:1.6;max-width:58ch}
+  details .respuesta b{color:var(--texto);font-weight:600}
+
+  /* ---------- cierre ---------- */
+  .cierre{text-align:center;border-top:1px solid var(--linea)}
+  .cierre .formulario{margin-inline:auto;margin-top:30px}
+  .cierre .debajo{text-align:center}
+  .cierre h2{margin-bottom:16px}
+  .cierre .bajada{color:var(--gris);max-width:44ch;margin-inline:auto}
+  footer{padding-block:30px;border-top:1px solid var(--linea);font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--gris2);text-transform:uppercase}
+  footer .enlaces{display:flex;gap:18px;flex-wrap:wrap}
+  footer a{color:var(--gris2);text-decoration:none;transition:color .18s}
+  footer a:hover{color:var(--verde)}
+  footer .interior{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  /* ---------- precios ---------- */
+  .planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .plan{background:var(--panel);border:1px solid var(--linea2);border-radius:14px;padding:clamp(22px,3vw,30px);display:flex;flex-direction:column;gap:10px}
+  .plan.destacado{border-color:var(--verde-bor);background:linear-gradient(180deg,var(--verde-op),transparent 60%),var(--panel)}
+  .plan .precio{font-family:var(--display);font-size:clamp(30px,4.5vw,40px);line-height:1}
+  .plan .precio small{font-family:var(--cuerpo);font-size:15px;color:var(--gris)}
+  .plan .incluye{color:var(--gris);font-size:15px;line-height:1.5}
+  .plan .incluye b{color:var(--texto)}
+  .nota-precio{margin-top:18px;color:var(--gris);font-size:15px;max-width:60ch;line-height:1.6}
+  .nota-precio b{color:var(--texto)}
+  .cta-linea{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px}
+  .cta-linea .boton{width:auto;padding-inline:26px}
+  .cta-linea .secundario{color:var(--gris);font-size:14px}
+</style>
+</head>
+<body>
+
+
+<!-- ================= HERO ================= -->
+<header class="hero banda">
+  <div class="interior">
+    <div class="marca">
+      <img src="/brand/icon-512.png" width="40" height="40" alt="" decoding="async">
+      <span class="nombre">Lulumina</span><span class="apellido">AI</span>
+      <nav class="idiomas" aria-label="Idioma">
+        <a href="/" hreflang="en">EN</a>
+        <a href="/es/" aria-current="true" hreflang="es">ES</a>
+      </nav>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Lulumina AI · abre muy pronto</p>
+        <h1>Tu personaje, siempre con tu cara</h1>
+        <p class="entrada">Subes tus fotos una vez. Después creas <b>fotos, videos, anuncios y animaciones</b> con la misma persona — y los editas ahí mismo, listos para publicar. <b>Cada cosa muestra lo que cuesta antes de crearla.</b></p>
+        <form class="formulario" id="form-hero" novalidate>
+          <div class="fila">
+            <input class="campo" id="h-nombre" type="text" name="FNAME" required placeholder="Tu nombre" autocomplete="given-name">
+            <input class="campo" id="h-correo" type="email" name="EMAIL" required placeholder="Tu email" autocomplete="email">
+          </div>
+          <button class="boton" type="submit">Quiero mi foto gratis</button>
+          <label class="consentimiento" for="h-ok"><input type="checkbox" id="h-ok" required><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span></label>
+          <p class="debajo">Te aviso el día que abre. Tu primera foto es gratis, sin tarjeta.</p>
+        </form>
+      </div>
+      <div class="hero-foto">
+        <video data-audio poster="/video/hero-multiverso.jpg?v=1" muted loop playsinline preload="auto" aria-label="Un universo de pantallas conectadas con el logo de Lulumina en el centro."><source src="/video/hero-multiverso.mp4?v=1" type="video/mp4"></video>
+        <div class="sello"><span class="pt" aria-hidden="true"></span><span>Hecho con Lulumina</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= QUÉ ES (VIDEO CON AUDIO) ================= -->
+<section class="banda">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Mira esto primero</p>
+      <h2>¿Qué es Lulumina?</h2>
+      <p class="bajada">Dale play y súbele el volumen.</p>
+    </div>
+    <div style="max-width:420px;margin:0 auto">
+      <video controls playsinline preload="metadata" poster="/video/que-es-lulumina.jpg?v=1" style="width:100%;border-radius:13px;border:1px solid var(--linea2);background:var(--panel);display:block" aria-label="Video que explica qué es Lulumina AI."><source src="/video/que-es-lulumina.mp4?v=1" type="video/mp4"></video>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROBLEMA ================= -->
+<section class="banda">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Si estás aquí, probablemente</p>
+      <h2>Ya lo intentaste con otras apps</h2>
+    </div>
+    <ul class="dolores">
+      <li><span class="marca-x">01</span><span>Generaste una cara que se te parecía… <em>pero no eras tú</em>. Y en el siguiente video, cambió otra vez.</span></li>
+      <li><span class="marca-x">02</span><span>Pagas una app para fotos, otra para video, y después editas todo en una tercera.</span></li>
+      <li><span class="marca-x">03</span><span>Monedas, créditos, packs. Nunca sabes cuánto te va a costar lo que estás por crear.</span></li>
+      <li><span class="marca-x">04</span><span>Las expresiones salen exageradas, de plástico, de dibujo animado.</span></li>
+    </ul>
+    <p class="remate">Lulumina nació de eso. <span>Una sola app, tu cara de verdad, y el precio a la vista.</span></p>
+  </div>
+</section>
+
+<!-- ================= GALERÍA ================= -->
+<section class="banda alterna">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Hecho con Lulumina</p>
+      <h2>Tú, en cualquier escena</h2>
+      <p class="bajada">En cada video con personas, la misma persona de principio a fin: misma cara, mismo pelo, en lugares distintos. Esa constancia es lo difícil, y es lo que Lulumina hace por ti. <b>Toca cualquiera para escuchar el audio.</b></p>
+    </div>
+    <div class="galeria">
+      <figure><span class="marcavideo">video</span><video data-audio poster="/video/baile-vestido-blanco.jpg?v=1" muted loop playsinline preload="metadata" aria-label="Una mujer baila y gira con un vestido blanco largo entre humo."><source src="/video/baile-vestido-blanco.mp4?v=1" type="video/mp4"></video><figcaption>Vestido blanco</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="/video/set.jpg?v=8" muted loop playsinline preload="metadata" aria-label="Un hombre haciéndose selfies en un set de filmación, en un cementerio con el equipo detrás."><source src="/video/set.mp4?v=8" type="video/mp4"><source src="/video/set.webm?v=8" type="video/webm"></video><figcaption>En el set</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="/video/alas.jpg?v=8" muted loop playsinline preload="metadata" aria-label="Una mujer con alas grandes de plumas blancas y un body de plumas en un estudio claro."><source src="/video/alas.mp4?v=8" type="video/mp4"><source src="/video/alas.webm?v=8" type="video/webm"></video><figcaption>Alas de ángel</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="/video/multitud.jpg?v=8" style="object-position:100% 50%" muted loop playsinline preload="metadata" aria-label="Una multitud de personas con camisas rosas y celestes que se inclinan a la vez."><source src="/video/multitud.mp4?v=8" type="video/mp4"><source src="/video/multitud.webm?v=8" type="video/webm"></video><figcaption>Multitud</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="/video/oficina.jpg?v=6" style="object-position:10% 50%" muted loop playsinline preload="metadata"><source src="/video/oficina.mp4?v=6" type="video/mp4"><source src="/video/oficina.webm?v=6" type="video/webm"></video><figcaption>Oficina</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="/video/video4.jpg?v=4" muted loop playsinline preload="metadata"><source src="/video/video4.mp4?v=4" type="video/mp4"><source src="/video/video4.webm?v=4" type="video/webm"></video><figcaption>En el metro</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="/video/vestido-azul.jpg?v=1" muted loop playsinline preload="metadata" aria-label="Una mujer pelirroja gira con un vestido largo azul."><source src="/video/vestido-azul.mp4?v=1" type="video/mp4"></video><figcaption>Vestido azul</figcaption></figure>
+      <figure><span class="marcavideo">video</span><video data-audio poster="/video/abrigo-calle.jpg?v=1" muted loop playsinline preload="metadata" aria-label="Una mujer camina por una calle con un abrigo color camel al atardecer."><source src="/video/abrigo-calle.mp4?v=1" type="video/mp4"></video><figcaption>Abrigo en la calle</figcaption></figure>
+      <figure class="ancha"><span class="marcavideo">video</span><video data-audio poster="/video/moto.jpg?v=8" muted loop playsinline preload="metadata" aria-label="Dos hombres en un estudio con una pelota de básquet y después uno en una moto de agua de noche."><source src="/video/moto.mp4?v=8" type="video/mp4"><source src="/video/moto.webm?v=8" type="video/webm"></video><figcaption>Estudio y moto de agua</figcaption></figure>
+    </div>
+    <p class="pie-galeria"><b>La misma cara en los cuatro.</b> Eso no sale solo: sale de entrenar tu personaje una vez, con tus fotos. Lulumina lo hace en el primer paso y después no lo tocas más.</p>
+  </div>
+</section>
+
+<!-- ================= QUÉ HACE ================= -->
+<section class="banda">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Qué puedes hacer</p>
+      <h2>Crear y editar, en un solo lugar</h2>
+      <p class="bajada">Todo con tu personaje. Todo con el precio a la vista antes de confirmar.</p>
+    </div>
+    <div class="rejilla seis">
+      <div class="tarjeta"><span class="num">01</span><h3>Fotos y videos con tu cara</h3><p>Plantillas listas (UGC, editorial, fantasía, escenas de película) o tu propia idea. Expresiones naturales, nunca exageradas.</p></div>
+      <div class="tarjeta"><span class="num">02</span><h3>Chasquido mágico</h3><p>Chasqueas los dedos y cambias de lugar y de ropa en el mismo video, con tu misma cara.</p></div>
+      <div class="tarjeta"><span class="num">03</span><h3>Sesiones completas</h3><p>Seis fotos de una sesión real — ascensor, viernes de noche, outfit del día — con el mismo look.</p></div>
+      <div class="tarjeta"><span class="num">04</span><h3>Lulumina Motion</h3><p>Escribes una frase y sale una animación con tipografía en movimiento, tus colores y tu logo.</p></div>
+      <div class="tarjeta"><span class="num">05</span><h3>Anuncios en varias versiones</h3><p>Un producto, un objetivo, y la IA escribe de 2 a 6 versiones distintas del anuncio. Las revisas y se crean juntas.</p></div>
+      <div class="tarjeta"><span class="num">06</span><h3>Social Clip</h3><p>El editor adentro: subtítulos, cortes con IA, títulos y zoom. Listo para subir, sin pasar por otra app.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRECIO ================= -->
+<section class="banda alterna" id="precios">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Precio claro, en dólares</p>
+      <h2>Sabes lo que cuesta antes de crear</h2>
+      <p class="bajada">Una <b>creación</b> es una foto. Un video de 5 segundos usa 4. Cada plan trae creaciones por mes, sin marca de agua. Cancelas cuando quieras.</p>
+    </div>
+    <div class="planes">
+      <div class="plan"><p class="eyebrow">Starter</p><p class="precio">US$ 12 <small>/ mes</small></p><p class="incluye"><b>50 creaciones por mes</b><br>≈ 50 fotos o 12 videos de 5 s<br>Para publicar todas las semanas.</p></div>
+      <div class="plan destacado"><p class="eyebrow">Pro · el más elegido</p><p class="precio">US$ 29 <small>/ mes</small></p><p class="incluye"><b>130 creaciones por mes</b><br>≈ 130 fotos o 32 videos de 5 s<br>Para publicar todos los días.</p></div>
+      <div class="plan"><p class="eyebrow">Studio</p><p class="precio">US$ 59 <small>/ mes</small></p><p class="incluye"><b>280 creaciones por mes</b><br>≈ 280 fotos o 70 videos de 5 s<br>Para negocios y agencias con clientes.</p></div>
+    </div>
+    <p class="nota-precio"><b>Prueba gratis:</b> tu primera foto, con la marca de agua de Lulumina y sin tarjeta. Se paga con tarjeta o PayPal.</p>
+  </div>
+</section>
+
+<!-- ================= CÓMO FUNCIONA ================= -->
+<section class="banda">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2>Tres pasos, en este orden</h2>
+      <p class="bajada">El orden importa más que las herramientas. Lulumina te lleva por él.</p>
+    </div>
+    <ol class="pasos">
+      <li><span class="cifra" aria-hidden="true">01</span><div><h3>Subes tus fotos</h3><p>De 3 a 5 fotos tuyas (o de tu personaje). Con eso Lulumina arma tu ficha: tu cara, tu pelo, tu ropa fija.</p></div></li>
+      <li><span class="cifra" aria-hidden="true">02</span><div><h3>Creas</h3><p>Eliges una plantilla o escribes tu idea. Ves el costo, confirmas, y en un par de minutos lo tienes.</p></div></li>
+      <li><span class="cifra" aria-hidden="true">03</span><div><h3>Editas y publicas</h3><p>Subtítulos, cortes y títulos adentro de Lulumina. Descargas y subes a Reels, TikTok o YouTube.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= QUIÉN SOY ================= -->
+<section class="banda alterna">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Quién está detrás</p>
+      <h2>No soy una gurú. Soy la que se tropezó con todas.</h2>
+    </div>
+    <div class="historia" style="grid-template-columns:1fr;max-width:760px">
+      <div>
+        <p>Soy <strong>Nidia</strong>. Tengo una agencia de marketing digital en el área de Washington DC, y hace un tiempo me obsesioné con el video hecho con inteligencia artificial.</p>
+        <p>Me llevó meses. Quemé créditos generando clips con duraciones que no entendía. Generé imágenes de mi propio personaje que <strong>no se parecían a mi personaje</strong>. Probé herramientas que prometían todo y hacían la mitad.</p>
+        <p>Hasta que entendí el orden correcto de las cosas. Y cuando lo entendí, <strong>armé Lulumina</strong> para no volver a pasar por eso — y para que tú no tengas que pasar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="banda">
+  <div class="interior">
+    <div class="encabezado">
+      <p class="eyebrow">Preguntas</p>
+      <h2>Lo que me preguntan siempre</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>¿Qué es una creación?</summary>
+        <div class="respuesta">Una foto. Un video de 5 segundos usa 4, uno de 8 usa 7. Antes de confirmar, Lulumina te muestra cuántas usa lo que estás por crear. Si algo falla, no se descuenta.</div>
+      </details>
+      <details>
+        <summary>¿De verdad va a tener mi cara?</summary>
+        <div class="respuesta">Ese es el centro de Lulumina: entrenas tu personaje una vez con tus fotos, y cada creación parte de esa ficha. Las expresiones son naturales por defecto: nada de caras exageradas.</div>
+      </details>
+      <details>
+        <summary>¿Necesito saber algo de antes?</summary>
+        <div class="respuesta">No. Si sabes usar Instagram, puedes con esto. Las plantillas ya traen todo lo que yo aprendí a los golpes.</div>
+      </details>
+      <details>
+        <summary>¿Qué incluye la prueba gratis?</summary>
+        <div class="respuesta">Tu primera foto con la marca de agua de Lulumina. Sin tarjeta. Si invitas a alguien, las dos ganan creaciones de regalo.</div>
+      </details>
+      <details>
+        <summary>¿Puedo cancelar?</summary>
+        <div class="respuesta">Sí, cuando quieras, desde la app. Sigues con todo hasta que termine el mes ya pagado.</div>
+      </details>
+      <details>
+        <summary>¿Me vas a llenar de correos?</summary>
+        <div class="respuesta">No. Te escribo el día que abre, y después solo cuando haya algo que valga la pena. Te borras con un click al pie de cualquier correo.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CIERRE ================= -->
+<section class="banda cierre alterna">
+  <div class="interior">
+    <p class="eyebrow">Último paso</p>
+    <h2 style="margin-top:14px">Tu primera foto, gratis</h2>
+    <p class="bajada">Dejas tu nombre y tu email. Te aviso el día que abre, y entras de las primeras.</p>
+    <form class="formulario" id="form-cierre" novalidate>
+      <div class="fila">
+        <input class="campo" id="c-nombre" type="text" name="FNAME" required placeholder="Tu nombre" autocomplete="given-name">
+        <input class="campo" id="c-correo" type="email" name="EMAIL" required placeholder="Tu email" autocomplete="email">
+      </div>
+      <button class="boton" type="submit">Quiero mi foto gratis</button>
+      <label class="consentimiento" for="c-ok"><input type="checkbox" id="c-ok" required><span>He leído y acepto la <a href="privacidad.html">política de privacidad</a>.</span></label>
+      <p class="debajo">Gratis. Sin tarjeta. Te borras con un click cuando quieras.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="banda">
+  <div class="interior">
+    <span>LuminaIAStudio.com · Wave Plus Pro</span>
+    <span class="enlaces"><a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a><span>Washington DC · Maryland · Virginia</span></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------------------------------------------------------------
+     Pegar aquí la dirección del formulario incorporado de Mailchimp.
+     Sale de: Formularios -> Formulario incorporado -> el <form action="...">
+     Tiene esta forma:
+       https://XXXX.us5.list-manage.com/subscribe/post?u=XXXX&id=XXXX
+     Mientras esté vacía, el botón abre el correo en vez de perder a nadie.
+  --------------------------------------------------------------- */
+  var ACCION_MAILCHIMP = "https://gmail.us5.list-manage.com/subscribe/post?u=64357cc0bdae80b13b0816b34&id=8bf4838e02&f_id=00f319e0f0";
+  var CORREO_DE_RESPALDO = "wavemarketingone@gmail.com";
+
+  var formularios = [document.getElementById('form-hero'), document.getElementById('form-cierre')];
+
+  formularios.forEach(function(f){
+    if(!f) return;
+
+    if (ACCION_MAILCHIMP) {
+      /* Se manda por JSONP: no saca a la persona de la página, no abre
+         pestañas nuevas, y Mailchimp contesta de verdad si entró o no. */
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        var boton = f.querySelector('button[type="submit"]');
+        var pie   = f.querySelector('.debajo');
+        var datos = {
+          EMAIL: (f.querySelector('input[name="EMAIL"]') || {}).value || '',
+          FNAME: (f.querySelector('input[name="FNAME"]') || {}).value || ''
+        };
+
+        var textoOriginal = boton ? (boton.getAttribute('data-original') || boton.textContent) : '';
+        if (boton) { boton.setAttribute('data-original', textoOriginal); }
+        if (boton) { boton.textContent = 'Anotándote…'; boton.disabled = true; }
+
+        var fn = 'mc_' + Date.now();
+        var url = ACCION_MAILCHIMP.replace('/post?', '/post-json?')
+                + '&EMAIL=' + encodeURIComponent(datos.EMAIL)
+                + '&FNAME=' + encodeURIComponent(datos.FNAME)
+                + '&c=' + fn;
+
+        var sc = document.createElement('script');
+        var cerrado = false;
+
+        function terminar(html, entro){
+          if (cerrado) return; cerrado = true;
+          clearTimeout(reloj);
+          try { delete window[fn]; } catch(x) { window[fn] = undefined; }
+          if (sc.parentNode) sc.parentNode.removeChild(sc);
+          if (pie) pie.innerHTML = html;
+          if (boton) {
+            if (entro) { boton.textContent = 'Ya estás dentro ✓'; }
+            else { boton.textContent = textoOriginal; boton.disabled = false; }
+          }
+        }
+
+        window[fn] = function(r){
+          if (r && r.result === 'success') { terminar('<b>¡Listo!</b> Te aviso el día que abre Lulumina. Si no ves el correo de confirmación, fijate en Promociones o Spam.<br><a href="encuesta.html">Ayúdame en 1 minuto: 4 preguntas →</a>', true); }
+          else {
+            var m = (r && r.msg) ? String(r.msg) : '';
+            if (m.toLowerCase().indexOf('already') !== -1 || m.indexOf('ya está') !== -1) {
+              terminar('<b>Ese correo ya estaba anotado.</b> Te aviso cuando abra, no hace falta nada más.', true);
+            } else {
+              terminar('No se pudo anotar: ' + m.replace(/<[^>]*>/g, ''), false);
+            }
+          }
+        };
+
+        var reloj = setTimeout(function(){
+          terminar('<b>No pude conectar.</b> Prueba de nuevo en un minuto, o escríbeme a <a href="mailto:' + CORREO_DE_RESPALDO + '">' + CORREO_DE_RESPALDO + '</a>.', false);
+        }, 12000);
+
+        sc.src = url;
+        sc.onerror = function(){
+          terminar('<b>No pude conectar.</b> Prueba de nuevo en un minuto, o escríbeme a <a href="mailto:' + CORREO_DE_RESPALDO + '">' + CORREO_DE_RESPALDO + '</a>.', false);
+        };
+        document.body.appendChild(sc);
+      });
+      return;
+    }
+
+    /* Sin dirección configurada: no se pierde a nadie, se abre el correo */
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      /* Consentimiento obligatorio, tambien en el camino de respaldo */
+      var casilla = f.querySelector('input[type="checkbox"]');
+      if (casilla && !casilla.checked) {
+        var aviso = f.querySelector('.debajo');
+        if (aviso) { aviso.textContent = 'Para seguir, marcá la casilla de la política de privacidad.'; aviso.style.color = 'var(--verde)'; }
+        casilla.focus();
+        return;
+      }
+
+      var nombre = (f.querySelector('input[name="FNAME"]') || {}).value || '';
+      var correo = (f.querySelector('input[name="EMAIL"]') || {}).value || '';
+      var boton = f.querySelector('button[type="submit"]');
+      var pie = f.querySelector('.debajo');
+
+      var asunto = encodeURIComponent('Quiero mi foto gratis en Lulumina');
+      var cuerpo = encodeURIComponent(
+        'Hola Nidia, quiero entrar a Lulumina cuando abra.\n\n' +
+        'Nombre: ' + nombre + '\n' +
+        'Email: ' + correo + '\n' +
+        'Acepta la politica de privacidad: si\n'
+      );
+      window.location.href = 'mailto:' + CORREO_DE_RESPALDO + '?subject=' + asunto + '&body=' + cuerpo;
+
+      if (boton) { boton.textContent = 'Abriendo tu correo…'; }
+      if (pie) { pie.textContent = 'Se abre tu app de correo con el mensaje listo. Mándalo y te agrego a mano.'; }
+    });
+  });
+})();
+
+(function(){
+  var quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var videos = Array.prototype.slice.call(document.querySelectorAll('.galeria video, .hero-foto video'));
+  if (!videos.length) return;
+
+  if (quieto) {                                  /* respeta a quien pidió menos movimiento */
+    videos.forEach(function(v){ v.setAttribute('controls',''); });
+    return;
+  }
+  function arrancar(v){ var p = v.play(); if (p && p.catch) { p.catch(function(){ v.setAttribute('controls',''); }); } }
+
+  if (!('IntersectionObserver' in window)) { videos.forEach(arrancar); return; }
+
+  var obs = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){
+      if (e.isIntersecting) { arrancar(e.target); } else { e.target.pause(); e.target.muted = true; }
+    });
+  }, { threshold: 0.25 });
+  videos.forEach(function(v){ obs.observe(v); });
+})();
+
+(function(){
+  /* Sonido a pedido: los videos arrancan en silencio (los navegadores lo exigen
+     para reproducir solos) y se escuchan cuando la persona toca. Solo suena uno
+     por vez, y se silencia al salir de la pantalla. */
+  var videos = Array.prototype.slice.call(
+    document.querySelectorAll('.galeria video[data-audio], .hero-foto video[data-audio]'));
+  if (!videos.length) return;
+
+  var OFF = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l4 6m0-6l-4 6"/></svg>';
+  var ON  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 8.5a5 5 0 010 7M20 6a9 9 0 010 12"/></svg>';
+  var DECIR_ENCENDER = 'Escuchar el audio de este video';
+  var DECIR_APAGAR   = 'Silenciar este video';
+
+  function pintar(b, sonando){
+    b.setAttribute('aria-pressed', sonando ? 'true' : 'false');
+    b.setAttribute('aria-label', sonando ? DECIR_APAGAR : DECIR_ENCENDER);
+    b.innerHTML = (sonando ? ON : OFF) + '<span class="txt">sonido</span>';
+  }
+  function silenciarOtros(menos){
+    videos.forEach(function(v){
+      if (v === menos || v.muted) return;
+      v.muted = true;
+      if (v.__boton) pintar(v.__boton, false);
+    });
+  }
+
+  videos.forEach(function(v){
+    var caja = v.closest('figure') || v.closest('.hero-foto');
+    if (!caja) return;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'sonido';
+    pintar(b, false);
+    caja.appendChild(b);
+    v.__boton = b;
+
+    function alternar(e){
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      if (v.muted) {
+        silenciarOtros(v);
+        v.muted = false;
+        var p = v.play(); if (p && p.catch) { p.catch(function(){}); }
+      } else {
+        v.muted = true;
+      }
+      pintar(b, !v.muted);
+    }
+    b.addEventListener('click', alternar);
+    v.addEventListener('click', alternar);
+    v.addEventListener('volumechange', function(){ pintar(b, !v.muted); });
+  });
+
+  /* al salir de la pantalla, se silencia solo */
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting && !e.target.muted) {
+          e.target.muted = true;
+          if (e.target.__boton) pintar(e.target.__boton, false);
+        }
+      });
+    }, { threshold: 0.2 });
+    videos.forEach(function(v){ obs.observe(v); });
+  }
+})();
+</script>
+
+</body>
+</html>
