@@ -60,15 +60,14 @@
 <body>
   <div class="caja">
     <p class="eyebrow">Ayúdame a construir lo correcto</p>
-    <h1>Cinco preguntas, un minuto</h1>
+    <h1>Cuatro preguntas, un minuto</h1>
     <p>Antes de lanzar quiero saber qué necesitas de verdad, no adivinar. No hay respuestas buenas ni malas.</p>
     <form id="f" novalidate>
-      <fieldset><legend>1. ¿Qué quieres crear?</legend><label class="op"><input type="radio" name="crear" value="Videos míos, con mi propia cara (mi clon)" required><span>Videos míos, con mi propia cara (mi clon)</span></label><label class="op"><input type="radio" name="crear" value="Contenido para mi marca o mi negocio" required><span>Contenido para mi marca o mi negocio</span></label><label class="op"><input type="radio" name="crear" value="Noticias o periodismo" required><span>Noticias o periodismo</span></label><label class="op"><input type="radio" name="crear" value="Arte o personajes" required><span>Arte o personajes</span></label><label class="op"><input type="radio" name="crear" value="Otra cosa" required><span>Otra cosa</span></label></fieldset>
-      <fieldset><legend>2. ¿Qué usas hoy para hacerlo? (opcional)</legend><input type="text" name="uso" maxlength="200" autocomplete="off"></fieldset>
-      <fieldset><legend>3. ¿Qué es lo que más te molesta de esas herramientas?</legend><label class="op"><input type="radio" name="molesta" value="Cobran sin que yo sepa cuánto" required><span>Cobran sin que yo sepa cuánto</span></label><label class="op"><input type="radio" name="molesta" value="El resultado no se parece a mí" required><span>El resultado no se parece a mí</span></label><label class="op"><input type="radio" name="molesta" value="Es difícil de usar" required><span>Es difícil de usar</span></label><label class="op"><input type="radio" name="molesta" value="Es caro" required><span>Es caro</span></label><label class="op"><input type="radio" name="molesta" value="Otra cosa" required><span>Otra cosa</span></label></fieldset>
-      <fieldset><legend>4. ¿Cuál de estas cosas querrías primero?</legend><label class="op"><input type="radio" name="primero" value="Un clon que graba videos por mí" required><span>Un clon que graba videos por mí</span></label><label class="op"><input type="radio" name="primero" value="Un horario automático de videos" required><span>Un horario automático de videos</span></label><label class="op"><input type="radio" name="primero" value="Un editor de video" required><span>Un editor de video</span></label><label class="op"><input type="radio" name="primero" value="Videos largos (3 minutos)" required><span>Videos largos (3 minutos)</span></label><label class="op"><input type="radio" name="primero" value="Un lugar para compartir mi multiverso" required><span>Un lugar para compartir mi multiverso</span></label></fieldset>
-      <fieldset><legend>5. ¿Cuánto pagarías por mes?</legend><label class="op"><input type="radio" name="precio" value="Nada: solo si es gratis" required><span>Nada: solo si es gratis</span></label><label class="op"><input type="radio" name="precio" value="Menos de US$10 al mes" required><span>Menos de US$10 al mes</span></label><label class="op"><input type="radio" name="precio" value="US$10 a 20 al mes" required><span>US$10 a 20 al mes</span></label><label class="op"><input type="radio" name="precio" value="US$20 a 40 al mes" required><span>US$20 a 40 al mes</span></label><label class="op"><input type="radio" name="precio" value="Más de US$40 al mes" required><span>Más de US$40 al mes</span></label></fieldset>
-      <fieldset><legend>Tu correo, si quieres que te cuente qué sale (opcional)</legend><input type="email" name="correo" autocomplete="email" maxlength="120"></fieldset>
+      <fieldset><legend>1. ¿Qué problema quieres resolver?</legend><label class="op"><input type="radio" name="problema" value="Hacer contenido más rápido" required><span>Hacer contenido más rápido</span></label><label class="op"><input type="radio" name="problema" value="Verme bien en cámara sin grabar" required><span>Verme bien en cámara sin grabar</span></label><label class="op"><input type="radio" name="problema" value="Recuperar mi tiempo" required><span>Recuperar mi tiempo</span></label><label class="op"><input type="radio" name="problema" value="Solo curiosidad" required><span>Solo curiosidad</span></label></fieldset>
+      <fieldset><legend>2. ¿Por qué crees que LuLumina podría servirte? (opcional)</legend><textarea name="porque" rows="3" maxlength="400"></textarea></fieldset>
+      <fieldset><legend>3. ¿Cómo haces video hoy y qué es lo más molesto? (opcional)</legend><textarea name="hoy" rows="3" maxlength="400"></textarea></fieldset>
+      <fieldset><legend>4. ¿Usarías un clon tuyo que grabe por ti?</legend><label class="op"><input type="radio" name="clon" value="Sí" required><span>Sí</span></label><label class="op"><input type="radio" name="clon" value="Quizás" required><span>Quizás</span></label><label class="op"><input type="radio" name="clon" value="No" required><span>No</span></label></fieldset>
+      <fieldset><legend>Tu correo, para enviarte el acceso (opcional; sin él no puedo invitarte)</legend><input type="email" name="correo" autocomplete="email" maxlength="120"></fieldset>
       <button type="submit" id="b">Enviar</button>
       <p class="nota" id="msg" role="status"></p>
     </form>
@@ -85,7 +84,7 @@
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var d=datos();
-    var faltan=['crear','molesta','primero','precio'].filter(function(k){return !d[k];});
+    var faltan=['problema','clon'].filter(function(k){return !d[k];});
     if(faltan.length){m.textContent=ES?'Faltan respuestas: marca una opción en cada pregunta.':'Missing answers: pick one option in each question.';return;}
     b.disabled=true;b.textContent=ES?'Enviando…':'Sending…';m.textContent='';
     d._subject='Encuesta Lulumina';d._captcha='false';d._template='table';d.idioma=ES?'es':'en';
