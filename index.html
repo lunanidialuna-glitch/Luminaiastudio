@@ -560,7 +560,7 @@
         }
 
         window[fn] = function(r){
-          if (r && r.result === 'success') { terminar('<b>¡Listo!</b> Te aviso el día que abre Lulumina. Si no ves el correo de confirmación, fijate en Promociones o Spam.<br><a href="encuesta.html">Ayúdame en 1 minuto: 5 preguntas →</a>', true); }
+          if (r && r.result === 'success') { terminar('<b>¡Listo!</b> Te aviso el día que abre Lulumina. Si no ves el correo de confirmación, fijate en Promociones o Spam.<br><a href="encuesta.html">Ayúdame en 1 minuto: 4 preguntas →</a>', true); }
           else {
             var m = (r && r.msg) ? String(r.msg) : '';
             if (m.toLowerCase().indexOf('already') !== -1 || m.indexOf('ya está') !== -1) {
